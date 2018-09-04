@@ -1,6 +1,6 @@
 
 {
-    "name": "room0",
+    "name": "rm_edit",
     "id": "4c1868e9-d5af-4d51-b82a-1e6256960aa6",
     "creationCodeFile": "",
     "inheritCode": false,
@@ -13,7 +13,7 @@
     "layers": [
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
-            "name": "Instances",
+            "name": "lyr_gui",
             "id": "225157c7-abf7-407c-a73c-8aae81235f77",
             "depth": 0,
             "grid_x": 32,
@@ -39,7 +39,7 @@
         },
         {
             "__type": "GMRBackgroundLayer_Model:#YoYoStudio.MVCFormat",
-            "name": "Background",
+            "name": "lyr_background",
             "id": "864e13bd-47ac-4d35-a487-e869645f5c27",
             "animationFPS": 15,
             "animationSpeedType": "0",
@@ -87,12 +87,12 @@
     },
     "roomSettings":     {
         "id": "8cdb030b-fe82-4fff-8c1c-ee46416a2eff",
-        "Height": 768,
+        "Height": 1080,
         "inheritRoomSettings": false,
         "modelName": "GMRoomSettings",
         "persistent": false,
         "mvc": "1.0",
-        "Width": 1024
+        "Width": 1920
     },
     "mvc": "1.0",
     "views": [

@@ -66,7 +66,7 @@
             "Key": "4c1868e9-d5af-4d51-b82a-1e6256960aa6",
             "Value": {
                 "id": "451adee0-0c7f-47ac-808e-7e490c342de9",
-                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourcePath": "rooms\\rm_edit\\rm_edit.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -95,11 +95,35 @@
             }
         },
         {
+            "Key": "759f8229-5231-4594-a8e1-59e5ca08d9ef",
+            "Value": {
+                "id": "dcc375ae-4a0f-4b7b-95db-aee7f42b90a1",
+                "resourcePath": "notes\\Bug List.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
+            "Key": "7a3116ea-bf4d-452a-a763-ff66db706c89",
+            "Value": {
+                "id": "a93a1b38-4032-481d-8680-ae3bff8ca64f",
+                "resourcePath": "notes\\To Do List.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "6636aace-26d6-4c68-87cd-37d08cf27953",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "aefd8df5-a844-478c-8acf-7c1404a25006",
+            "Value": {
+                "id": "2381a25d-44ea-4003-8e17-1995ce58efa8",
+                "resourcePath": "notes\\Version Control Log.yy",
+                "resourceType": "GMNotes"
             }
         },
         {
