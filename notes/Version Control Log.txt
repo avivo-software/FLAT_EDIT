@@ -3,3 +3,5 @@
 *************************************************************************
 
 Version 0.0.0.0 | Base Files.
+Version 0.0.0.1 | Grid implementation.
+Version 0.0.0.2 | Fixed grid number possitioning. Condenced code. Added comments. Tidied code.
