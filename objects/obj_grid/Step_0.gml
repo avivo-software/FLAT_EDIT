@@ -190,86 +190,41 @@ if global.edit_enabled == true // Ensures grid can be modified
 		
 	        if window_get_cursor() == cr_size_ns // Checks if current cursor is set to up, down cursor
 	        {
-	            if mouse_y > y_offset + y_max + cell_size / 2 // Ensures mouse is at least half a cells height from edge of grid
-	            {
-					if y_limit + 1 < hard_y_limit // Stops grid from being expanded beyond specified limits
-					{
-						y_limit ++; // Adds new row
-						//y_limit = round(mouse_y - y_offset / cell_size) 
-					}
-	            }
-    
-	            if mouse_y < y_offset + y_max - cell_size / 2 // Ensures mouse is at most half a cells height from inside of grid
-	            {
-	                if y_limit > 1 
-					{
-						y_limit --; // Removes new row and ensures grid can't disappear
-					}
+				check_y_limit = round((mouse_y - y_offset) / cell_size); // Stores new y_limit
+						
+				if check_y_limit > 0
+				{
+					y_limit = round((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
 	        }
 			
 			// EXPAND GRID HORIZONTAL
         
-	        if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, down cursor
+	        if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, right cursor
 	        {
-	            if mouse_x > x_offset + x_max + cell_size / 2 // Ensures mouse is at least half a cells width from edge of grid X
-	            {
-					if x_limit + 1 < hard_x_limit // Stops grid from being expanded beyond specified limits
-					{
-						x_limit ++; // Adds new column
-					}
+				check_x_limit = round((mouse_x - x_offset) / cell_size); // Stores new y_limit
+						
+				if check_x_limit > 0
+				{
+					x_limit = round((mouse_x - x_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
-    
-	            if mouse_x < x_offset + x_max - cell_size / 2 // Ensures mouse is at most half a cells width from inside of grid X
-	            {
-	                if x_limit > 1 
-					{
-						x_limit --; // Removes new column and ensures grid can't disappear
-					}
-	            }
 	        }
         
             if window_get_cursor() == cr_size_nwse // Checks if current cursor is set to top, left cursor
             {
-                if mouse_x > x_offset + x_max + cell_size // Ensures mouse is at least half a cells width from edge of grid X
-                {
-                    if mouse_y > y_offset + y_max + cell_size // Ensures mouse is at least half a cells height from edge of grid Y
-                    {
-                        if x_limit < hard_x_limit // Ensures grid can't be made bigger than max X size
-                        {
-							x_limit ++; // Add column
-                        }
-                        
-                        if y_limit < hard_y_limit // Ensures grid can't be made bigger than max Y size
-                        {
-							y_limit ++; // Add row
-                        }
-                    }
-                }
-                    else
-                {
-                    if mouse_x < x_offset + x_max - cell_size // Ensures mouse is at most half a cells height from inside of grid X
-                    {
-                        if mouse_y < y_offset + y_max - cell_size // Ensures mouse is at most half a cells height from inside of grid Y
-                        {
-                            if x_limit > 1 // Removes new column and ensures grid can't disappear
-                            {
-                                if x_limit * cell_size < room_width - cell_size
-								{
-									x_limit --; // Remove column
-								}
-                            }
-                            
-                            if y_limit > 1 // Removes new row and ensures grid can't disappear
-                            {
-                                if y_limit * cell_size < room_height - cell_size
-								{
-									y_limit --; // Remove row
-								}
-                            }
-                        }
-                    }
-                }
+                check_y_limit = round((mouse_y - y_offset) / cell_size); // Stores new y_limit
+						
+				if check_y_limit > 0
+				{
+					y_limit = round((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
+				}
+				
+				check_x_limit = round((mouse_x - x_offset) / cell_size); // Stores new x_limit
+						
+				if check_x_limit > 0
+				{
+					x_limit = round((mouse_x - x_offset) / cell_size); // Recalculates X Limit based on mouse X possition
+				}
             }
         }
     }
