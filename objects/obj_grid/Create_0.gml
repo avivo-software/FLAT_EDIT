@@ -14,8 +14,8 @@ y_offset = 256; // Y offset of Palette realative to window size
 x_shift = 0; // Determines number of cells to shift in the X direction
 y_shift = 0; // Determines number of cells to shift in the Y direction
 
-x_limit = 8; // Sets the number of rows to draw
-y_limit = 4; // Sets the number of columns to draw
+x_limit = 4; // Sets the number of rows to draw
+y_limit = 2; // Sets the number of columns to draw
 
 x_max = 0; // Stores the length of the X line
 y_max = 0; // Stores the length of the Y line
@@ -29,7 +29,7 @@ y_scale = 1; // Sets Y scale tile
 x1 = x_offset; // Stores X1 coordinate for grid
 y1 = y_offset; // Stores Y1 coordinate for grid
 
-x2 = x1 + x_max; // Stores X2 coordinate for grid 
+x2 = x1 + x_max; // Stores X2 coordinate for grid
 y2 = y1 + y_max; // Stores Y2 coordinate for grid
 
 cell_min = 8; // Sets the minimum size of the grid
@@ -51,3 +51,6 @@ numbers_enabled = true; // Determines if grid numbers are visible
 grid_snap = 16; // Sets the amount to snap the grid by
 numbers_gap = 16; // The distance from grid to draw numbers
 buffer = 4; // Sets the distance in pixels that borders the action areas
+line_thickness = 2; // Stores the thickness of the grid lines
+
+

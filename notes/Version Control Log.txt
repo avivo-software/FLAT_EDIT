@@ -6,3 +6,4 @@ Version 0.0.0.0 | Base Files.
 Version 0.0.0.1 | Grid implementation.
 Version 0.0.0.2 | Fixed grid number possitioning. Condenced code. Added comments. Tidied code.
 Version 0.0.0.3 | Changed game FPS to 60. Added and modified comments.
+Version 0.0.0.4 | You can now make the grid any thickness. All code now takes into consideration the line thickness.

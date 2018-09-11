@@ -18,8 +18,8 @@ y_max = y_limit * cell_size; // Sets Y Coordinates to correct position
 *              DETERMINES GRID COORDINATES BASED ON MOUSE              *       
 ***********************************************************************/
 
-x_pos = floor((mouse_x - x_offset) / cell_size) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
-y_pos = floor((mouse_y - y_offset) / cell_size) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
+x_pos = floor((mouse_x - x_offset) / (cell_size + line_thickness)) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
+y_pos = floor((mouse_y - y_offset) / (cell_size + line_thickness)) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
 
 
 /***********************************************************************
@@ -142,7 +142,7 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 
-    if point_in_rectangle(mouse_x, mouse_y, x1 + buffer, y2 - buffer, x2 - buffer, y2 + buffer) // Check that mouse is in expand up, down area
+    if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset + y_max + line_thickness * y_limit - buffer + line_thickness / 2, x_offset + x_max + line_thickness * x_limit, y_offset + y_max + line_thickness * y_limit + buffer + line_thickness / 2) // Check that mouse is in expand up, down area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -151,7 +151,7 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 
-    if point_in_rectangle(mouse_x, mouse_y, x2 - buffer, y1 + buffer,x2 + buffer, y2 - buffer) // Check that mouse is in expand left, right area
+    if point_in_rectangle(mouse_x, mouse_y, x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2, y_offset, x_offset + x_max + line_thickness * x_limit + buffer + line_thickness / 2, y_offset + y_max + line_thickness * y_limit) // Check that mouse is in expand left, right area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -160,7 +160,7 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 
-    if point_in_rectangle(mouse_x, mouse_y, x2 - buffer, y2 - buffer, x2 + buffer, y2 + buffer) // Check that mouse is in expand diagonal area
+    if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer + x_max + x_limit * line_thickness, y_offset - buffer + y_max + y_limit * line_thickness, x_offset + buffer + x_max + x_limit * line_thickness, y_offset + buffer + y_max + y_limit * line_thickness) // Check that mouse is in expand diagonal area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -195,12 +195,16 @@ if global.edit_enabled == true // Ensures grid can be modified
 					if y_limit + 1 < hard_y_limit // Stops grid from being expanded beyond specified limits
 					{
 						y_limit ++; // Adds new row
+						//y_limit = round(mouse_y - y_offset / cell_size) 
 					}
 	            }
     
 	            if mouse_y < y_offset + y_max - cell_size / 2 // Ensures mouse is at most half a cells height from inside of grid
 	            {
-	                if y_limit > 1 then y_limit --; // Removes new row and ensures grid can't disapear
+	                if y_limit > 1 
+					{
+						y_limit --; // Removes new row and ensures grid can't disappear
+					}
 				}
 	        }
 			
@@ -218,7 +222,10 @@ if global.edit_enabled == true // Ensures grid can be modified
     
 	            if mouse_x < x_offset + x_max - cell_size / 2 // Ensures mouse is at most half a cells width from inside of grid X
 	            {
-	                if x_limit > 1 then x_limit --; // Removes new column and ensures grid can't disapear
+	                if x_limit > 1 
+					{
+						x_limit --; // Removes new column and ensures grid can't disappear
+					}
 	            }
 	        }
         
@@ -230,12 +237,12 @@ if global.edit_enabled == true // Ensures grid can be modified
                     {
                         if x_limit < hard_x_limit // Ensures grid can't be made bigger than max X size
                         {
-                            if x_limit * cell_size < room_width - cell_size then x_limit ++;
+							x_limit ++; // Add column
                         }
                         
                         if y_limit < hard_y_limit // Ensures grid can't be made bigger than max Y size
                         {
-                            if y_limit * cell_size < room_height - cell_size then y_limit ++;
+							y_limit ++; // Add row
                         }
                     }
                 }
@@ -245,14 +252,20 @@ if global.edit_enabled == true // Ensures grid can be modified
                     {
                         if mouse_y < y_offset + y_max - cell_size // Ensures mouse is at most half a cells height from inside of grid Y
                         {
-                            if x_limit > 1 // Removes new column and ensures grid can't disapear
+                            if x_limit > 1 // Removes new column and ensures grid can't disappear
                             {
-                                if x_limit * cell_size < room_width - cell_size then x_limit --; // Add column
+                                if x_limit * cell_size < room_width - cell_size
+								{
+									x_limit --; // Remove column
+								}
                             }
                             
-                            if y_limit > 1 // Removes new row and ensures grid can't disapear
+                            if y_limit > 1 // Removes new row and ensures grid can't disappear
                             {
-                                if y_limit * cell_size < room_height - cell_size then y_limit --; // Add row
+                                if y_limit * cell_size < room_height - cell_size
+								{
+									y_limit --; // Remove row
+								}
                             }
                         }
                     }
@@ -275,7 +288,7 @@ current_font = fnt_western_32;
 if cell_size < 128 then current_font = fnt_western_12; // Sets current font
 if cell_size > 128 then current_font = fnt_western_32; // Sets current font
 
-draw_set_font(current_font); // Sets number font
+draw_set_font(current_font); // Sets font to draw numbers with
 
 font_width = string_width(0); // Stores width of current font in pixels
 font_height = string_height(0); // Stores height of current font in pixels
