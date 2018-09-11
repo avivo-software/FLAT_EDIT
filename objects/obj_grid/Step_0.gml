@@ -35,6 +35,20 @@ if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + x_max, y_
     mouse_in_grid = false; // Sets mouse_in_grid_status to false
 }
 
+/***********************************************************************
+*                         SETS FONT VARIABLES                          *       
+***********************************************************************/
+
+current_font = fnt_western_32;
+
+if cell_size < 128 then current_font = fnt_western_12; // Sets current font
+if cell_size > 128 then current_font = fnt_western_32; // Sets current font
+
+draw_set_font(current_font); // Sets font to draw numbers with
+
+font_width = string_width(0); // Stores width of current font in pixels
+font_height = string_height(0); // Stores height of current font in pixels
+
 
 /***********************************************************************
 *                              PANS GRID                               *
@@ -89,13 +103,16 @@ if mouse_in_grid == true // Prevents grid from zooming in or out when the mouse 
         {
             if cell_size < cell_max // Ensures grid can't be zoomed outside of specified limits
             {
-                cell_size = cell_size * 2; // Doubles cell size
+				if y_limit > 1 // Prevents y_limit from being zero
+				{
+	                cell_size = cell_size * 2; // Doubles cell size
                 
-                x_scale = x_scale * 2; // Double X scale
-                y_scale = y_scale * 2; // Double Y scale
+	                x_scale = x_scale * 2; // Double X scale
+	                y_scale = y_scale * 2; // Double Y scale
                 
-                x_limit = floor(x_limit / 2); // Half X limit
-                y_limit = floor(y_limit / 2); // Half Y limit
+	                x_limit = floor(x_limit / 2); // Half X limit
+	                y_limit = floor(y_limit / 2); // Half Y limit
+				}
             }
         }
     }
@@ -115,11 +132,8 @@ if mouse_in_grid == true // Prevents grid from zooming in or out when the mouse 
             
                 x_limit = floor(x_limit * 2); // Double x_limit
                 y_limit = floor(y_limit * 2); // Double y_limit
+				
             }
-        }
-            else
-        {
-            show_debug_message("Can't zoom to this level. Please increase grid size limit to zoom under these conditions"); // Display message if trying to scroll out of bounds
         }
     }
 }
@@ -141,8 +155,13 @@ if global.edit_enabled == true // Ensures grid can be modified
             global.border_selection_id = unique_id; // Locks grid for editing
         }
     }
+	
+	x1 = x_offset;
+	y1 = y_offset + y_max + line_thickness * y_limit - buffer + line_thickness / 2;
+	x2 = x_offset + x_max + line_thickness * x_limit;
+	y2 = y_offset + y_max + line_thickness * y_limit + buffer + line_thickness / 2;
 
-    if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset + y_max + line_thickness * y_limit - buffer + line_thickness / 2, x_offset + x_max + line_thickness * x_limit, y_offset + y_max + line_thickness * y_limit + buffer + line_thickness / 2) // Check that mouse is in expand up, down area
+    if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand up, down area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -150,8 +169,13 @@ if global.edit_enabled == true // Ensures grid can be modified
             global.border_selection_id = unique_id; // Locks grid for editing
         }
     }
+	
+	x1 =  x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2;
+	y1 = y_offset;
+	x2 = x_offset + x_max + line_thickness * x_limit + buffer + line_thickness / 2;
+	y2 = y_offset + y_max + line_thickness * y_limit;
 
-    if point_in_rectangle(mouse_x, mouse_y, x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2, y_offset, x_offset + x_max + line_thickness * x_limit + buffer + line_thickness / 2, y_offset + y_max + line_thickness * y_limit) // Check that mouse is in expand left, right area
+    if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand left, right area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -160,7 +184,12 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 
-    if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer + x_max + x_limit * line_thickness, y_offset - buffer + y_max + y_limit * line_thickness, x_offset + buffer + x_max + x_limit * line_thickness, y_offset + buffer + y_max + y_limit * line_thickness) // Check that mouse is in expand diagonal area
+	x1 = x_offset - buffer + x_max + x_limit * line_thickness;
+	y1 = y_offset - buffer + y_max + y_limit * line_thickness;
+	x2 = x_offset + buffer + x_max + x_limit * line_thickness;
+	y2 = y_offset + buffer + y_max + y_limit * line_thickness;
+	
+    if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand diagonal area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -177,53 +206,45 @@ if global.edit_enabled == true // Ensures grid can be modified
             {
                 if mouse_x > 0 and mouse_x < room_width - x_max // Prevents grid leaving the boundaries of the room
                 {
-                    x_offset = round(mouse_x / grid_snap) * grid_snap; // Snap X
+                    x_offset = floor(mouse_x / grid_snap) * grid_snap; // Snap X
                 }
                 
                 if mouse_y > 0 and mouse_y < room_height - y_max // Prevents grid leaving the boundaries of the room
                 {
-                    y_offset = round(mouse_y / grid_snap) * grid_snap; // Snap Y
+                    y_offset = floor(mouse_y / grid_snap) * grid_snap; // Snap Y
 				}
 			}
         
 			// EXPAND GRID VERTICALLY
 		
 	        if window_get_cursor() == cr_size_ns // Checks if current cursor is set to up, down cursor
-	        {
-				check_y_limit = round((mouse_y - y_offset) / cell_size); // Stores new y_limit
-						
-				if check_y_limit > 0
+	        {	
+				if floor((mouse_y - y_offset) / cell_size) > 0
 				{
-					y_limit = round((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
+					y_limit = floor((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
 	        }
 			
 			// EXPAND GRID HORIZONTAL
         
 	        if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, right cursor
-	        {
-				check_x_limit = round((mouse_x - x_offset) / cell_size); // Stores new y_limit
-						
-				if check_x_limit > 0
+	        {	
+				if floor((mouse_x - x_offset) / cell_size) > 0
 				{
-					x_limit = round((mouse_x - x_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
+					x_limit = floor((mouse_x - x_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
 	        }
         
             if window_get_cursor() == cr_size_nwse // Checks if current cursor is set to top, left cursor
-            {
-                check_y_limit = round((mouse_y - y_offset) / cell_size); // Stores new y_limit
-						
-				if check_y_limit > 0
+            {	
+				if floor((mouse_y - y_offset) / cell_size) > 0
 				{
-					y_limit = round((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
+					y_limit = floor((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
-				
-				check_x_limit = round((mouse_x - x_offset) / cell_size); // Stores new x_limit
 						
-				if check_x_limit > 0
+				if floor((mouse_x - x_offset) / cell_size) > 0
 				{
-					x_limit = round((mouse_x - x_offset) / cell_size); // Recalculates X Limit based on mouse X possition
+					x_limit = floor((mouse_x - x_offset) / cell_size); // Recalculates X Limit based on mouse X possition
 				}
             }
         }
@@ -234,16 +255,3 @@ if global.edit_enabled == true // Ensures grid can be modified
     }
 }
 
-/***********************************************************************
-*                         SETS FONT VARIABLES                          *       
-***********************************************************************/
-
-current_font = fnt_western_32;
-
-if cell_size < 128 then current_font = fnt_western_12; // Sets current font
-if cell_size > 128 then current_font = fnt_western_32; // Sets current font
-
-draw_set_font(current_font); // Sets font to draw numbers with
-
-font_width = string_width(0); // Stores width of current font in pixels
-font_height = string_height(0); // Stores height of current font in pixels

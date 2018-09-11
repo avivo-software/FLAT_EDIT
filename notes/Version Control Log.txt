@@ -8,3 +8,4 @@ Version 0.0.0.2 | Fixed grid number possitioning. Condenced code. Added comments
 Version 0.0.0.3 | Changed game FPS to 60. Added and modified comments.
 Version 0.0.0.4 | You can now make the grid any thickness. All code now takes into consideration the line thickness.
 Version 0.0.0.5 | Drastically reduced amount of code needed to manipulate grid size and location.
+Version 0.0.0.6 | Removed debug message about grid size being out of bounds as this is not providing any benefit. Removed check X and Y limit variables and inserted them in the if statement directly. 
