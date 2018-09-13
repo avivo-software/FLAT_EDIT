@@ -19,4 +19,6 @@ global.controls[5] = vk_down; // Move down
 // GENERATE OBJECT INSTANCES
 
 layer_id = layer_get_id("lyr_gui"); // Gets GUI layer ID
+
 instance_create_layer(0, 0, layer_id, obj_grid); // Loads grid instance
+instance_create_layer(0, 0, layer_id, obj_palette); // Loads palette instance

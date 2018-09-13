@@ -31,6 +31,22 @@
     },
     "resources": [
         {
+            "Key": "1d006493-cd56-4cb0-84dc-bc306125a77d",
+            "Value": {
+                "id": "3607f651-1c35-4eed-8df8-020b020e35cb",
+                "resourcePath": "sprites\\spr_buttons_grey\\spr_buttons_grey.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "29170ea2-e222-490e-9d8d-631de409e887",
+            "Value": {
+                "id": "d63393ee-7186-405f-b613-0dab7122a4b8",
+                "resourcePath": "objects\\obj_palette\\obj_palette.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "31ccdcc0-d63d-458b-8692-85c5cdacb6ba",
             "Value": {
                 "id": "a54b4fa4-fd33-477b-afb5-de3d1a66fac4",
@@ -68,6 +84,14 @@
                 "id": "451adee0-0c7f-47ac-808e-7e490c342de9",
                 "resourcePath": "rooms\\rm_edit\\rm_edit.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "6074b302-a640-4fce-b79b-e73afe682e2b",
+            "Value": {
+                "id": "a763ae27-a276-49e9-b77b-74e9f3a2b6c6",
+                "resourcePath": "sprites\\spr_buttons_green\\spr_buttons_green.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -167,6 +191,14 @@
             }
         },
         {
+            "Key": "bb5ee88e-de70-44c7-9d91-6ef23e600c08",
+            "Value": {
+                "id": "8bfec857-320d-4ebd-a830-aff9170dd73e",
+                "resourcePath": "views\\bb5ee88e-de70-44c7-9d91-6ef23e600c08.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "bc81ceaf-bac9-4d1e-820d-2b56e5499acf",
             "Value": {
                 "id": "89efe2ac-475b-40bd-8222-9e3c1cf9b8b0",
@@ -244,6 +276,14 @@
                 "id": "cc5ca042-b6b1-4c9c-9214-627a10da9fd5",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "fdbd7c2d-04f6-4d3e-a7c9-dea3a7b66602",
+            "Value": {
+                "id": "f224362e-cff3-45d7-abf4-f353c6392125",
+                "resourcePath": "sprites\\spr_buttons_orange\\spr_buttons_orange.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

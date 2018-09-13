@@ -1,4 +1,4 @@
-/// @description Initializes Variables
+/// @description Initializes variables
 
 /***************************************************************************
 *							INITIALIZES VARIABLES						   *

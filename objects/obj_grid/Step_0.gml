@@ -147,6 +147,8 @@ if global.edit_enabled == true // Ensures grid can be modified
 {
     if !mouse_check_button(global.controls[0]) then window_set_cursor(cr_arrow); // Sets cursor back to default as long as an operation is not active
 
+	// MOVE GRID
+
     if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer, y_offset - buffer, x_offset + buffer, y_offset + buffer) // Check that mouse is in move grid area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
@@ -156,10 +158,12 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 	
-	x1 = x_offset;
-	y1 = y_offset + y_max + line_thickness * y_limit - buffer + line_thickness / 2;
-	x2 = x_offset + x_max + line_thickness * x_limit;
-	y2 = y_offset + y_max + line_thickness * y_limit + buffer + line_thickness / 2;
+	// EXPAND GRID VERTICALLY
+	
+	x1 = x_offset; // Calculates X1 possition (Prevents string in function from being too long)
+	y1 = y_offset + y_max + line_thickness * y_limit - buffer + line_thickness / 2; // Calculates Y1 possition (Prevents string in function from being too long)
+	x2 = x_offset + x_max + line_thickness * x_limit; // Calculates X2 possition (Prevents string in function from being too long)
+	y2 = y_offset + y_max + line_thickness * y_limit + buffer + line_thickness / 2; // Calculates Y2 possition (Prevents string in function from being too long)
 
     if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand up, down area
     {
@@ -170,10 +174,12 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 	
-	x1 =  x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2;
-	y1 = y_offset;
-	x2 = x_offset + x_max + line_thickness * x_limit + buffer + line_thickness / 2;
-	y2 = y_offset + y_max + line_thickness * y_limit;
+	// EXPAND GRID HORIZONTALLY
+	
+	x1 =  x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2;// Calculates X1 possition (Prevents string in function from being too long)
+	y1 = y_offset; // Calculates Y1 possition (Prevents string in function from being too long)
+	x2 = x_offset + x_max + line_thickness * x_limit + buffer + line_thickness / 2; // Calculates X2 possition (Prevents string in function from being too long)
+	y2 = y_offset + y_max + line_thickness * y_limit; // Calculates Y2 possition (Prevents string in function from being too long)
 
     if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand left, right area
     {
@@ -184,10 +190,10 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 
-	x1 = x_offset - buffer + x_max + x_limit * line_thickness;
-	y1 = y_offset - buffer + y_max + y_limit * line_thickness;
-	x2 = x_offset + buffer + x_max + x_limit * line_thickness;
-	y2 = y_offset + buffer + y_max + y_limit * line_thickness;
+	x1 = x_offset - buffer + x_max + x_limit * line_thickness; // Calculates X1 possition (Prevents string in function from being too long)
+	y1 = y_offset - buffer + y_max + y_limit * line_thickness; // Calculates Y1 possition (Prevents string in function from being too long)
+	x2 = x_offset + buffer + x_max + x_limit * line_thickness; // Calculates X2 possition (Prevents string in function from being too long)
+	y2 = y_offset + buffer + y_max + y_limit * line_thickness; // Calculates Y2 possition (Prevents string in function from being too long)
 	
     if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand diagonal area
     {
@@ -219,7 +225,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 		
 	        if window_get_cursor() == cr_size_ns // Checks if current cursor is set to up, down cursor
 	        {	
-				if floor((mouse_y - y_offset) / cell_size) > 0
+				if floor((mouse_y - y_offset) / cell_size) > 0 // Prevents grid from becoming invisible
 				{
 					y_limit = floor((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
@@ -229,15 +235,17 @@ if global.edit_enabled == true // Ensures grid can be modified
         
 	        if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, right cursor
 	        {	
-				if floor((mouse_x - x_offset) / cell_size) > 0
+				if floor((mouse_x - x_offset) / cell_size) > 0 // Prevents grid from becoming invisible
 				{
 					x_limit = floor((mouse_x - x_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
 	        }
         
+			// EXPAND DIAGONALLY
+		
             if window_get_cursor() == cr_size_nwse // Checks if current cursor is set to top, left cursor
             {	
-				if floor((mouse_y - y_offset) / cell_size) > 0
+				if floor((mouse_y - y_offset) / cell_size) > 0 // Prevents grid from becoming invisible
 				{
 					y_limit = floor((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
 				}
