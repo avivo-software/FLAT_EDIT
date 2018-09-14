@@ -10,12 +10,20 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 	{
 		loop_count = i + j * inner_loop; // Calculates the itteration number of current instance
 		
-		x = i * current_sprite_width + x_gap * i; // Calculates X possition for current sprite itteration 
-		y = j * current_sprite_height + y_gap * j; // Calculates Y possition for current sprite itteration 
-			
-		if mouse_check_button(global.controls[0]) // Checks if button has been selected
+		x = i * current_sprite_width + x_gap * i + x_offset; // Calculates X possition for current sprite itteration 
+		y = j * current_sprite_height + y_gap * j + y_offset; // Calculates Y possition for current sprite itteration 
+		
+		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
 		{
-			if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
+			// MOUSE HOVER ACTIONS
+			
+			current_x_scale = secondary_x_scale; // Sets X scale to secondary sprite (Effectivly inset)
+			current_y_scale = secondary_y_scale; // Sets Y scale to secondary sprite (Effectivly inset)
+			
+			
+			// CLICK EVENTS
+			
+			if mouse_check_button(global.controls[0]) // Checks if button has been selected
 			{
 				if loop_count < sprite_limit // Prevents a non visible button from being selected
 				{
@@ -31,6 +39,15 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 					show_debug_message(current_sprite_id); 
 				}
 			}
+		}
+			else
+		{
+			
+			// MOUSE NON HOVER ACTIONS
+			
+			current_x_scale = primary_x_scale; // Sets X scale to primary sprite (Effectivly inset)
+			current_y_scale = primary_y_scale; // Sets Y scale to primary sprite (Effectivly outset)
+
 		}
 		
 		if loop_count < sprite_limit // This will prevent duplicate sprites from being drawn

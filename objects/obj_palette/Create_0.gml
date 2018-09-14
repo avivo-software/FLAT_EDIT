@@ -30,8 +30,8 @@ secondary_y_scale = primary_y_scale - (primary_y_scale / increment_percentage); 
 current_sprite_width = sprite_get_width(current_sprite) * current_x_scale; // Stores actual width
 current_sprite_height = sprite_get_height(current_sprite) * current_y_scale; // Stores actual height
 
-x_offset = 0; // Determines X offset relative to the far left hand side of the screen
-y_offset = 0; // Determines Y offset relative to the top of the screen
+x_offset = 128; // Determines X offset relative to the far left hand side of the screen
+y_offset = 128; // Determines Y offset relative to the top of the screen
 
 min_scale = 0.0625; // Sets the minimum size a sprite can be
 max_scale = 1; // Sets the maximum size a sprite can be
@@ -41,7 +41,7 @@ scale_inc = 1.1; // Determines the amount to increase the sprites by when enlarg
 sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
 sprite_limit = sprite_qty; // Sets the maximum number of sprites to draw
 
-grid_snap = 16; // Sets the amount to snap the grid by
+grid_snap = 4; // Sets the amount to snap the grid by
 buffer = 4; // Sets the distance in pixels the borders around the action areas
 
 last_selection_enabled = false; // Determines if a border should be draw around the last selected sprite

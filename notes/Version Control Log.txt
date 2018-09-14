@@ -11,3 +11,4 @@ Version 0.0.0.5 | Drastically reduced amount of code needed to manipulate grid s
 Version 0.0.0.6 | Removed debug message about grid size being out of bounds as this is not providing any benefit. Removed check X and Y limit variables and inserted them in the if statement directly. 
 Version 0.0.0.7 | Commit before palette implementation.
 Version 0.0.0.8 | Started implementation of master palette code.
+Version 0.0.0.9 | Started to impliment move code for palette.
