@@ -42,12 +42,10 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		}
 			else
 		{
-			
 			// MOUSE NON HOVER ACTIONS
 			
 			current_x_scale = primary_x_scale; // Sets X scale to primary sprite (Effectivly inset)
 			current_y_scale = primary_y_scale; // Sets Y scale to primary sprite (Effectivly outset)
-
 		}
 		
 		if loop_count < sprite_limit // This will prevent duplicate sprites from being drawn
@@ -56,6 +54,4 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		}
 	}
 }
-
-
 
