@@ -2,3 +2,4 @@
 *								  BUG LIST							    *
 *************************************************************************
 
+BUG | Palette border extends beyond the number of sprites.

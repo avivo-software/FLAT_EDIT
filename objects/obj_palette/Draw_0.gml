@@ -36,7 +36,7 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 						current_sprite_id = loop_count + palette_shift; // Sets current sprite number
 					}
 						
-					show_debug_message(current_sprite_id); 
+					//show_debug_message(current_sprite_id); 
 				}
 			}
 		}
@@ -55,3 +55,4 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 	}
 }
 
+draw_rectangle(border_x1, border_y1, border_x2, border_y2, 1);

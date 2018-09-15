@@ -13,3 +13,4 @@ Version 0.0.0.7 | Commit before palette implementation.
 Version 0.0.0.8 | Started implementation of master palette code.
 Version 0.0.0.9 | Started to impliment move code for palette.
 Version 0.0.1.0 | Refined code for moving, expanding and reducing palette size and location.
+Version 0.0.1.1 | Expanding more than one object at a time bug fixed.
