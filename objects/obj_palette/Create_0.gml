@@ -16,11 +16,11 @@ y_gap = 8; // Sets the distance in pixels between each sprite in the Y direction
 
 //last_selection = 0; // Stores last selected sprite ID
 
-current_x_scale = 0.25; // Determines current X scale
-current_y_scale = 0.25; // Determines current Y scale
+current_x_scale = 0.0625; // Determines current X scale
+current_y_scale = 0.0625; // Determines current Y scale
 
-primary_x_scale = 0.25; // Determines the primary X scale
-primary_y_scale = 0.25; // Determines the primary Y scale
+primary_x_scale = 0.0625; // Determines the primary X scale
+primary_y_scale = 0.0625; // Determines the primary Y scale
 
 secondary_x_scale = 0.24; // Determines the secondary X scale
 secondary_y_scale = 0.24; // Determines the secondary Y scale

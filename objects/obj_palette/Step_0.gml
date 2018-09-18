@@ -136,17 +136,10 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 				outer_loop = floor((mouse_y - y_offset) / current_sprite_height); // Recalculates outer loop
 				inner_loop = floor(sprite_limit / outer_loop) + 1; // Recalculates inner loop
 				
-				temp_loop = (current_sprite_height + y_gap) * outer_loop / (current_sprite_height + y_gap);
+				outer_loop = round(sprite_qty / inner_loop);
 				
-				if inner_loop * (outer_loop - 1) > sprite_qty
-				{
-					show_debug_message("1");
-					outer_loop --;
-				}
-					else
-				{
-					show_debug_message("0");
-				}
+				if inner_loop * outer_loop < sprite_qty then outer_loop ++;
+				if inner_loop > sprite_qty then inner_loop = sprite_qty;
 			}
 		}
 
@@ -158,6 +151,11 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 			{
 				inner_loop = floor((mouse_x - x_offset) / current_sprite_width); // Recalculates outer loop
 				outer_loop = floor(sprite_limit / inner_loop) + 1; // Recalculates inner loop
+				
+				inner_loop = round(sprite_qty / outer_loop);
+				
+				if outer_loop * inner_loop < sprite_qty then inner_loop ++;
+				if outer_loop > sprite_qty then outer_loop = sprite_qty;
 			}
 		}
 
