@@ -55,4 +55,10 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 	}
 }
 
-draw_rectangle(border_x1, border_y1, border_x2, border_y2, 1);
+if global.edit_enabled == true // Prevents border being drawn if edit is not enabled
+{
+	if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Checks if mouse is in palette edit boundry
+	{
+		draw_rectangle(border_x1, border_y1, border_x2, border_y2, 1); // Draws rectangle around palette border
+	}
+}

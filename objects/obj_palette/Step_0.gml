@@ -136,10 +136,10 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 				outer_loop = floor((mouse_y - y_offset) / current_sprite_height); // Recalculates outer loop
 				inner_loop = floor(sprite_limit / outer_loop) + 1; // Recalculates inner loop
 				
-				outer_loop = round(sprite_qty / inner_loop);
+				outer_loop = round(sprite_limit / inner_loop); // Recalculates outer loop
 				
-				if inner_loop * outer_loop < sprite_qty then outer_loop ++;
-				if inner_loop > sprite_qty then inner_loop = sprite_qty;
+				if inner_loop * outer_loop < sprite_limit then outer_loop ++; // Recalculates inner loop
+				if inner_loop > sprite_limit then inner_loop = sprite_limit; // Recalculates inner loop
 			}
 		}
 
@@ -152,10 +152,10 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 				inner_loop = floor((mouse_x - x_offset) / current_sprite_width); // Recalculates outer loop
 				outer_loop = floor(sprite_limit / inner_loop) + 1; // Recalculates inner loop
 				
-				inner_loop = round(sprite_qty / outer_loop);
+				inner_loop = round(sprite_limit / outer_loop); // Recalculates inner loop
 				
-				if outer_loop * inner_loop < sprite_qty then inner_loop ++;
-				if outer_loop > sprite_qty then outer_loop = sprite_qty;
+				if outer_loop * inner_loop < sprite_limit then inner_loop ++; // Recalculates outer loop
+				if outer_loop > sprite_limit then outer_loop = sprite_limit; // Recalculates outer loop
 			}
 		}
 
@@ -163,7 +163,7 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		
 		if window_get_cursor() == cr_size_nwse // Checks if current cursor is set to diagonal cursor
 		{	
-			show_message("");
+			
 		}
 	}
 }
