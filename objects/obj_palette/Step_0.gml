@@ -64,12 +64,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 
 // DETECTS IF MOUSEIS IN EXPAND VERTICALLY ZONE
 
-x1 = x_offset; // Calculates X1 
-y1 = y_offset + (current_sprite_height + y_gap) * outer_loop - buffer - y_gap; // Calculates Y1
-x2 = x_offset + (current_sprite_width + x_gap) * inner_loop - x_gap * 2; // Calculates X2
-y2 = y_offset + (current_sprite_height + y_gap) * outer_loop + buffer - y_gap; // Calculates Y2
-
-if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand up, down area
+if point_in_rectangle(mouse_x, mouse_y, x_offset, border_y2 - buffer, border_x2 - buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
 {
     if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
     {
@@ -80,12 +75,7 @@ if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is i
 
 // DETECTS IF MOUSEIS IN EXPAND HORIZONTALLY ZONE
 
-x1 = x_offset + (current_sprite_width + x_gap) * inner_loop - buffer - x_gap; // Calculates X1
-y1 = y_offset; // Calculates Y1 possition
-x2 = x_offset + (current_sprite_width + x_gap) * inner_loop + buffer - x_gap; // Calculates X2 
-y2 = y_offset + (current_sprite_height + y_gap) * outer_loop - y_gap * 2; // Calculates Y2
-
-if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand up, down area
+if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, y_offset, border_x2 + buffer, border_y2 - buffer) // Check that mouse is in expand up, down area
 {
     if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
     {
@@ -96,12 +86,7 @@ if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is i
 
 // DETECTS IF MOUSEIS IN EXPAND DIAGONALLY ZONE
 
-x1 = x_offset + (current_sprite_width + x_gap) * inner_loop - buffer; // Calculates X1
-y1 = y_offset + (current_sprite_height + y_gap) * outer_loop - buffer; // Calculates Y1
-x2 = x_offset + (current_sprite_width + x_gap) * inner_loop + buffer; // Calculates X2 
-y2 = y_offset + (current_sprite_height + y_gap) * outer_loop + buffer; // Calculates Y2
-
-if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand up, down area
+if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, border_y1 - buffer, border_x2 + buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
 {
     if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
     {
