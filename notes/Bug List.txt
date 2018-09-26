@@ -3,3 +3,4 @@
 *************************************************************************
 
 BUG | Palette border extends beyond the number of sprites. Fixed in 0.0.1.2
+BUG | Palette flickers when expanding palette scale.

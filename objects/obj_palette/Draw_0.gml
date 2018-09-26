@@ -50,7 +50,7 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		
 		if loop_count < sprite_limit // This will prevent duplicate sprites from being drawn
 		{
-			draw_sprite_ext(spr_buttons_green, loop_count + palette_shift, x, y, current_x_scale, current_y_scale, 0, c_white, 1); // Draw palette
+			draw_sprite_ext(current_sprite, loop_count + palette_shift, x, y, current_x_scale, current_y_scale, 0, c_white, 1); // Draw palette
 		}
 	}
 }
