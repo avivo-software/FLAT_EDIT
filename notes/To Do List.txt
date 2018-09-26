@@ -2,3 +2,4 @@
 *									TO DO							    *
 *************************************************************************
 
+TO DO | Look into palette expansion wobble effect by updateing the palette width and height in correct order.

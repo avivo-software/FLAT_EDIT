@@ -18,3 +18,4 @@ Version 0.0.1.2 | Expanding objects now works in one direction.
 Version 0.0.1.3 | Tidy code. Updated graphics. Added comments.
 Version 0.0.1.4 | Shortened point in rectangle variables for border detection. Variables are now inserted directly into function to save on line numbers.
 Version 0.0.1.5 | Diagonal palette scaling now works but need to solve flickering bug. 
+Version 0.0.1.6 | Fixed flickering problem when expanding palette scale.
