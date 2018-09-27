@@ -34,9 +34,7 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 						else
 					{
 						current_sprite_id = loop_count + palette_shift; // Sets current sprite number
-					}
-						
-					//show_debug_message(current_sprite_id); 
+					} 
 				}
 			}
 		}

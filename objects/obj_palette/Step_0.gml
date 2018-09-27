@@ -7,9 +7,6 @@ border_y1 = y_offset; // Stores Y1 location in order to define border boundries
 border_x2 = x_offset + (current_sprite_width + x_gap) * inner_loop - x_gap; // Stores X2 location in order to define border boundries
 border_y2 = y_offset + (current_sprite_height + y_gap) * outer_loop - y_gap; // Stores Y2 location in order to define border boundries
 
-current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // Stores actual width
-current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
-
 /*************************************************************************
 *									ZOOM - / +			   				 *
 *************************************************************************/
@@ -155,11 +152,18 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 			
 			temp_scale = external_hyp / palette_hyp;
 			
-			primary_x_scale = primary_x_scale * temp_scale;
-			primary_y_scale = primary_y_scale * temp_scale;
+			if current_x_scale > min_scale and current_y_scale < max_scale
+			{
+				primary_x_scale = primary_x_scale * temp_scale;
+				primary_y_scale = primary_y_scale * temp_scale;
+				
+				secondary_x_scale = primary_x_scale - scale_differential;
+				secondary_y_scale = primary_y_scale - scale_differential;
 			
-			current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // Stores actual width
-			current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
+				current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // Stores actual width
+				current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
+			}
+			
 		}
 	}
 }

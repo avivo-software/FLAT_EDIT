@@ -14,21 +14,25 @@ unique_id = instance_count; // Stores the unique ID number for this instance
 x_gap = 8; // Sets the distance in pixels between each sprite in the X direction
 y_gap = 8; // Sets the distance in pixels between each sprite in the Y direction
 
-current_x_scale = 1; // Determines current X scale
-current_y_scale = 1; // Determines current Y scale
+current_x_scale = 0.25; // Determines current X scale
+current_y_scale = 0.25; // Determines current Y scale
 
-primary_x_scale = 1; // Determines the primary X scale
-primary_y_scale = 1; // Determines the primary Y scale
+primary_x_scale = 0.25; // Determines the primary X scale
+primary_y_scale = 0.25; // Determines the primary Y scale
 
-secondary_x_scale = 1; // Determines the secondary X scale
-secondary_y_scale = 1; // Determines the secondary Y scale
+secondary_x_scale = 0.24; // Determines the secondary X scale
+secondary_y_scale = 0.24; // Determines the secondary Y scale
+
+scale_differential = 0.01; // The difference in percentage between primary and secondary scale
+
+min_scale = 0.0625; // Determines the minimum scale the palette size can be
+max_scale = 2; // Determines the maximum scale the palette size can be
 
 current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // Stores actual width
 current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
 
 x_offset = 128; // Determines X offset relative to the far left hand side of the screen
 y_offset = 128; // Determines Y offset relative to the top of the screen
-
 
 sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
 sprite_limit = sprite_qty; // Sets the maximum number of sprites to draw
