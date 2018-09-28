@@ -4,14 +4,14 @@
 *                            UPDATE VARIABLES                          *
 ***********************************************************************/
 
-x1 = x_offset; // X1 border coordinate
-y1 = y_offset; // Y1 border coordinate
-
-x2 = x_offset + x_max; // X2 border coordinate
-y2 = y_offset + y_max; // Y2 border coordinate
-
 x_max = x_limit * cell_size; // Sets X coordinates to correct position
 y_max = y_limit * cell_size; // Sets Y Coordinates to correct position
+
+border_x1 = x_offset; // X1 border coordinate
+border_y1 = y_offset; // Y1 border coordinate
+
+border_x2 = x_offset + x_max; // X2 border coordinate
+border_y2 = y_offset + y_max; // Y2 border coordinate
 
 
 /***********************************************************************
@@ -160,12 +160,12 @@ if global.edit_enabled == true // Ensures grid can be modified
 	
 	// DETECTS IF MOUSEIS IN EXPAND VERTICALLY ZONE
 	
-	x1 = x_offset; // Calculates X1 possition (Prevents string in function from being too long)
-	y1 = y_offset + y_max + line_thickness * y_limit - buffer + line_thickness / 2; // Calculates Y1 possition (Prevents string in function from being too long)
-	x2 = x_offset + x_max + line_thickness * x_limit; // Calculates X2 possition (Prevents string in function from being too long)
-	y2 = y_offset + y_max + line_thickness * y_limit + buffer + line_thickness / 2; // Calculates Y2 possition (Prevents string in function from being too long)
+	border_x1 = x_offset; // Calculates X1 possition (Prevents string in function from being too long)
+	border_y1 = y_offset + y_max + line_thickness * y_limit - buffer + line_thickness / 2; // Calculates Y1 possition (Prevents string in function from being too long)
+	border_x2 = x_offset + x_max + line_thickness * x_limit; // Calculates X2 possition (Prevents string in function from being too long)
+	border_y2 = y_offset + y_max + line_thickness * y_limit + buffer + line_thickness / 2; // Calculates Y2 possition (Prevents string in function from being too long)
 
-    if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand up, down area
+    if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand up, down area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -176,12 +176,12 @@ if global.edit_enabled == true // Ensures grid can be modified
 	
 	// DETECTS IF MOUSEIS IN EXPAND HORIZONTALLY ZONE
 	
-	x1 =  x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2;// Calculates X1 possition (Prevents string in function from being too long)
-	y1 = y_offset; // Calculates Y1 possition (Prevents string in function from being too long)
-	x2 = x_offset + x_max + line_thickness * x_limit + buffer + line_thickness / 2; // Calculates X2 possition (Prevents string in function from being too long)
-	y2 = y_offset + y_max + line_thickness * y_limit; // Calculates Y2 possition (Prevents string in function from being too long)
+	border_x1 = x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2;// Calculates X1 possition (Prevents string in function from being too long)
+	border_y1 = y_offset; // Calculates Y1 possition (Prevents string in function from being too long)
+	border_x2 = x_offset + x_max + line_thickness * x_limit + buffer + line_thickness / 2; // Calculates X2 possition (Prevents string in function from being too long)
+	border_y2 = y_offset + y_max + line_thickness * y_limit; // Calculates Y2 possition (Prevents string in function from being too long)
 
-    if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand left, right area
+    if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand left, right area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {
@@ -192,14 +192,14 @@ if global.edit_enabled == true // Ensures grid can be modified
 
 	// EXPAND GRID DIAGONALLY
 
-	x1 = x_offset - buffer + x_max + x_limit * line_thickness; // Calculates X1 possition (Prevents string in function from being too long)
-	y1 = y_offset - buffer + y_max + y_limit * line_thickness; // Calculates Y1 possition (Prevents string in function from being too long)
-	x2 = x_offset + buffer + x_max + x_limit * line_thickness; // Calculates X2 possition (Prevents string in function from being too long)
-	y2 = y_offset + buffer + y_max + y_limit * line_thickness; // Calculates Y2 possition (Prevents string in function from being too long)
+	border_x1 = x_offset - buffer + x_max + x_limit * line_thickness; // Calculates X1 possition (Prevents string in function from being too long)
+	border_y1 = y_offset - buffer + y_max + y_limit * line_thickness; // Calculates Y1 possition (Prevents string in function from being too long)
+	border_x2 = x_offset + buffer + x_max + x_limit * line_thickness; // Calculates X2 possition (Prevents string in function from being too long)
+	border_y2 = y_offset + buffer + y_max + y_limit * line_thickness; // Calculates Y2 possition (Prevents string in function from being too long)
 	
 	// DETECTS IF MOUSEIS IN EXPAND DIAGONALLY ZONE
 	
-    if point_in_rectangle(mouse_x, mouse_y, x1, y1, x2, y2) // Check that mouse is in expand diagonal area
+    if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand diagonal area
     {
         if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
         {

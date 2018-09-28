@@ -146,7 +146,7 @@
             "Key": "809d016b-9dbc-42fe-b65d-537f0b25ebd6",
             "Value": {
                 "id": "c0f43a1f-9a30-4604-afac-40ecc331a886",
-                "resourcePath": "scripts\\spt_test\\spt_test.yy",
+                "resourcePath": "scripts\\spt_actions\\spt_actions.yy",
                 "resourceType": "GMScript"
             }
         },

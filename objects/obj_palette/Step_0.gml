@@ -44,7 +44,7 @@ if global.edit_enabled == true // Prevents palette from being shifted when edit 
 
 
 /***********************************************************************
-*                       EXPAND AND MOVE PALETTE                        *       
+*								SET CURSOR							   *       
 ***********************************************************************/
 
 // DETECTS IF MOUSE CURSOR IS IN MOVE ZONE
@@ -94,7 +94,10 @@ if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, border_y1 - buffer, 
     }
 }
 
-// EXPAND AND MOVE
+
+/***********************************************************************
+*                       EXPAND AND MOVE PALETTE                        *       
+***********************************************************************/
 	
 if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 {
@@ -120,7 +123,7 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 				outer_loop = floor((mouse_y - y_offset) / current_sprite_height); // Recalculates outer loop
 				inner_loop = floor(sprite_limit / outer_loop) + 1; // Recalculates inner loop
 				
-				outer_loop = round(sprite_limit / inner_loop); // Recalculates outer loop
+				outer_loop = floor(sprite_limit / inner_loop); // Recalculates outer loop
 				
 				if inner_loop * outer_loop < sprite_limit then outer_loop ++; // Recalculates inner loop
 				if inner_loop > sprite_limit then inner_loop = sprite_limit; // Recalculates inner loop
@@ -136,10 +139,10 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 				inner_loop = floor((mouse_x - x_offset) / current_sprite_width); // Recalculates outer loop
 				outer_loop = floor(sprite_limit / inner_loop) + 1; // Recalculates inner loop
 				
-				inner_loop = round(sprite_limit / outer_loop); // Recalculates inner loop
+				inner_loop = floor(sprite_limit / outer_loop); // Recalculates outer loop
 				
-				if outer_loop * inner_loop < sprite_limit then inner_loop ++; // Recalculates outer loop
-				if outer_loop > sprite_limit then outer_loop = sprite_limit; // Recalculates outer loop
+				if outer_loop * inner_loop < sprite_limit then inner_loop ++; // Recalculates inner loop
+				if outer_loop > sprite_limit then outer_loop = sprite_limit; // Recalculates inner loop
 			}
 		}
 
@@ -147,24 +150,25 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		
 		if window_get_cursor() == cr_size_nwse // Checks if current cursor is set to diagonal cursor
 		{	
-			palette_hyp = point_distance(border_x1, border_y1, border_x2, border_y2);
-			external_hyp = point_distance(border_x1, border_y1, mouse_x, mouse_y);
+			palette_hyp = point_distance(border_x1, border_y1, border_x2, border_y2); // Stores the hypotenuse of the palette
+			external_hyp = point_distance(border_x1, border_y1, mouse_x, mouse_y); // Stores the distance between the top left corner to the mouse
 			
-			temp_scale = external_hyp / palette_hyp;
+			temp_scale = external_hyp / palette_hyp; // Stores the tempory scale based on new potential possition
 			
-			if current_x_scale > min_scale and current_y_scale < max_scale
+			if primary_x_scale * temp_scale > min_scale // Prevents palette scale from becoming invisible or too small
 			{
-				primary_x_scale = primary_x_scale * temp_scale;
-				primary_y_scale = primary_y_scale * temp_scale;
+				if primary_x_scale * temp_scale < max_scale // Prevents palette scale from becoming to large
+				{
+					primary_x_scale = primary_x_scale * temp_scale; // Scales to new primary X based on temp scale
+					primary_y_scale = primary_y_scale * temp_scale; // Scales to new primary Y based on temp scale
 				
-				secondary_x_scale = primary_x_scale - scale_differential;
-				secondary_y_scale = primary_y_scale - scale_differential;
+					secondary_x_scale = primary_x_scale - scale_differential; // Scales to new secondry X based on temp scale and differential
+					secondary_y_scale = primary_y_scale - scale_differential; // Scales to new secondry Y based on temp scale differential
 			
-				current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // Stores actual width
-				current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
+					current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // Stores actual width
+					current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
+				}
 			}
-			
 		}
 	}
 }
-

@@ -20,11 +20,10 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			current_x_scale = secondary_x_scale; // Sets X scale to secondary sprite (Effectivly inset)
 			current_y_scale = secondary_y_scale; // Sets Y scale to secondary sprite (Effectivly inset)
 			
-			
 			// CLICK EVENTS
 			
 			if mouse_check_button(global.controls[0]) // Checks if button has been selected
-			{
+			{			
 				if loop_count < sprite_limit // Prevents a non visible button from being selected
 				{
 					if loop_count + palette_shift > sprite_qty // Checks if loop_count + palette_shift is not greater than the sprite limit

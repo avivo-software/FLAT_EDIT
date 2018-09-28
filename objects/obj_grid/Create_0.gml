@@ -26,12 +26,6 @@ y_pos = 0; // Stores Y coordinate of the selected cell
 x_scale = 1; // Sets X scale tile
 y_scale = 1; // Sets Y scale tile
 
-x1 = x_offset; // Stores X1 coordinate for grid
-y1 = y_offset; // Stores Y1 coordinate for grid
-
-x2 = x1 + x_max; // Stores X2 coordinate for grid
-y2 = y1 + y_max; // Stores Y2 coordinate for grid
-
 cell_min = 8; // Sets the minimum size of the grid
 cell_max = 512; // Sets the maximum size of the grid
 
