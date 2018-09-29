@@ -58,3 +58,4 @@ tile_root = 4; // Stores the number of sprites to draw in a row before proceedin
 
 inner_loop = tile_root; // Sets inner loop to tile root
 outer_loop = floor(sprite_limit / tile_root) + 1; // Number of sprites to draw in Y direction (Calculated from inner loop)
+inner_loop = floor(sprite_limit / outer_loop); // Prevents border from being too large for the palette

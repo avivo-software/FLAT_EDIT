@@ -21,3 +21,4 @@ Version 0.0.1.5 | Diagonal palette scaling now works but need to solve flickerin
 Version 0.0.1.6 | Fixed flickering problem when expanding palette scale.
 Version 0.0.1.7 | Secondary sprite scale now works. Problem with border covering invisible area seems to have been resolved organically.
 Version 0.0.1.8 | Minimum and maximum palette scale limits now work.
+Version 0.0.1.9 | Fixed palette border issues.
