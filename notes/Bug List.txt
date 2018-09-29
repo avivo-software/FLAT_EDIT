@@ -6,3 +6,4 @@ BUG | Palette border extends beyond the number of sprites. Fixed in 0.0.1.2
 BUG | Palette flickers when expanding palette scale. Fixed in 0.0.1.6
 BUG | Border sometimes covers an invisible area. Fixed in 0.0.1.9
 BUG | When expanding grid diagonally or horizontally an extra column is added. It does no do this for vertical expansion.
+BUG | When expanding horizontally and outer loop is equil to sprite limit program freezes. Fixed 0.0.2.0
