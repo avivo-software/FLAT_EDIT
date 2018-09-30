@@ -136,7 +136,9 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 				outer_loop = floor(sprite_limit / inner_loop) + 1; // Calculates outer loop
 				inner_loop = ceil(sprite_limit / outer_loop); // Prevents border from being too large for the palette
 				
-				if inner_loop = 1 then outer_loop--;
+				//if inner_loop = 1 then outer_loop--;
+				
+				if ceil(sprite_limit / inner_loop) < outer_loop then outer_loop--; // Prevents border frombeing too large
 			}
 			
 			//if inner_loop = 

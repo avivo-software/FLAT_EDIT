@@ -35,7 +35,7 @@ x_offset = 128; // Determines X offset relative to the far left hand side of the
 y_offset = 128; // Determines Y offset relative to the top of the screen
 
 sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
-sprite_limit = 17; // Sets the maximum number of sprites to draw
+sprite_limit = 44; // Sets the maximum number of sprites to draw
 
 grid_snap = 4; // Sets the amount to snap the grid by
 buffer = 4; // Sets the distance in pixels the borders around the action areas
