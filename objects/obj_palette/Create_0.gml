@@ -23,6 +23,9 @@ primary_y_scale = 0.25; // Determines the primary Y scale
 secondary_x_scale = 0.24; // Determines the secondary X scale
 secondary_y_scale = 0.24; // Determines the secondary Y scale
 
+tertiary_x_scale = 0.20; // Determines the secondary X scale
+tertiary_y_scale = 0.20; // Determines the secondary Y scale
+
 scale_differential = 0.01; // The difference in percentage between primary and secondary scale
 
 min_scale = 0.0625; // Determines the minimum scale the palette size can be
@@ -35,7 +38,7 @@ x_offset = 128; // Determines X offset relative to the far left hand side of the
 y_offset = 128; // Determines Y offset relative to the top of the screen
 
 sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
-sprite_limit = 44; // Sets the maximum number of sprites to draw
+sprite_limit = sprite_qty; // Sets the maximum number of sprites to draw
 
 grid_snap = 4; // Sets the amount to snap the grid by
 buffer = 4; // Sets the distance in pixels the borders around the action areas
@@ -45,6 +48,13 @@ expand_enabled = false; // Prevents palette from being expanded while sprites ar
 
 palette_shift = 0; // Determines how many positions to offset sub-image number by
 
+for (i = 0; i < sprite_qty; i += 1)
+{
+   stuck[i] = false;
+}
+
+stuck[0] = true;
+stuck[sprite_qty - 1] = true;
 
 // CALCULATES LOOPS
 

@@ -26,3 +26,4 @@ Version 0.0.2.0 | Palette horizontal crash bug fixed. Palette no longer disappea
 Version 0.0.2.1 | Fixed palette border issues but still needs refineing.
 Version 0.0.2.2 | Fixed button action ID number when clicked.
 Version 0.0.2.3 | Code tidy.
+Version 0.0.2.4 | Code ready for button sprite interaction code.

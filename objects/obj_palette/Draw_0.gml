@@ -13,35 +13,18 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		x = i * current_sprite_width + x_gap * i + x_offset; // Calculates X possition for current sprite itteration 
 		y = j * current_sprite_height + y_gap * j + y_offset; // Calculates Y possition for current sprite itteration 
 			
-		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
-		{
-			// MOUSE HOVER ACTIONS
+		current_sprite_id = loop_count + palette_shift; // Calculates current sprite ID (Allows correct button presses to be identified correctly)
+		if current_sprite_id > sprite_qty - 1 then current_sprite_id = current_sprite_id - sprite_qty; // Recalculates ID if loop count is higher than sprite qty
 			
-			current_x_scale = secondary_x_scale; // Sets X scale to secondary sprite (Effectivly inset)
-			current_y_scale = secondary_y_scale; // Sets Y scale to secondary sprite (Effectivly inset)
-			
-			// CLICK EVENTS
-			
-			if loop_count < sprite_limit // Prevents a non visible button from being selected
-			{
-				if loop_count + palette_shift > sprite_limit // Checks if loop_count + palette_shift is not greater than the sprite limit
-				{
-					current_sprite_id = loop_count + palette_shift - sprite_qty; // Ensures the sprite ID can't exceed the sprite qty
-				}
-					else
-				{
-					current_sprite_id = loop_count + palette_shift; // Sets current sprite number
-				} 
-			}
-			show_debug_message(current_sprite_id);
-		}
-			else
-		{
-			// MOUSE NON HOVER ACTIONS
-			
-			current_x_scale = primary_x_scale; // Sets X scale to primary sprite (Effectivly inset)
-			current_y_scale = primary_y_scale; // Sets Y scale to primary sprite (Effectivly outset)
-		}
+		
+		//if stuck[current_sprite_id] == 1
+		//{
+			//current_sprite = secondary_sprite;
+		//}
+			//else
+		//{
+			//current_sprite = primary_sprite;
+		//}
 		
 		if loop_count < sprite_limit // This will prevent duplicate sprites from being drawn
 		{
@@ -49,6 +32,10 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		}
 	}
 }
+
+/****************************************************************************
+*							DRAW RECTANGLE BORDER			    			*
+****************************************************************************/
 
 if global.edit_enabled == true // Prevents border being drawn if edit is not enabled
 {
