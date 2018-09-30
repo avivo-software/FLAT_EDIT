@@ -12,7 +12,7 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		
 		x = i * current_sprite_width + x_gap * i + x_offset; // Calculates X possition for current sprite itteration 
 		y = j * current_sprite_height + y_gap * j + y_offset; // Calculates Y possition for current sprite itteration 
-		
+			
 		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
 		{
 			// MOUSE HOVER ACTIONS
@@ -22,20 +22,18 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			
 			// CLICK EVENTS
 			
-			if mouse_check_button(global.controls[0]) // Checks if button has been selected
-			{			
-				if loop_count < sprite_limit // Prevents a non visible button from being selected
+			if loop_count < sprite_limit // Prevents a non visible button from being selected
+			{
+				if loop_count + palette_shift > sprite_limit // Checks if loop_count + palette_shift is not greater than the sprite limit
 				{
-					if loop_count + palette_shift > sprite_qty // Checks if loop_count + palette_shift is not greater than the sprite limit
-					{
-						current_sprite_id = loop_count + palette_shift - sprite_qty; // Ensures the sprite ID can't exceed the sprite qty
-					}
-						else
-					{
-						current_sprite_id = loop_count + palette_shift; // Sets current sprite number
-					} 
+					current_sprite_id = loop_count + palette_shift - sprite_qty; // Ensures the sprite ID can't exceed the sprite qty
 				}
+					else
+				{
+					current_sprite_id = loop_count + palette_shift; // Sets current sprite number
+				} 
 			}
+			show_debug_message(current_sprite_id);
 		}
 			else
 		{

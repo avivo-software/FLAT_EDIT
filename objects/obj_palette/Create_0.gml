@@ -45,17 +45,8 @@ expand_enabled = false; // Prevents palette from being expanded while sprites ar
 
 palette_shift = 0; // Determines how many positions to offset sub-image number by
 
-for (i = 0; i < sprite_qty; ++i) // Loops through availible sprites in palette
-{
-	sticky[i] = false; // Sets sticky variables to false
-}
 
-/****************************************************************************
-*								SETS DIRECTION								*
-****************************************************************************/
+// CALCULATES LOOPS
 
-tile_root = 4; // Stores the number of sprites to draw in a row before proceeding to the next sprite
-
-inner_loop = tile_root; // Sets inner loop to tile root
-outer_loop = floor(sprite_limit / tile_root) + 1; // Number of sprites to draw in Y direction (Calculated from inner loop)
-inner_loop = floor(sprite_limit / outer_loop) + 1; // Prevents border from being too large for the palette
+inner_loop = 4; // Sets inner loop to tile root
+outer_loop = floor(sprite_limit / inner_loop); // Number of sprites to draw in Y direction (Calculated from inner loop)

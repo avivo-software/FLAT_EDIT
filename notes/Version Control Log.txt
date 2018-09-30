@@ -24,3 +24,5 @@ Version 0.0.1.8 | Minimum and maximum palette scale limits now work.
 Version 0.0.1.9 | Fixed palette border issues.
 Version 0.0.2.0 | Palette horizontal crash bug fixed. Palette no longer disappears when made too small.
 Version 0.0.2.1 | Fixed palette border issues but still needs refineing.
+Version 0.0.2.2 | Fixed button action ID number when clicked.
+Version 0.0.2.3 | Code tidy.
