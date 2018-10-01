@@ -18,16 +18,34 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			
 		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
 		{
+			if mouse_check_button(global.controls[0])
+			{
+				if stuck[current_sprite_id] == false
+				{
+					
+				}
+					else
+				{
+					
+				}
+			}
+				else
+			{
+				if stuck[current_sprite_id] == false
+				{
+					
+				}
+					else
+				{
+					
+				}
+			}
 			
-		}
-		
-		if stuck[current_sprite_id] == 1
-		{
-			current_sprite = secondary_sprite;
 		}
 			else
 		{
-			current_sprite = primary_sprite;
+			current_x_scale = primary_x_scale; // Sets X scale to primary sprite 
+			current_y_scale = primary_y_scale; // Sets Y scale to primary sprite
 		}
 		
 		if loop_count < sprite_limit // This will prevent duplicate sprites from being drawn
