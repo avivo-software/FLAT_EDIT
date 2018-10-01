@@ -18,10 +18,10 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			
 		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
 		{
-			if mouse_check_button(global.controls[0]) // Checks for mouse click
+			if mouse_check_button_pressed(global.controls[0]) // Checks for mouse click
 			{
 				if sticky[current_sprite_id] == true then stuck[current_sprite_id] = !stuck[current_sprite_id]; // Toggles sprite state if sticky is enabled for that sprite
-				spt_actions(); // Execute specified sub routine
+				spt_actions(action_id, current_sprite_id); // Execute specified sub routine
 				
 				if stuck[current_sprite_id] == false // Checks if current sprite is stuck
 				{

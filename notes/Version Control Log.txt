@@ -30,3 +30,4 @@ Version 0.0.2.4 | Code ready for button sprite interaction code.
 Version 0.0.2.5 | Swapped palette scroll direction to make it more intuitive. Fixed error when scrolling palette below zero. 
 Version 0.0.2.6 | Ready to impliment sprite status code.
 Version 0.0.2.7 | Button status code now works. However needs to be improved asper to do list.
+Version 0.0.2.8 | Actions script started.
