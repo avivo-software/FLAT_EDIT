@@ -48,13 +48,13 @@ expand_enabled = false; // Prevents palette from being expanded while sprites ar
 
 palette_shift = 0; // Determines how many positions to offset sub-image number by
 
-for (i = 0; i < sprite_qty; i += 1)
+for (i = 0; i < sprite_qty + 100; i += 1)
 {
    stuck[i] = false;
 }
 
 stuck[0] = true;
-stuck[sprite_qty - 1] = true;
+stuck[1] = true;
 
 // CALCULATES LOOPS
 

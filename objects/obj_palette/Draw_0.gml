@@ -16,15 +16,19 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		current_sprite_id = loop_count + palette_shift; // Calculates current sprite ID (Allows correct button presses to be identified correctly)
 		if current_sprite_id > sprite_qty - 1 then current_sprite_id = current_sprite_id - sprite_qty; // Recalculates ID if loop count is higher than sprite qty
 			
+		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
+		{
+			
+		}
 		
-		//if stuck[current_sprite_id] == 1
-		//{
-			//current_sprite = secondary_sprite;
-		//}
-			//else
-		//{
-			//current_sprite = primary_sprite;
-		//}
+		if stuck[current_sprite_id] == 1
+		{
+			current_sprite = secondary_sprite;
+		}
+			else
+		{
+			current_sprite = primary_sprite;
+		}
 		
 		if loop_count < sprite_limit // This will prevent duplicate sprites from being drawn
 		{

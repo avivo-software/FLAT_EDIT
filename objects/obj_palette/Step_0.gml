@@ -8,14 +8,14 @@ border_x2 = x_offset + (current_sprite_width + x_gap) * inner_loop - x_gap; // S
 border_y2 = y_offset + (current_sprite_height + y_gap) * outer_loop - y_gap; // Stores Y2 location in order to define border boundries
 
 /*************************************************************************
-*									ZOOM - / +			   				 *
+*								PALETTE SHIFT			   				 *
 *************************************************************************/
 
 if global.edit_enabled == true // Prevents palette from being shifted when edit mode is disabled
 {
-	// ZOOM OUT
+	// SHIFT DOWN
 	
-	if mouse_wheel_down() // Checks for mouse wheel down
+	if mouse_wheel_up() // Checks for mouse wheel down
 	{
 		if palette_shift > 0 // Prevents negative number
 		{
@@ -27,9 +27,9 @@ if global.edit_enabled == true // Prevents palette from being shifted when edit 
 		}
 	}
 	
-	// ZOOM IN
+	// SHIFT UP
 	
-	if mouse_wheel_up() // Checks for mouse wheel up
+	if mouse_wheel_down() // Checks for mouse wheel up
 	{
 		if palette_shift < sprite_limit // Prevents number from exeeding sprite limit 
 		{
