@@ -35,6 +35,7 @@ hard_y_limit = 32; // Sets a maximum size for the level in the y direction
 grid_visible = true; // Sets if grid is visible
 
 grid_colour = c_black; // Sets grid line colour
+current_number_colour = c_white; // 
 number_select_colour = c_red; // Sets colour of selected number
 number_non_select_colour = c_white; // Sets colour of non-selected numbers
 
