@@ -50,11 +50,11 @@ if grid_visible == true // Checks if grid is visible to the user
 				
 				if i == y_pos - y_shift // Checks if Y possition is current number
 				{
-					draw_text_colour(x, y, i + y_shift, number_select_colour, number_select_colour, number_select_colour, number_select_colour, 1); // Draws selected number
+					draw_text_colour(x, y, i + x_shift, number_select_colour, number_select_colour, number_select_colour, number_select_colour, 1); // Draws selected number
 				}
 					else
 				{
-					draw_text_colour(x, y, i + y_shift, number_non_select_colour, number_non_select_colour, number_non_select_colour, number_non_select_colour, 1); // Draws unselected numbers
+					draw_text_colour(x, y, i + x_shift, number_non_select_colour, number_non_select_colour, number_non_select_colour, number_non_select_colour, 1); // Draws unselected numbers
 				}
 			}
 		}

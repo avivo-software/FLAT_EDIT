@@ -10,6 +10,7 @@ global.border_selection_id = 0; // Determines which palette has been selected
 
 global.controls[0] = mb_left; // Select item
 global.controls[1] = mb_right; // Secondary selection
+
 global.controls[2] = vk_left; // Move left
 global.controls[3] = vk_right; // Move right
 global.controls[4] = vk_up; // Move up

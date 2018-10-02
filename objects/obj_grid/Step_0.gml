@@ -58,34 +58,28 @@ font_height = string_height(0); // Stores height of current font in pixels
 
 if keyboard_check_released(global.controls[2]) // Checks if shift left key has been pressed
 {
-    if x_shift > 0 then x_shift --; // Shift left by one
+    if y_shift > 0 then y_shift --; // Shift left by one
 }
 
 // PAN GRID RIGHT
 
 if keyboard_check_released(global.controls[3]) // Checks if shift right key has been pressed
 {
-    if x_shift + x_limit < hard_x_limit
-    {
-        x_shift ++; // Shift right by one
-    }
+    if y_shift + y_limit < hard_y_limit then y_shift ++; // Shift right by one
 }
 
 // PAN GRID UP
 
 if keyboard_check_released(global.controls[4]) // Checks if shift up key has been pressed
 {
-    if y_shift > 0 then y_shift --; // Shift up by one 
+    if x_shift > 0 then x_shift --; // Shift up by one 
 }
 
 // PAN GRID DOWN
 
 if keyboard_check_released(global.controls[5]) // Checks if shift down key has been pressed
 {
-    if y_shift + y_limit < hard_y_limit
-    {
-        y_shift ++; // Shift down by one
-    }
+    if x_shift + x_limit < hard_x_limit then x_shift ++; // Shift down by one
 }
 
 

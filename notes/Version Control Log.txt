@@ -33,3 +33,4 @@ Version 0.0.2.7 | Button status code now works. However, needs to be improved as
 Version 0.0.2.8 | Actions script started.
 Version 0.0.2.9 | Sprite status code now works.
 Version 0.0.3.0 | Spelling and grammar check completed.
+Version 0.0.3.1 | Fixed border number scrolling bug. Palette no longer scrolls when mouse is not inside palette.
