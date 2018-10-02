@@ -35,3 +35,5 @@ Version 0.0.2.9 | Sprite status code now works.
 Version 0.0.3.0 | Spelling and grammar check completed.
 Version 0.0.3.1 | Fixed border number scrolling bug. Palette no longer scrolls when mouse is not inside palette.
 Version 0.0.3.2 | Grid draw code has been condensed to into one double nested loop, replacing individual loops.
+Version 0.0.3.3 | More spelling corrections.
+Version 0.0.3.4 | Grid no longer misses out pixels as "interpolate colours between pixels" option has been turned on.

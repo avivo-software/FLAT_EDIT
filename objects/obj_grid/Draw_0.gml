@@ -1,7 +1,7 @@
 /// @description Draw Grid
 
 /************************************************************************
-								X AND Y GRID LINES
+							X AND Y GRID LINES
 *************************************************************************/
 
 for(j = 0; j < y_limit + 1; j++)
@@ -21,7 +21,7 @@ for(j = 0; j < y_limit + 1; j++)
 			// Draw X line numbers
 			
 			x = x_offset + cell_size / 2 - font_width / 2 + i * cell_size + line_thickness / 2 + line_thickness * i; // Calculates X possition for next number 
-			y = y_offset - numbers_gap - font_height; // Calculates Y possition for next number
+			y = y_offset - numbers_gap - font_height; // Calculates Y position for next number
 					
 			if i == x_pos - x_shift then current_number_colour = number_select_colour else current_number_colour = number_non_select_colour; // Sets number colour to correct number
 			{
@@ -30,7 +30,7 @@ for(j = 0; j < y_limit + 1; j++)
 			
 			// Draw Y line numbers
 			
-			x = x_offset - numbers_gap - font_width; // Calculates X possition for next number
+			x = x_offset - numbers_gap - font_width; // Calculates X position for next number
 			y = y_offset + cell_size / 2 - font_height / 2 + i * cell_size + (line_thickness / 2 + line_thickness * i); // Calculates Y possition for next number
 				
 			if i == y_pos - y_shift then current_number_colour = number_select_colour else current_number_colour = number_non_select_colour; // Sets number colour to correct number
