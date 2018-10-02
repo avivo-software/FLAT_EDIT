@@ -8,7 +8,7 @@ if argument0 = 0 then // Checks if action type is buttons
 	{
 		case 0:
 		
-			show_message("button");
+			//show_message("button");
 		
 		break;
 	}

@@ -61,7 +61,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 	}
 }
 
-// DETECTS IF MOUSEIS IN EXPAND VERTICALLY ZONE
+// DETECTS IF MOUSE IS IN EXPAND VERTICALLY ZONE
 
 if point_in_rectangle(mouse_x, mouse_y, x_offset, border_y2 - buffer, border_x2 - buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
 {
@@ -83,7 +83,7 @@ if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, y_offset, border_x2 
     }
 }
 
-// DETECTS IF MOUSEIS IN EXPAND DIAGONALLY ZONE
+// DETECTS IF MOUSE IS IN EXPAND DIAGONALLY ZONE
 
 if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, border_y1 - buffer, border_x2 + buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
 {

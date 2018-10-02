@@ -23,9 +23,6 @@ primary_y_scale = 0.25; // Determines the primary Y scale
 secondary_x_scale = 0.24; // Determines the secondary X scale
 secondary_y_scale = 0.24; // Determines the secondary Y scale
 
-tertiary_x_scale = 0.20; // Determines the secondary X scale
-tertiary_y_scale = 0.20; // Determines the secondary Y scale
-
 scale_differential = 0.01; // The difference in percentage between primary and secondary scale
 
 min_scale = 0.0625; // Determines the minimum scale the palette size can be
@@ -54,11 +51,8 @@ for (i = 0; i < sprite_qty; i += 1)
    sticky[i] = false;
 }
 
-stuck[0] = true;
-sticky[0] = true;
-
 
 // CALCULATES LOOPS
 
 inner_loop = 4; // Sets inner loop to tile root
-outer_loop = floor(sprite_limit / inner_loop); // Number of sprites to draw in Y direction (Calculated from inner loop)
+outer_loop = floor(sprite_limit / inner_loop) + 1; // Number of sprites to draw in Y direction (Calculated from inner loop)

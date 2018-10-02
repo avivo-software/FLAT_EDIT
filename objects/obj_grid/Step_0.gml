@@ -174,7 +174,7 @@ if global.edit_enabled == true // Ensures grid can be modified
         }
     }
 	
-	// DETECTS IF MOUSEIS IN EXPAND HORIZONTALLY ZONE
+	// DETECTS IF MOUSE IS IN EXPAND HORIZONTALLY ZONE
 	
 	border_x1 = x_offset + x_max + line_thickness * x_limit - buffer + line_thickness / 2;// Calculates X1 possition (Prevents string in function from being too long)
 	border_y1 = y_offset; // Calculates Y1 possition (Prevents string in function from being too long)
@@ -197,7 +197,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 	border_x2 = x_offset + buffer + x_max + x_limit * line_thickness; // Calculates X2 possition (Prevents string in function from being too long)
 	border_y2 = y_offset + buffer + y_max + y_limit * line_thickness; // Calculates Y2 possition (Prevents string in function from being too long)
 	
-	// DETECTS IF MOUSEIS IN EXPAND DIAGONALLY ZONE
+	// DETECTS IF MOUSE IS IN EXPAND DIAGONALLY ZONE
 	
     if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand diagonal area
     {
