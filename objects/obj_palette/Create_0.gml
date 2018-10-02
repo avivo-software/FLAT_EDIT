@@ -23,6 +23,9 @@ primary_y_scale = 0.25; // Determines the primary Y scale
 secondary_x_scale = 0.24; // Determines the secondary X scale
 secondary_y_scale = 0.24; // Determines the secondary Y scale
 
+tertiary_x_scale = 0.20; // Determines the secondary X scale
+tertiary_y_scale = 0.20; // Determines the secondary Y scale
+
 scale_differential = 0.01; // The difference in percentage between primary and secondary scale
 
 min_scale = 0.0625; // Determines the minimum scale the palette size can be
@@ -45,13 +48,14 @@ expand_enabled = false; // Prevents palette from being expanded while sprites ar
 
 palette_shift = 0; // Determines how many positions to offset sub-image number by
 
-// INITIALIZES STICKY VARIABLES
-
 for (i = 0; i < sprite_qty; i += 1)
 {
    stuck[i] = false;
    sticky[i] = false;
 }
+
+stuck[0] = true;
+sticky[0] = true;
 
 
 // CALCULATES LOOPS

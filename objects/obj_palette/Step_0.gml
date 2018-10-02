@@ -166,3 +166,4 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		}
 	}
 }
+

@@ -31,3 +31,4 @@ Version 0.0.2.5 | Swapped palette scroll direction to make it more intuitive. Fi
 Version 0.0.2.6 | Ready to impliment sprite status code.
 Version 0.0.2.7 | Button status code now works. However needs to be improved asper to do list.
 Version 0.0.2.8 | Actions script started.
+Version 0.0.2.9 | Sprite status code now works.

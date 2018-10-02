@@ -15,66 +15,38 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			
 		current_sprite_id = loop_count + palette_shift; // Calculates current sprite ID (Allows correct button presses to be identified correctly)
 		if current_sprite_id > sprite_qty - 1 then current_sprite_id = current_sprite_id - sprite_qty; // Recalculates ID if loop count is higher than sprite qty
-			
+		
 		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
 		{
-			if mouse_check_button_pressed(global.controls[0]) // Checks for mouse click
+			if mouse_check_button_pressed(global.controls[0]) // Checks if mouse is clicked 
 			{
-				if sticky[current_sprite_id] == true then stuck[current_sprite_id] = !stuck[current_sprite_id]; // Toggles sprite state if sticky is enabled for that sprite
-				spt_actions(action_id, current_sprite_id); // Execute specified sub routine
+				stuck[current_sprite_id] = !stuck[current_sprite_id]; // Toggles sprite status 
 				
-				if stuck[current_sprite_id] == false // Checks if current sprite is stuck
-				{
-					current_x_scale = secondary_x_scale; // Assign secondary X scale to current X scale
-					current_y_scale = secondary_y_scale; // Assign secondary X scale to current X scale
-					
-					current_sprite = secondary_sprite; // Assigns secondary sprite to current sprite
-				}
-					else
-				{
-					current_x_scale = primary_x_scale; // Assign primary X scale to current X scale
-					current_y_scale = primary_y_scale; // Assign primary X scale to current X scale
-					
-					current_sprite = primary_sprite; // Assigns primary sprite to current sprite
-				}
+				spt_actions(action_id, current_sprite_id); // Executes selected action based upon type of palette
 			}
-				else
+		}
+		
+			if current_sprite_id < sprite_qty // Prevents out of range error
 			{
-				if stuck[current_sprite_id] == false
+				if stuck[current_sprite_id] == true // Checks if current sprite is stuck
 				{
-					current_x_scale = primary_x_scale; // Assign primary X scale to current X scale
-					current_y_scale = primary_y_scale; // Assign primary Y scale to current Y scale
-					
-					current_sprite = primary_sprite; // Assigns primary sprite to current sprite
+					current_sprite = secondary_sprite; // Sets current sprite to secondary sprite
+			
+					current_x_scale = secondary_x_scale; // Sets current X scale to secondary X scale
+					current_y_scale = secondary_y_scale; // Sets current Y scale to secondary Y scale
 				}
 					else
 				{
-					current_x_scale = secondary_x_scale; // Assign secondary X scale to current X scale
-					current_y_scale = secondary_y_scale; // Assign secondary Y scale to current Y scale
-					
-					current_sprite = secondary_sprite; // Assigns secondary sprite to current sprite
+					current_sprite = primary_sprite; // Sets current sprite to primary sprite
+			
+					current_x_scale = primary_x_scale; // Sets current X scale to primary X scale
+					current_y_scale = primary_y_scale; // Sets current Y scale to primary Y scale
 				}
+				
+				if sticky[current_sprite_id] == false then stuck[current_sprite_id] = false; // Pops sprite back out if button is not sticky (Creates a clicking effect)
 			}
-			
-		}
-			else
-		{
-			
-		if stuck[current_sprite_id] == false
-		{
-			current_x_scale = primary_x_scale; // Assign primary X scale to current X scale
-			current_y_scale = primary_y_scale; // Assign primary Y scale to current Y scale
-					
-			current_sprite = primary_sprite; // Assigns primary sprite to current sprite
-		}
-			else
-		{
-			current_x_scale = secondary_x_scale; // Assign secondary X scale to current X scale
-			current_y_scale = secondary_y_scale; // Assign secondary Y scale to current Y scale
-			
-			current_sprite = secondary_sprite; // Assigns secondary sprite to current sprite
-		}
-		}
+		
+		// DRAW SPRITE
 		
 		if loop_count < sprite_limit // This will prevent duplicate sprites from being drawn
 		{
