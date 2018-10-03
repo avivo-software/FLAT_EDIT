@@ -7,12 +7,12 @@
     "option_windows_borderless": false,
     "option_windows_company_info": "Avivo Software Ltd",
     "option_windows_copy_exe_to_dest": false,
-    "option_windows_copyright_info": "(c) 2018 CompanyName",
+    "option_windows_copyright_info": "(c) 2018 Avivo Software Ltd",
     "option_windows_description_info": "An Avivo Software Production",
     "option_windows_display_cursor": true,
     "option_windows_display_name": "Flat Edit",
     "option_windows_enable_steam": false,
-    "option_windows_executable_name": "${project_name}",
+    "option_windows_executable_name": "Flat  Edit",
     "option_windows_icon": "${base_options_dir}\\windows\\icons\\icon.ico",
     "option_windows_installer_finished": "${base_options_dir}\\windows\\installer\\finished.bmp",
     "option_windows_installer_header": "${base_options_dir}\\windows\\installer\\header.bmp",
@@ -32,7 +32,7 @@
         "build": 4,
         "major": 0,
         "minor": 0,
-        "revision": 1
+        "revision": 2
     },
     "option_windows_vsync": false
 }

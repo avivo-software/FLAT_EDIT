@@ -41,7 +41,7 @@ if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + ((cell_si
 
 current_font = fnt_arial_32;
 
-if cell_size < 64 then current_font = fnt_arial_8; // Sets current font to arial 8
+if cell_size < 64 then current_font = fnt_arial_6; // Sets current font to arial 8
 if cell_size < 128 then current_font = fnt_arial_12; // Sets current font to arial 12
 if cell_size > 128 then current_font = fnt_arial_32; // Sets current font to arial 32
 

@@ -24,9 +24,7 @@ for(j = 0; j < y_limit + 1; j++)
 			y = y_offset - numbers_gap - font_height; // Calculates Y position for next number
 					
 			if i == x_pos - x_shift then current_number_colour = number_select_colour else current_number_colour = number_non_select_colour; // Sets number colour to correct number
-			{
-				if i < x_limit then draw_text_colour(x, y, i + y_shift, current_number_colour, current_number_colour, current_number_colour, current_number_colour, 1); // Draws selected number if is within grid size
-			}
+			if i < x_limit then draw_text_colour(x, y, i + y_shift, current_number_colour, current_number_colour, current_number_colour, current_number_colour, 1); // Draws selected number if is within grid size
 			
 			// Draw Y line numbers
 			
@@ -34,9 +32,7 @@ for(j = 0; j < y_limit + 1; j++)
 			y = y_offset + cell_size / 2 - font_height / 2 + i * cell_size + (line_thickness / 2 + line_thickness * i); // Calculates Y possition for next number
 				
 			if i == y_pos - y_shift then current_number_colour = number_select_colour else current_number_colour = number_non_select_colour; // Sets number colour to correct number
-			{
-				if i < y_limit then draw_text_colour(x, y, i + x_shift, current_number_colour, current_number_colour, current_number_colour, current_number_colour, 1); // Draws selected number if is within grid size
-			}
+			if i < y_limit then draw_text_colour(x, y, i + x_shift, current_number_colour, current_number_colour, current_number_colour, current_number_colour, 1); // Draws selected number if is within grid size
 		}
 	}
 }
