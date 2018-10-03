@@ -39,10 +39,11 @@ if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + x_max, y_
 *                         SETS FONT VARIABLES                          *       
 ***********************************************************************/
 
-current_font = fnt_western_32;
+current_font = fnt_arial_32;
 
-if cell_size < 128 then current_font = fnt_western_12; // Sets current font
-if cell_size > 128 then current_font = fnt_western_32; // Sets current font
+if cell_size < 64 then current_font = fnt_arial_8; // Sets current font to arial 8
+if cell_size < 128 then current_font = fnt_arial_12; // Sets current font to arial 12
+if cell_size > 128 then current_font = fnt_arial_32; // Sets current font to arial 32
 
 draw_set_font(current_font); // Sets font to draw numbers with
 

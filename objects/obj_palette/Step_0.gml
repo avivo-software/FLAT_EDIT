@@ -46,10 +46,11 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 *								SET CURSOR							   *       
 ***********************************************************************/
 
-// DETECTS IF MOUSE CURSOR IS IN MOVE ZONE
-
 if global.edit_enabled == true // Prevents palette from being manipulated when edit mode is disabled
 {
+	
+	// DETECTS IF MOUSE CURSOR IS IN MOVE ZONE
+	
 	if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer, y_offset - buffer, x_offset + buffer, y_offset + buffer) // Checks if cursor is in move palette area
 	{
 		if global.border_selection_id == !unique_id // Prevents and active item from interfering with other moveable objects
@@ -59,40 +60,40 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 		}
 	}
 
+	// DETECTS IF MOUSE IS IN EXPAND VERTICALLY ZONE
 
-// DETECTS IF MOUSE IS IN EXPAND VERTICALLY ZONE
+	if point_in_rectangle(mouse_x, mouse_y, x_offset, border_y2 - buffer, border_x2 - buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
+	{
+	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+	    {
+	        window_set_cursor(cr_size_ns); // Sets cursor to up, down arrow
+	        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
+	    }
+	}
 
-if point_in_rectangle(mouse_x, mouse_y, x_offset, border_y2 - buffer, border_x2 - buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
-{
-    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
-    {
-        window_set_cursor(cr_size_ns); // Sets cursor to up, down arrow
-        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
-    }
+	// DETECTS IF MOUSEIS IN EXPAND HORIZONTALLY ZONE
+
+	if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, y_offset, border_x2 + buffer, border_y2 - buffer) // Check that mouse is in expand up, down area
+	{
+	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+	    {
+	        window_set_cursor(cr_size_we); // Sets cursor to up, down arrow
+	        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
+	    }
+	}
+
+	// DETECTS IF MOUSE IS IN EXPAND DIAGONALLY ZONE
+
+	if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, border_y1 - buffer, border_x2 + buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
+	{
+	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+	    {
+	        window_set_cursor(cr_size_nwse); // Sets cursor to up, down arrow
+	        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
+	    }
+	}
 }
 
-// DETECTS IF MOUSEIS IN EXPAND HORIZONTALLY ZONE
-
-if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, y_offset, border_x2 + buffer, border_y2 - buffer) // Check that mouse is in expand up, down area
-{
-    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
-    {
-        window_set_cursor(cr_size_we); // Sets cursor to up, down arrow
-        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
-    }
-}
-
-// DETECTS IF MOUSE IS IN EXPAND DIAGONALLY ZONE
-
-if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, border_y1 - buffer, border_x2 + buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
-{
-    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
-    {
-        window_set_cursor(cr_size_nwse); // Sets cursor to up, down arrow
-        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
-    }
-}
-}
 
 /***********************************************************************
 *                       EXPAND AND MOVE PALETTE                        *       

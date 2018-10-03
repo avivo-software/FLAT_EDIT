@@ -8,4 +8,4 @@ BUG | Border sometimes covers an invisible area. Fixed in 0.0.1.9
 BUG | When expanding grid diagonally or horizontally an extra column is added. It does no do this for vertical expansion.
 BUG | When expanding horizontally and outer loop is equil to sprite limit program freezes. Fixed 0.0.2.0
 BUG | Grid does not shift correctly. Fixed 0.0.3.1
-
+BUG | Some grid lines are missing when line thickness is set to 1. Fixed 0.0.3.7.

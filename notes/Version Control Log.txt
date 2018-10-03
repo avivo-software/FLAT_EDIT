@@ -39,3 +39,4 @@ Version 0.0.3.3 | More spelling corrections.
 Version 0.0.3.4 | Grid no longer misses out pixels as "interpolate colours between pixels" option has been turned on.
 Version 0.0.3.5 | Palette is now locked when editing is enabled. This stops sprites being pressed accidentally when expanding.
 Version 0.0.3.6 | Palette expand code is now identical for both directions.
+Version 0.0.3.7 | Updated fonts. 

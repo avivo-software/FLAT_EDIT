@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "6a3d9fd7-50cb-4028-9f47-e84898237fbc",
+            "Value": {
+                "id": "1bf974dc-256e-4bce-9ca9-7c0f031fe15e",
+                "resourcePath": "fonts\\fnt_arial_12\\fnt_arial_12.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "6ae375b7-6eef-4ae0-a695-6756da81a7fa",
             "Value": {
                 "id": "147b71e2-4ec0-42ce-84a8-e627f6855084",
@@ -114,7 +122,7 @@
             "Key": "706ad380-4871-4184-aa5f-e31a8271e6b6",
             "Value": {
                 "id": "7f650b9a-4bdb-4102-84ae-57f1ed93fe1d",
-                "resourcePath": "fonts\\fnt_western_12\\fnt_western_12.yy",
+                "resourcePath": "fonts\\fnt_arial_8\\fnt_arial_8.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -154,7 +162,7 @@
             "Key": "940c4546-b2b5-44e8-8d49-16f1f0cae90e",
             "Value": {
                 "id": "21d74526-f662-48e6-bf2d-39237acd850e",
-                "resourcePath": "fonts\\fnt_western_32\\fnt_western_32.yy",
+                "resourcePath": "fonts\\fnt_arial_32\\fnt_arial_32.yy",
                 "resourceType": "GMFont"
             }
         },
