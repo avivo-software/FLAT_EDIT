@@ -119,7 +119,7 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		{
 			if floor((mouse_y - y_offset - y_gap) / (current_sprite_width + y_gap)) > 0 // Prevents palette from disappearing 
 			{
-				outer_loop = floor((mouse_y - y_offset - y_gap) / (current_sprite_width + y_gap)); // Calculates outer loop
+				outer_loop = round((mouse_y - y_offset - y_gap) / (current_sprite_width + y_gap)); // Calculates outer loop
 				inner_loop = floor(sprite_limit / outer_loop); // Calculates inner loop
 				outer_loop = ceil(sprite_limit / inner_loop); // Prevents border from being too large for the palette
 			}
@@ -131,7 +131,7 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		{	
 			if floor((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap)) > 0 // Prevents palette from disappearing 
 			{	
-				inner_loop = floor((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap)) + 0; // Calculates inner loop
+				inner_loop = round((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap)); // Calculates inner loop
 				outer_loop = floor(sprite_limit / inner_loop) + 1; // Calculates outer loop
 				inner_loop = ceil(sprite_limit / outer_loop); // Prevents border from being too large for the palette
 			}

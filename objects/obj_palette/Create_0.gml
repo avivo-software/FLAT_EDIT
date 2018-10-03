@@ -9,8 +9,8 @@ action_id = 0; // describes the type of palette | 0 = Buttons
 
 last_selection = 0; // Stores ID of last selected sprite
 
-current_sprite = spr_buttons_orange; // Determines the currently selected sprite
-primary_sprite = spr_buttons_orange; // Determines primary sprite
+current_sprite = spr_buttons_green; // Determines the currently selected sprite
+primary_sprite = spr_buttons_green; // Determines primary sprite
 secondary_sprite = spr_buttons_grey; // Determines secondary sprite
 
 x_gap = 4; // Sets the distance in pixels between each sprite in the X direction
@@ -52,7 +52,7 @@ palette_shift = 0; // Determines how many positions to offset sub-image number b
 for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
 {
    stuck[i] = false; // Initialize stuck array
-   sticky[i] = false; // Initialize sticky array
+   sticky[i] = true; // Initialize sticky array
 }
 
 // CALCULATES LOOPS
