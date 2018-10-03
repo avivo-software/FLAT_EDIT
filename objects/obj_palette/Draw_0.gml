@@ -23,8 +23,9 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 				if global.edit_enabled == false // Prevents sprites being interacted with when edit mode is enabled
 				{
 					stuck[current_sprite_id] = !stuck[current_sprite_id]; // Toggles sprite status 
+					last_selection = current_sprite_id; // Updates last selection ID
+					
 					spt_actions(action_id, current_sprite_id); // Executes selected action based upon type of palette
-					show_debug_message(current_sprite_id);
 				}
 			}
 		}
@@ -70,3 +71,10 @@ if global.edit_enabled == true // Prevents border being drawn if edit is not ena
 	}
 }
 
+
+/***********************************************************************
+*									DEBUG							   *       
+***********************************************************************/
+
+//draw_line(obj_grid.x_offset, obj_grid.y_offset - 2, obj_grid.x_offset + 128, obj_grid.y_offset - 2);
+draw_text(0, 0, last_selection);

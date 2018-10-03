@@ -40,3 +40,5 @@ Version 0.0.3.4 | Grid no longer misses out pixels as "interpolate colours betwe
 Version 0.0.3.5 | Palette is now locked when editing is enabled. This stops sprites being pressed accidentally when expanding.
 Version 0.0.3.6 | Palette expand code is now identical for both directions.
 Version 0.0.3.7 | Updated fonts. 
+Version 0.0.3.8 | Fully tested. Ready for next stage of project.
+Version 0.0.3.9 | Grid now expands properly when line thickness is greater than 1. Palette code now stores last selected sprite.

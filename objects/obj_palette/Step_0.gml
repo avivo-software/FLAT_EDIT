@@ -23,7 +23,7 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 		}
 			else
 		{
-			palette_shift = sprite_limit; // Cycles to sprite limit
+			palette_shift = sprite_qty; // Cycles to sprite limit
 		}
 	}
 	
@@ -31,7 +31,7 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 	
 	if mouse_wheel_down() // Checks for mouse wheel up
 	{
-		if palette_shift < sprite_limit // Prevents number from exeeding sprite limit 
+		if palette_shift < sprite_qty // Prevents number from exeeding sprite limit 
 		{
 			palette_shift ++; // Increments palette_shift by one
 		}
@@ -48,7 +48,6 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 
 if global.edit_enabled == true // Prevents palette from being manipulated when edit mode is disabled
 {
-	
 	// DETECTS IF MOUSE CURSOR IS IN MOVE ZONE
 	
 	if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer, y_offset - buffer, x_offset + buffer, y_offset + buffer) // Checks if cursor is in move palette area
@@ -132,7 +131,7 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		{	
 			if floor((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap)) > 0 // Prevents palette from disappearing 
 			{	
-				inner_loop = floor((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap)) + 1; // Calculates inner loop
+				inner_loop = floor((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap)) + 0; // Calculates inner loop
 				outer_loop = floor(sprite_limit / inner_loop) + 1; // Calculates outer loop
 				inner_loop = ceil(sprite_limit / outer_loop); // Prevents border from being too large for the palette
 			}
@@ -173,3 +172,9 @@ if keyboard_check_pressed(vk_space)
 {
 	global.edit_enabled = !global.edit_enabled;
 }
+
+if keyboard_check_pressed(vk_alt)
+{
+	window_set_fullscreen(true);
+}
+

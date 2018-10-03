@@ -26,8 +26,8 @@ y_pos = 0; // Stores Y coordinate of the selected cell
 x_scale = 1; // Sets X scale tile
 y_scale = 1; // Sets Y scale tile
 
-cell_min = 8; // Sets the minimum size of the grid
-cell_max = 512; // Sets the maximum size of the grid
+cell_min = 4; // Sets the minimum size of the grid
+cell_max = 256; // Sets the maximum size of the grid
 
 hard_x_limit = 64; // Sets a maximum size for the level in the x direction
 hard_y_limit = 32; // Sets a maximum size for the level in the y direction

@@ -10,8 +10,8 @@ y_max = y_limit * cell_size; // Sets Y Coordinates to correct position
 border_x1 = x_offset; // X1 border coordinate
 border_y1 = y_offset; // Y1 border coordinate
 
-border_x2 = x_offset + x_max; // X2 border coordinate
-border_y2 = y_offset + y_max; // Y2 border coordinate
+border_x2 = x_offset + ((cell_size + line_thickness) * x_limit); // X2 border coordinate
+border_y2 = y_offset + ((cell_size + line_thickness) * y_limit); // Y2 border coordinate
 
 
 /***********************************************************************
@@ -26,7 +26,7 @@ y_pos = floor((mouse_y - y_offset) / (cell_size + line_thickness)) + y_shift; //
 *          DETERMINES IF MOUSE IS INSIDE OR OUTSIDE THE GRID           *       
 ***********************************************************************/
 
-if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + x_max, y_offset + y_max) // Checks if mouse is inside grid
+if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + ((cell_size + line_thickness) * x_limit) + line_thickness, y_offset + ((cell_size + line_thickness) * y_limit) + line_thickness) // Checks if mouse is inside grid
 {
     mouse_in_grid = true; // Sets mouse_in_grid_status to true
 }
@@ -167,7 +167,7 @@ if global.edit_enabled == true // Ensures grid can be modified
             window_set_cursor(cr_size_ns); // Sets cursor to up, down arrow
             global.border_selection_id = unique_id; // Locks grid for editing
         }
-    }
+	}
 	
 	// DETECTS IF MOUSE IS IN EXPAND HORIZONTALLY ZONE
 	
@@ -226,9 +226,9 @@ if global.edit_enabled == true // Ensures grid can be modified
 		
 	        if window_get_cursor() == cr_size_ns // Checks if current cursor is set to up, down cursor
 	        {	
-				if floor((mouse_y - y_offset) / cell_size) > 0 // Prevents grid from becoming invisible
+				if floor((mouse_y - y_offset) / cell_size) > 1 // Prevents grid from becoming invisible
 				{
-					y_limit = floor((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
+					y_limit = floor((mouse_y - y_offset) / (cell_size + line_thickness)); // Recalculates Y Limit based on mouse Y possition
 				}
 	        }
 			
@@ -236,9 +236,9 @@ if global.edit_enabled == true // Ensures grid can be modified
         
 	        if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, right cursor
 	        {	
-				if floor((mouse_x - x_offset) / cell_size) > 0 // Prevents grid from becoming invisible
+				if floor((mouse_x - x_offset) / cell_size) > 1 // Prevents grid from becoming invisible
 				{
-					x_limit = floor((mouse_x - x_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
+					x_limit = floor((mouse_x - x_offset) / (cell_size + line_thickness)); // Recalculates Y Limit based on mouse Y possition
 				}
 	        }
         
@@ -248,12 +248,12 @@ if global.edit_enabled == true // Ensures grid can be modified
             {	
 				if floor((mouse_x - x_offset) / cell_size) > 0 // Prevents grid from becoming invisible
 				{
-					x_limit = floor((mouse_x - x_offset) / cell_size); // Recalculates X Limit based on mouse X possition
+					x_limit = floor((mouse_x - x_offset) / (cell_size + line_thickness)); // Recalculates X Limit based on mouse X possition
 				}
 				
 				if floor((mouse_y - y_offset) / cell_size) > 0 // Prevents grid from becoming invisible
 				{
-					y_limit = floor((mouse_y - y_offset) / cell_size); // Recalculates Y Limit based on mouse Y possition
+					y_limit = floor((mouse_y - y_offset) / (cell_size + line_thickness)); // Recalculates Y Limit based on mouse Y possition
 				}
             }
         }
