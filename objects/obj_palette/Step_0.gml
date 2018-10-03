@@ -13,36 +13,33 @@ border_y2 = y_offset + (current_sprite_height + y_gap) * outer_loop - y_gap; // 
 
 if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Stops palette from scrolling when cursor is not inside 
 {
-	if global.edit_enabled == true // Prevents palette from being shifted when edit mode is disabled
+	// SHIFT DOWN
+	
+	if mouse_wheel_up() // Checks for mouse wheel down
 	{
-		// SHIFT DOWN
-	
-		if mouse_wheel_up() // Checks for mouse wheel down
+		if palette_shift > 0 // Prevents negative number
 		{
-			if palette_shift > 0 // Prevents negative number
-			{
-				palette_shift --; // Reduces palette_shift
-			}
-				else
-			{
-				palette_shift = sprite_limit; // Cycles to sprite limit
-			}
+			palette_shift --; // Reduces palette_shift
 		}
-	
-		// SHIFT UP
-	
-		if mouse_wheel_down() // Checks for mouse wheel up
+			else
 		{
-			if palette_shift < sprite_limit // Prevents number from exeeding sprite limit 
-			{
-				palette_shift ++; // Increments palette_shift by one
-			}
-				else
-			{
-				palette_shift = 0; // Sets palette back to original state
-			}
-		}					
+			palette_shift = sprite_limit; // Cycles to sprite limit
+		}
 	}
+	
+	// SHIFT UP
+	
+	if mouse_wheel_down() // Checks for mouse wheel up
+	{
+		if palette_shift < sprite_limit // Prevents number from exeeding sprite limit 
+		{
+			palette_shift ++; // Increments palette_shift by one
+		}
+			else
+		{
+			palette_shift = 0; // Sets palette back to original state
+		}
+	}					
 }
 
 /***********************************************************************
@@ -61,7 +58,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 			global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
 		}
 	}
-}
+
 
 // DETECTS IF MOUSE IS IN EXPAND VERTICALLY ZONE
 
@@ -95,7 +92,7 @@ if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, border_y1 - buffer, 
         global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
     }
 }
-
+}
 
 /***********************************************************************
 *                       EXPAND AND MOVE PALETTE                        *       
@@ -169,3 +166,11 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 	}
 }
 
+/***********************************************************************
+*									DEBUG							   *       
+***********************************************************************/
+
+if keyboard_check_pressed(vk_space)
+{
+	global.edit_enabled = !global.edit_enabled;
+}

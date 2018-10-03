@@ -20,9 +20,12 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		{
 			if mouse_check_button_pressed(global.controls[0]) // Checks if mouse is clicked 
 			{
-				stuck[current_sprite_id] = !stuck[current_sprite_id]; // Toggles sprite status 
-				
-				spt_actions(action_id, current_sprite_id); // Executes selected action based upon type of palette
+				if global.edit_enabled == false // Prevents sprites being interacted with when edit mode is enabled
+				{
+					stuck[current_sprite_id] = !stuck[current_sprite_id]; // Toggles sprite status 
+					spt_actions(action_id, current_sprite_id); // Executes selected action based upon type of palette
+					show_debug_message(current_sprite_id);
+				}
 			}
 		}
 			if current_sprite_id < sprite_qty // Prevents out of range error

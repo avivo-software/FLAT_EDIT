@@ -2,7 +2,7 @@
 *                             CREATION CODE								*
 ************************************************************************/
 
-global.edit_enabled = true; // Determines if objects can be resized or moved 
+global.edit_enabled = false; // Determines if objects can be resized or moved 
 global.border_selection_id = 0; // Determines which palette has been selected
 
 
@@ -23,5 +23,3 @@ layer_id = layer_get_id("lyr_gui"); // Gets GUI layer ID
 
 instance_create_layer(0, 0, layer_id, obj_grid); // Loads grid instance
 instance_create_layer(0, 0, layer_id, obj_palette); // Loads palette instance
-
-//window_set_fullscreen(true);
