@@ -43,3 +43,4 @@ Version 0.0.3.7 | Updated fonts.
 Version 0.0.3.8 | Fully tested. Ready for next stage of project.
 Version 0.0.3.9 | Grid now expands properly when line thickness is greater than 1. Palette code now stores last selected sprite.
 Version 0.0.4.0 | Updated graphics ready for child palette implementation. 
+Version 0.0.4.1 | Started to implement sound system.

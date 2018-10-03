@@ -52,7 +52,7 @@ palette_shift = 0; // Determines how many positions to offset sub-image number b
 for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
 {
    stuck[i] = false; // Initialize stuck array
-   sticky[i] = true; // Initialize sticky array
+   sticky[i] = false; // Initialize sticky array
 }
 
 // CALCULATES LOOPS

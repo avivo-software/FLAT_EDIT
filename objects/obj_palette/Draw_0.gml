@@ -18,6 +18,18 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 		
 		if point_in_rectangle(mouse_x, mouse_y, x, y, x + current_sprite_width, y + current_sprite_height) // Checks to see if mouse is hovered over current sprite
 		{
+			if mouse_check_button_released(global.controls[0]) // Checks if mouse button has been released
+			{
+				if stuck[current_sprite_id] == false  // Playes sound depending if sprite has been released or pressed
+				{
+					if global.edit_enabled == false then audio_play_sound(global.sounds[1], 0, false); // Play mouse click sound provided palette is not currently being edited
+				}
+					else
+				{
+					if global.edit_enabled == false then audio_play_sound(global.sounds[0], 0, false); // Play mouse click sound provided palette is not currently being edited
+				}
+			}
+			
 			if mouse_check_button_pressed(global.controls[0]) // Checks if mouse is clicked 
 			{
 				if global.edit_enabled == false // Prevents sprites being interacted with when edit mode is enabled
@@ -26,10 +38,9 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 					last_selection = current_sprite_id; // Updates last selection ID
 					
 					spt_actions(action_id, current_sprite_id); // Executes selected action based upon type of palette
-					
-					show_debug_message(current_sprite_id);
 				}
 			}
+			
 		}
 			if current_sprite_id < sprite_qty // Prevents out of range error
 			{
