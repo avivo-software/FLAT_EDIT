@@ -26,7 +26,7 @@ with obj_grid // Prevents unknown variable error
 		
 				x_shift = 0; // Sets grid X shift back to zero
 				
-				//if x_shift == 0 then obj_palette.
+				if x_shift == 0 then other.stuck[argument1] = true; // Sticks button down if minimum limit is reached
 		
 			break;
 		
@@ -37,30 +37,6 @@ with obj_grid // Prevents unknown variable error
 			break;
 		
 			case 5: // Shift grid back to far most left position (Zero)
-		
-			if zoom_enabled == true  // prevents palette scrolling if it is not enabled
-			{
-				if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
-				{
-				    if cell_size < cell_max // Ensures grid can't be zoomed outside of specified limits
-				    {
-						if y_limit > 1 // Prevents y_limit from being zero
-						{
-					        cell_size = cell_size * 2; // Doubles cell size
-                
-					        x_scale = x_scale * 2; // Double X scale
-					        y_scale = y_scale * 2; // Double Y scale
-                
-					        x_limit = floor(x_limit / 2); // Half X limit
-					        y_limit = floor(y_limit / 2); // Half Y limit
-						}
-				    }
-				}
-			}
-		
-			break;
-		
-			case 6: // Shift grid back to top most position (Zero)
 		
 			if zoom_enabled == true  // prevents palette scrolling if it is not enabled
 			{
@@ -81,30 +57,106 @@ with obj_grid // Prevents unknown variable error
 				    }
 				}
 			}
+		
+			break;
+		
+			case 6: // Shift grid back to top most position (Zero)
+		
+			if zoom_enabled == true  // prevents palette scrolling if it is not enabled
+			{
+				if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
+				{
+				    if cell_size < cell_max // Ensures grid can't be zoomed outside of specified limits
+				    {
+						if y_limit > 1 // Prevents y_limit from being zero
+						{
+					        cell_size = cell_size * 2; // Doubles cell size
+                
+					        x_scale = x_scale * 2; // Double X scale
+					        y_scale = y_scale * 2; // Double Y scale
+                
+					        x_limit = floor(x_limit / 2); // Half X limit
+					        y_limit = floor(y_limit / 2); // Half Y limit
+						}
+				    }
+				}
+			}
 	
 			break;
 		
 			case 7: // PAN GRID LEFT
 		
-				if y_shift > 0 then y_shift --; // Shift left by one if within limits
+				if x_shift > 0 then x_shift --; // Shift left by one if within limits (Greater than zero)
+				
+				if x_shift = 0 or x_shift + x_limit = hard_x_limit // Checks if grid is within limits
+				{
+					other.stuck[3] = true // Sticks far left pan button
+					other.stuck[7] = true; // Sticks pan left button
+					other.stuck[8] = false; // Sticks pan far right button
+				}
+					else
+				{
+					other.stuck[3] = false; // Unsticks far left pan button
+					other.stuck[7] = false; // Unsticks pan left button
+					other.stuck[8] = false // Unsticks pan far right button
+				}
 		
 			break;
 		
 			case 8: // PAN GRID RIGHT
 		
-				 if y_shift + y_limit < hard_y_limit then y_shift ++; // Shift right by one if within limits
+				if x_limit + x_shift < hard_x_limit then x_shift ++; // Checks if grid is within limits
+				
+				other.stuck[7] = false; // Sticks pan left button
+				other.stuck[3] = false; // Unsticks far left pan button
+				
+				if x_limit + x_shift < hard_x_limit // Checks if grid is within max limits
+				{
+					other.stuck[8] = false; // Unsticks pan far right button
+				}
+					else
+				{
+					other.stuck[8] = true; // Sticks pan far right button
+					other.stuck[3] = true; // Sticks far left pan button
+				}
 		
 			break;
 		
 			case 9: // PAN GRID UP
 		
-				if x_shift > 0 then x_shift --; // Shift up by one if within limits
+				if y_shift > 0 then y_shift --; // Shift left by one if within limits (Greater than zero)
+				
+				if y_shift = 0 or y_shift + y_limit = hard_y_limit // Checks if grid is within limits
+				{
+					other.stuck[4] = true // Sticks far top pan button
+					other.stuck[9] = true; // Sticks up pan button
+					other.stuck[10] = false; // Unsticks down pan button
+				}
+					else
+				{
+					other.stuck[4] = false; // Unsticks far top pan button
+					other.stuck[9] = false; // Unsticks up pan button
+					other.stuck[10] = false // Unsticks down pan button
+				}
 		
 			break;
 		
 			case 10: // PAN GRID DOWN
 		
-				 if x_shift + x_limit < hard_x_limit then x_shift ++; // Shift down by one if within limits
+				if y_limit + y_shift < hard_y_limit then y_shift ++; // Checks if grid is within limits
+				
+				other.stuck[9] = false; // Unsticks up pan button
+				other.stuck[4] = false; // Unsticks far top pan button
+				
+				if y_limit + y_shift < hard_y_limit // Checks if grid is within max limits
+				{
+					other.stuck[10] = false; // Unsticks down pan button
+				}
+					else
+				{
+					other.stuck[10] = true; // Sticks down pan button
+					other.stuck[4] = true; // Sticks far top pan button
+				}
 		
 			break;
 			

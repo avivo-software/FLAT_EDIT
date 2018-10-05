@@ -11,4 +11,6 @@ BUG | Grid does not shift correctly. Fixed in 0.0.3.1
 BUG | Some grid lines are missing when line thickness is set to 1. Fixed 0.0.3.7.
 BUG | Mouse is in incorrect possition when expanding grid if grid thickness is larger than 1. Fixed in 0.0.3.8
 BUG | Grid disappears when made too small. Fixed in 0.0.3.8
-BUG | Palette behaves strangely when sprite limit is low.
+BUG | Palette behaves strangely when sprite limit is low. Fixed in 0.0.4.5
+BUG | Grid goes beyond hard limits if zoomed out.
+BUG | Grid panning is in wrong direction. Fixed in 0.0.4.6
