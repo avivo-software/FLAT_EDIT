@@ -2,9 +2,20 @@
 *                             CREATION CODE								*
 ************************************************************************/
 
+// INITIALIZE GENERAL GLOBALS
+
 global.edit_enabled = false; // Determines if objects can be resized or moved 
 global.border_selection_id = 0; // Determines which palette has been selected
 
+global.sound_fx_enabled = false; // Toggles Sound-FX
+global.music_enabled = false; // Toggles music
+
+// INITIALIZE GRID GLOBALS
+
+global.rotate_enabled = false; // Determines if selected grid tile should be rotated
+
+global.flip_vertical_enabled = false; // Determines if selected grid tile should be flipped vertically
+global.flip_horizontal_enabled = false; // Determines if selected grid tile should be flipped horizontally
 
 // INITIALIZE GLOBAL CONTROLS
 

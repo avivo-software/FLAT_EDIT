@@ -181,8 +181,4 @@ if keyboard_check_pressed(vk_space)
 	global.edit_enabled = !global.edit_enabled;
 }
 
-if keyboard_check_pressed(vk_alt)
-{
-	window_set_fullscreen(true);
-}
 

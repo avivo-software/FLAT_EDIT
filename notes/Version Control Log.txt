@@ -47,3 +47,4 @@ Version 0.0.4.1 | Started to implement sound system.
 Version 0.0.4.2 | Reduced smallest grid text font by two points. Updated project info.
 Version 0.0.4.3 | Ready for full test. Appears to be fully working.
 Version 0.0.4.4 | Fully tested. fully working.
+Version 0.0.4.5 | Grid zoom code now points to script. Some more button functions have been added. Grid can now be toggled. Additional global variables have been added.

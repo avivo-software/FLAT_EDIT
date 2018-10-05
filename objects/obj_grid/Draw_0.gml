@@ -4,15 +4,18 @@
 							X AND Y GRID LINES
 *************************************************************************/
 
-for(j = 0; j < y_limit + 1; j++)
+for(j = 0; j < y_limit + 1; j++) // Outer loop (Vertical)
 {
-	for(i = 0; i < x_limit + 1; i++)
+	for(i = 0; i < x_limit + 1; i++) // Inner loop (Horizontal)
 	{
-		x = x_offset + cell_size * i; // Calculates X coordinates
-	    draw_line_width_colour(x + (line_thickness * i), y_offset, x + (line_thickness * i), y_max + y_offset + (line_thickness * y_limit), line_thickness, grid_colour, grid_colour); // Draws the line
+		if grid_enabled == true // Checks if grid is enabled before drawing grid
+		{
+			x = x_offset + cell_size * i; // Calculates X coordinates
+			draw_line_width_colour(x + (line_thickness * i), y_offset, x + (line_thickness * i), y_max + y_offset + (line_thickness * y_limit), line_thickness, grid_colour, grid_colour); // Draws the line
 	
-		y = y_offset + cell_size * j; // Calculates Y coordinates
-		draw_line_width_colour(x_offset, y + (line_thickness * j), x_max + x_offset + (line_thickness * x_limit), y + (line_thickness * j), line_thickness, grid_colour, grid_colour); // Draws the line
+			y = y_offset + cell_size * j; // Calculates Y coordinates
+			draw_line_width_colour(x_offset, y + (line_thickness * j), x_max + x_offset + (line_thickness * x_limit), y + (line_thickness * j), line_thickness, grid_colour, grid_colour); // Draws the line
+		}
 		
 		// DRAW GRID NUMBERS
 		

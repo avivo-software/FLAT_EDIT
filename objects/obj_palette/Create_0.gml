@@ -37,7 +37,7 @@ x_offset = 128; // Determines X offset relative to the far left hand side of the
 y_offset = 128; // Determines Y offset relative to the top of the screen
 
 sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
-sprite_limit = 4; // Sets the maximum number of sprites to draw
+sprite_limit = sprite_qty; // Sets the maximum number of sprites to draw
 
 grid_snap = 4; // Sets the amount to snap the grid by
 buffer = 4; // Sets the distance in pixels the borders around the action areas
@@ -57,5 +57,5 @@ for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
 
 // CALCULATES LOOPS
 
-inner_loop = 2; // Sets inner loop to tile root
-outer_loop = 2; // Number of sprites to draw in Y direction (Calculated from inner loop)
+inner_loop = sprite_limit; // Sets inner loop to tile root
+outer_loop = 1; // Number of sprites to draw in Y direction (Calculated from inner loop)

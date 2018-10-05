@@ -26,7 +26,7 @@ y_pos = 0; // Stores Y coordinate of the selected cell
 x_scale = 1; // Sets X scale tile
 y_scale = 1; // Sets Y scale tile
 
-cell_min = 4; // Sets the minimum size of the grid
+cell_min = 32; // Sets the minimum size of the grid
 cell_max = 256; // Sets the maximum size of the grid
 
 hard_x_limit = 64; // Sets a maximum size for the level in the x direction
@@ -39,10 +39,10 @@ current_number_colour = c_white; //
 number_select_colour = c_red; // Sets colour of selected number
 number_non_select_colour = c_white; // Sets colour of non-selected numbers
 
-in_scope = false; // Determines if mouse is in grid or not
-
+//in_scope = false; // Determines if mouse is in grid or not
+grid_enabled = true; // Determines if grid should be drawn
 numbers_enabled = true; // Determines if grid numbers are visible
-palette_scroll_enabled = true; // Allows palette to be scrolled
+zoom_enabled = true; // Allows palette to be scrolled
 
 grid_snap = 16; // Sets the amount to snap the grid by
 numbers_gap = 16; // The distance from grid to draw numbers
