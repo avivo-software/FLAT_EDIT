@@ -40,7 +40,6 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 					spt_actions(action_id, current_sprite_id); // Executes selected action based upon type of palette
 				}
 			}
-			
 		}
 			if current_sprite_id < sprite_qty // Prevents out of range error
 			{
@@ -61,7 +60,6 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 				
 				if sticky[current_sprite_id] == false then stuck[current_sprite_id] = false; // Pops sprite back out if button is not sticky (Creates a clicking effect)
 			}
-		
 		
 		// DRAW SPRITE
 		

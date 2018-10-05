@@ -90,47 +90,50 @@ if keyboard_check_released(global.controls[5]) // Checks if shift down key has b
 
 // ZOOM IN
 
-if mouse_in_grid == true // Prevents grid from zooming in or out when the mouse is not in the grid area
+if palette_scroll_enabled == true  // prevents palette scrolling if it is not enabled
 {
-    if mouse_wheel_up() // Checks to see if mouse was scrolled up
-    {
-        if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
-        {
-            if cell_size < cell_max // Ensures grid can't be zoomed outside of specified limits
-            {
-				if y_limit > 1 // Prevents y_limit from being zero
-				{
-	                cell_size = cell_size * 2; // Doubles cell size
+	if mouse_in_grid == true // Prevents grid from zooming in or out when the mouse is not in the grid area
+	{
+	    if mouse_wheel_up() // Checks to see if mouse was scrolled up
+	    {
+	        if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
+	        {
+	            if cell_size < cell_max // Ensures grid can't be zoomed outside of specified limits
+	            {
+					if y_limit > 1 // Prevents y_limit from being zero
+					{
+		                cell_size = cell_size * 2; // Doubles cell size
                 
-	                x_scale = x_scale * 2; // Double X scale
-	                y_scale = y_scale * 2; // Double Y scale
+		                x_scale = x_scale * 2; // Double X scale
+		                y_scale = y_scale * 2; // Double Y scale
                 
-	                x_limit = floor(x_limit / 2); // Half X limit
-	                y_limit = floor(y_limit / 2); // Half Y limit
-				}
-            }
-        }
-    }
+		                x_limit = floor(x_limit / 2); // Half X limit
+		                y_limit = floor(y_limit / 2); // Half Y limit
+					}
+	            }
+	        }
+	    }
 
-    // ZOOM OUT
+	    // ZOOM OUT
 
-    if mouse_wheel_down() // Checks to see if mouse was scrolled down
-    {
-        if x_shift + x_limit * 2 < hard_x_limit // Prevents error (Can't zoom past hard X limit)
-        {
-            if cell_size > cell_min // Ensures grid can't be zoomed outside of specified limits
-            {
-                cell_size = cell_size / 2; // Half cell size
+	    if mouse_wheel_down() // Checks to see if mouse was scrolled down
+	    {
+	        if x_shift + x_limit * 2 < hard_x_limit // Prevents error (Can't zoom past hard X limit)
+	        {
+	            if cell_size > cell_min // Ensures grid can't be zoomed outside of specified limits
+	            {
+	                cell_size = cell_size / 2; // Half cell size
             
-                x_scale = x_scale / 2; // Half X scale
-                y_scale = y_scale / 2; // Half Y scale
+	                x_scale = x_scale / 2; // Half X scale
+	                y_scale = y_scale / 2; // Half Y scale
             
-                x_limit = floor(x_limit * 2); // Double x_limit
-                y_limit = floor(y_limit * 2); // Double y_limit
+	                x_limit = floor(x_limit * 2); // Double x_limit
+	                y_limit = floor(y_limit * 2); // Double y_limit
 				
-            }
-        }
-    }
+	            }
+	        }
+	    }
+	}
 }
 
 

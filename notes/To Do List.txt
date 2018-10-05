@@ -7,3 +7,4 @@ TO DO | Reduce point_in_rectangle code for grid as as been done with palette. (C
 TO DO | The bug with extra border line is caused by initial creation code. This can be fixed by duplicating the expand palette code. Fixed
 TO DO | Rebase git source control as some commit comments are incorrect.
 TO DO | Look into constants.
+TO DO | Palette expand code now fully works but would benice to find away to make the code more symmetrical.

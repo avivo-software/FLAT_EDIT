@@ -117,15 +117,17 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		
 		if window_get_cursor() == cr_size_ns // Checks if current cursor is set to left, right cursor
 		{
-			if floor((mouse_y - y_offset) / current_sprite_height) > 0 // Prevents grid from becoming invisible
+			if floor((mouse_y - y_offset) / current_sprite_height) > 0 // Prevents palette from freezing
 			{
-				outer_loop = floor((mouse_y - y_offset) / current_sprite_height); // Recalculates outer loop
-				inner_loop = floor(sprite_limit / outer_loop) + 1; // Recalculates inner loop
+				temp_loop = floor((mouse_y - y_offset - y_gap) / (current_sprite_height + y_gap));
 				
-				outer_loop = round(sprite_limit / inner_loop); // Recalculates outer loop
+				if temp_loop > 0 // Prevents outer loop from becoming invisible
+				{
+					if temp_loop < sprite_limit + 1 then outer_loop = temp_loop; // Prevents border from being larger than the number of sprites
 				
-				if inner_loop * outer_loop < sprite_limit then outer_loop ++; // Recalculates inner loop
-				if inner_loop > sprite_limit then inner_loop = sprite_limit; // Recalculates inner loop
+					inner_loop = ceil(sprite_limit / outer_loop); // Calculates inner loop preventing border from becoming too large
+					outer_loop = ceil(sprite_limit / inner_loop); // Calculates outer loop preventing border from becoming too large
+				}
 			}
 		}
 
@@ -133,15 +135,13 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 		
 		if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, right cursor
 		{	
-			if floor((mouse_x - x_offset) / current_sprite_width) > 0 // Prevents grid from becoming invisible
+			if floor((mouse_x - x_offset) / current_sprite_width) > 0 // Prevents palette from freezing
 			{
-				inner_loop = floor((mouse_x - x_offset) / current_sprite_width); // Recalculates outer loop
-				outer_loop = floor(sprite_limit / inner_loop) + 1; // Recalculates inner loop
+				temp_loop = round((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap));
+				if temp_loop < sprite_limit + 1 then inner_loop = temp_loop; // Prevents border from being larger than the number of sprites
 				
-				inner_loop = round(sprite_limit / outer_loop); // Recalculates inner loop
-				
-				if outer_loop * inner_loop < sprite_limit then inner_loop ++; // Recalculates outer loop
-				if outer_loop > sprite_limit then outer_loop = sprite_limit; // Recalculates outer loop
+				outer_loop = ceil(sprite_limit / inner_loop); // Calculates inner loop preventing border from becoming too large
+				inner_loop = ceil(sprite_limit / outer_loop); // Calculates outer loop preventing border from becoming too large
 			}
 		}
 

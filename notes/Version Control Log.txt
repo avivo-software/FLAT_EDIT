@@ -46,3 +46,4 @@ Version 0.0.4.0 | Updated graphics ready for child palette implementation.
 Version 0.0.4.1 | Started to implement sound system.
 Version 0.0.4.2 | Reduced smallest grid text font by two points. Updated project info.
 Version 0.0.4.3 | Ready for full test. Appears to be fully working.
+Version 0.0.4.4 | Fully tested. fully working.

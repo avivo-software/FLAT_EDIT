@@ -42,6 +42,7 @@ number_non_select_colour = c_white; // Sets colour of non-selected numbers
 in_scope = false; // Determines if mouse is in grid or not
 
 numbers_enabled = true; // Determines if grid numbers are visible
+palette_scroll_enabled = true; // Allows palette to be scrolled
 
 grid_snap = 16; // Sets the amount to snap the grid by
 numbers_gap = 16; // The distance from grid to draw numbers
