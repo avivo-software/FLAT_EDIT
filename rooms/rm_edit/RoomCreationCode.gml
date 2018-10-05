@@ -7,7 +7,7 @@
 global.edit_enabled = false; // Determines if objects can be resized or moved 
 global.border_selection_id = 0; // Determines which palette has been selected
 
-global.sound_fx_enabled = false; // Toggles Sound-FX
+global.sound_fx_enabled = true; // Toggles Sound-FX
 global.music_enabled = false; // Toggles music
 
 // INITIALIZE GRID GLOBALS

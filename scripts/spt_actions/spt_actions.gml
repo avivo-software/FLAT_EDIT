@@ -37,7 +37,7 @@ with obj_grid // Prevents unknown variable error
 			break;
 		
 			case 5: // Shift grid back to far most left position (Zero)
-		
+			
 			if zoom_enabled == true  // prevents palette scrolling if it is not enabled
 			{
 				if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
@@ -53,6 +53,15 @@ with obj_grid // Prevents unknown variable error
                 
 					        x_limit = floor(x_limit * 2); // Half X limit
 					        y_limit = floor(y_limit * 2); // Half Y limit
+							
+							if cell_size = cell_min 
+							{
+								other.stuck[5] = true
+							}
+								else
+							{
+								other.stuck[5] = false;
+							}
 						}
 				    }
 				}

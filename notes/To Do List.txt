@@ -9,3 +9,4 @@ TO DO | Rebase git source control as some commit comments are incorrect.
 TO DO | Look into constants.
 TO DO | Palette expand code now fully works but would benice to find away to make the code more symmetrical.
 TO DO | Go through comments to ensure spelling grammar and consistency.
+TO DO | See if sticky array can be removed.

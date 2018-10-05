@@ -22,11 +22,11 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			{
 				if stuck[current_sprite_id] == false  // Playes sound depending if sprite has been released or pressed
 				{
-					if global.edit_enabled == false then audio_play_sound(global.sounds[1], 0, false); // Play mouse click sound provided palette is not currently being edited
+					spt_sound(0, 0);	
 				}
 					else
 				{
-					if global.edit_enabled == false then audio_play_sound(global.sounds[0], 0, false); // Play mouse click sound provided palette is not currently being edited
+					spt_sound(0, 1);
 				}
 			}
 			

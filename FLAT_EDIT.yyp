@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "96f0b1a9-e029-4e2c-88c7-a3c5cd8b945e",
+            "Value": {
+                "id": "253c84fa-dcda-4ce0-a8b3-706d57f2a9e7",
+                "resourcePath": "scripts\\spt_sound\\spt_sound.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "6636aace-26d6-4c68-87cd-37d08cf27953",
@@ -328,7 +336,8 @@
         }
     ],
     "script_order": [
-        "809d016b-9dbc-42fe-b65d-537f0b25ebd6"
+        "809d016b-9dbc-42fe-b65d-537f0b25ebd6",
+        "96f0b1a9-e029-4e2c-88c7-a3c5cd8b945e"
     ],
     "tutorial": ""
 }
