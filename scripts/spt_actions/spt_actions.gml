@@ -53,24 +53,26 @@ with obj_grid // Prevents unknown variable error
                 
 					        x_limit = floor(x_limit * 2); // Half X limit
 					        y_limit = floor(y_limit * 2); // Half Y limit
-							
-							if cell_size = cell_min 
-							{
-								other.stuck[5] = true
-							}
-								else
-							{
-								other.stuck[5] = false;
-							}
 						}
 				    }
 				}
 			}
-		
+			
+			other.stuck[6] = false; // Unsticks zoom in button
+			
+			if cell_size = cell_min // Checks if minimum limit has been reached
+			{
+				other.stuck[5] = true; // Sticks zoom button
+			}
+				else
+			{
+				other.stuck[5] = false; // Unsticks zoom out button
+			}
+			
 			break;
 		
 			case 6: // Shift grid back to top most position (Zero)
-		
+			
 			if zoom_enabled == true  // prevents palette scrolling if it is not enabled
 			{
 				if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
@@ -90,7 +92,18 @@ with obj_grid // Prevents unknown variable error
 				    }
 				}
 			}
-	
+			
+			other.stuck[5] = false; // Unsticks zoom out button
+			
+			if cell_size = cell_max // Checks if maximum limit has been reached
+			{
+				other.stuck[6] = true; // Sticks zoom in button
+			}
+				else
+			{
+				other.stuck[6] = false; // Unsticks zoom in button
+			}
+			
 			break;
 		
 			case 7: // PAN GRID LEFT
@@ -188,6 +201,54 @@ with obj_grid // Prevents unknown variable error
 			
 			break;
 			
+			case 14: // Refresh
+			
+				show_message("refresh");
+			
+			break;
+			
+			case 15: // Undo max actions
+			
+				show_message("undo max");
+			
+			break;
+			
+			case 16: // Undo one action
+			
+				show_message("undo one");
+			
+			break;
+			
+			case 17: // Play
+			
+				show_message("play");
+			
+			break;
+			
+			case 18: // Pause
+			
+				show_message("pause");
+			
+			break;
+			
+			case 19: // Redo one action
+			
+				show_message("redo one");
+			
+			break;
+			
+			case 20: // Redo max actions
+			
+				show_message("redo max");
+			
+			break;
+			
+			case 21: // Controls
+			
+				show_message("controls");
+			
+			break;
+			
 			case 22: // Sound-FX
 		
 				global.sound_fx_enabled = !global.sound_fx_enabled; // Toggle Sound-FX
@@ -199,6 +260,43 @@ with obj_grid // Prevents unknown variable error
 				global.music_enabled = !global.music_enabled; // Toggle music
 			
 			break;
+			
+			case 24: // Settings
+			
+				show_message("settings");
+			
+			break;
+			
+			case 25: 
+			
+				show_message("load"); // Load
+			
+			break;
+			
+			case 26: // Save
+			
+				show_message("save");
+			
+			break;
+			
+			case 27: // Delete
+			
+				show_message("delete");
+			
+			break;
+						
+			case 28: // Info
+			
+				show_message("info");
+			
+			break;
+			
+			case 29: // Help
+			
+				show_message("help");
+			
+			break;
+
 		
 			case 30: // Quit
 		

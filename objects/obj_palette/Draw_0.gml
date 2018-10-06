@@ -89,5 +89,6 @@ if global.edit_enabled == true // Prevents border being drawn if edit is not ena
 
 if keyboard_check_pressed(vk_enter)
 {
-	sprite_limit ++;
+	//sprite_limit ++;
+	stuck[6] = true;
 }

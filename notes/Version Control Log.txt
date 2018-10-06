@@ -50,3 +50,4 @@ Version 0.0.4.4 | Fully tested. fully working.
 Version 0.0.4.5 | Grid zoom code now points to script. Some more button functions have been added. Grid can now be toggled. Additional global variables have been added.
 Version 0.0.4.6 | Fixed grid panning in wrong direction bug fixed. Inset code now works for pan arrow buttons in action script.
 Version 0.0.4.7 | Converted sound to script.
+Version 0.0.4.8 | More button functions added.
