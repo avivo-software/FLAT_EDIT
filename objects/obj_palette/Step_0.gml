@@ -138,6 +138,7 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 			if floor((mouse_x - x_offset) / current_sprite_width) > 0 // Prevents palette from freezing
 			{
 				temp_loop = round((mouse_x - x_offset - x_gap) / (current_sprite_width + x_gap));
+				
 				if temp_loop < sprite_limit + 1 then inner_loop = temp_loop; // Prevents border from being larger than the number of sprites
 				
 				outer_loop = ceil(sprite_limit / inner_loop); // Calculates inner loop preventing border from becoming too large

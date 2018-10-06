@@ -26,13 +26,15 @@ with obj_grid // Prevents unknown variable error
 		
 				x_shift = 0; // Sets grid X shift back to zero
 				
-				if x_shift == 0 then other.stuck[argument1] = true; // Sticks button down if minimum limit is reached
+				if x_shift == 0 then other.stuck[argument1] = true; // Sticks button down if limit is reached
 		
 			break;
 		
 			case 4: // Shift grid back to top most position (Zero)
 		
 				y_shift = 0; // Sets grid X shift back to zero
+				
+				if y_shift == 0 then other.stuck[argument1] = true; // Sticks button down if limit is reached
 		
 			break;
 		
@@ -203,49 +205,49 @@ with obj_grid // Prevents unknown variable error
 			
 			case 14: // Refresh
 			
-				show_message("refresh");
+				show_debug_message("refresh");
 			
 			break;
 			
 			case 15: // Undo max actions
 			
-				show_message("undo max");
+				show_debug_message("undo max");
 			
 			break;
 			
 			case 16: // Undo one action
 			
-				show_message("undo one");
+				show_debug_message("undo one");
 			
 			break;
 			
 			case 17: // Play
 			
-				show_message("play");
+				show_debug_message("play");
 			
 			break;
 			
 			case 18: // Pause
 			
-				show_message("pause");
+				show_debug_message("pause");
 			
 			break;
 			
 			case 19: // Redo one action
 			
-				show_message("redo one");
+				show_debug_message("redo one");
 			
 			break;
 			
 			case 20: // Redo max actions
 			
-				show_message("redo max");
+				show_debug_message("redo max");
 			
 			break;
 			
 			case 21: // Controls
 			
-				show_message("controls");
+				show_debug_message("controls");
 			
 			break;
 			
@@ -263,37 +265,37 @@ with obj_grid // Prevents unknown variable error
 			
 			case 24: // Settings
 			
-				show_message("settings");
+				show_debug_message("settings");
 			
 			break;
 			
 			case 25: 
 			
-				show_message("load"); // Load
+				show_debug_message("load"); // Load
 			
 			break;
 			
 			case 26: // Save
 			
-				show_message("save");
+				show_debug_message("save");
 			
 			break;
 			
 			case 27: // Delete
 			
-				show_message("delete");
+				show_debug_message("delete");
 			
 			break;
 						
 			case 28: // Info
 			
-				show_message("info");
+				show_debug_message("info");
 			
 			break;
 			
 			case 29: // Help
 			
-				show_message("help");
+				show_debug_message("help");
 			
 			break;
 

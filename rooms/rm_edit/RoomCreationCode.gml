@@ -2,6 +2,10 @@
 *                             CREATION CODE								*
 ************************************************************************/
 
+// SET CONSTANTS
+
+
+
 // INITIALIZE GENERAL GLOBALS
 
 global.edit_enabled = false; // Determines if objects can be resized or moved 
@@ -39,3 +43,4 @@ instance_create_layer(0, 0, layer_id, obj_palette); // Loads palette instance
 
 global.sounds[0] = snd_click_on; // Button click on sound (palette)
 global.sounds[1] = snd_click_off// Button click off sound (palette)
+

@@ -15,7 +15,7 @@ if global.edit_enabled == false
 		
 				case 1:
 		
-					audio_play_sound(global.sounds[snd_click_on], 0, false); // Play mouse click sound provided palette is not currently being edited
+					audio_play_sound(global.sounds[snd_click_off], 0, false); // Play mouse click sound provided palette is not currently being edited
 		
 				break;
 			}

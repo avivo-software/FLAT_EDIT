@@ -55,6 +55,7 @@ for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
    sticky[i] = true; // Initialize sticky array
 }
 
+
 // CALCULATES LOOPS
 
 inner_loop = sprite_limit; // Sets inner loop to tile root

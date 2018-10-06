@@ -90,16 +90,18 @@ if keyboard_check_released(global.controls[5]) // Checks if shift down key has b
 
 // ZOOM IN
 
-if mouse_wheel_up() // Checks to see if mouse was scrolled up
+if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Ensures mouse is inside grid before scrolling avoiding interference with other objects
 {
-	spt_actions(0, 5); // Run zoom in code
-}
+	if mouse_wheel_up() // Checks to see if mouse was scrolled up
+	{
+		spt_actions(0, 5); // Run zoom in code
+	}
 
-if mouse_wheel_down() // Checks to see if mouse was scrolled down
-{
-	spt_actions(0, 6); // Run zoom out code
+	if mouse_wheel_down() // Checks to see if mouse was scrolled down
+	{
+		spt_actions(0, 6); // Run zoom out code
+	}
 }
-
 
 /***********************************************************************
 *                         EXPAND AND MOVE GRID                         *       
