@@ -52,3 +52,4 @@ Version 0.0.4.6 | Fixed grid panning in wrong direction bug fixed. Inset code no
 Version 0.0.4.7 | Converted sound to script.
 Version 0.0.4.8 | More button functions added.
 Version 0.0.4.9 | Pan to top button has been fixed. Grid now only zooms when mouse is inside grid.
+Version 0.0.5.0 | Grid can no longer be expanded past hard limits. 
