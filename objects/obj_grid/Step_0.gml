@@ -90,7 +90,7 @@ if keyboard_check_released(global.controls[5]) // Checks if shift down key has b
 
 // ZOOM IN
 
-if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Ensures mouse is inside grid before scrolling avoiding interference with other objects
+if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Ensures mouse is inside grid before scrolling avoiding interference with obj_palette objects
 {
 	if mouse_wheel_up() // Checks to see if mouse was scrolled up
 	{
@@ -115,7 +115,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 
     if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer, y_offset - buffer, x_offset + buffer, y_offset + buffer) // Check that mouse is in move grid area
     {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
         {
             window_set_cursor(cr_size_all); // Sets cursor to move cursor
             global.border_selection_id = unique_id; // Locks grid for editing
@@ -131,7 +131,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 
     if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand up, down area
     {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
         {
             window_set_cursor(cr_size_ns); // Sets cursor to up, down arrow
             global.border_selection_id = unique_id; // Locks grid for editing
@@ -147,7 +147,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 
     if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand left, right area
     {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
         {
             window_set_cursor(cr_size_we); // Sets cursor to left, right arrow
             global.border_selection_id = unique_id; // Locks grid for editing
@@ -165,7 +165,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 	
     if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand diagonal area
     {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
         {
             window_set_cursor(cr_size_nwse); // Sets cursor to diagonal top left
             global.border_selection_id = unique_id; // Locks grid for editing
@@ -176,7 +176,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 	
     if mouse_check_button(global.controls[0]) // Check if select button is pressed
     {
-        if global.border_selection_id == unique_id // Prevents other objects from being moved while grid is being moved
+        if global.border_selection_id == unique_id // Prevents obj_palette objects from being moved while grid is being moved
         {
             if window_get_cursor() == cr_size_all // Checks if current cursor is set to move cursor
             {
@@ -218,7 +218,6 @@ if global.edit_enabled == true // Ensures grid can be modified
 					{
 						x_limit = floor((mouse_x - x_offset) / (cell_size + line_thickness)); // Recalculates X Limit based on mouse Y possition
 					}
-					
 				}
 					else
 				{
@@ -252,7 +251,6 @@ if global.edit_enabled == true // Ensures grid can be modified
 					{
 						x_limit = floor((mouse_x - x_offset) / (cell_size + line_thickness)); // Recalculates X Limit based on mouse Y possition
 					}
-					
 				}
 					else
 				{
@@ -263,7 +261,7 @@ if global.edit_enabled == true // Ensures grid can be modified
     }
         else
     {
-        global.border_selection_id = 0; // Frees up other objects to be moved and manipulated
+        global.border_selection_id = 0; // Frees up obj_palette objects to be moved and manipulated
     }
 }
 

@@ -29,8 +29,8 @@ y_scale = 1; // Sets Y scale tile
 cell_min = 32; // Sets the minimum size of the grid
 cell_max = 256; // Sets the maximum size of the grid
 
-hard_x_limit = 32; // Sets a maximum size for the level in the x direction
-hard_y_limit = 20; // Sets a maximum size for the level in the y direction
+hard_x_limit = 128; // Sets a maximum size for the level in the x direction
+hard_y_limit = 64; // Sets a maximum size for the level in the y direction
 
 grid_visible = true; // Sets if grid is visible
 

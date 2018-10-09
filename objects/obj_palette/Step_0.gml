@@ -52,10 +52,10 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 	
 	if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer, y_offset - buffer, x_offset + buffer, y_offset + buffer) // Checks if cursor is in move palette area
 	{
-		if global.border_selection_id == !unique_id // Prevents and active item from interfering with other moveable objects
+		if global.border_selection_id == !unique_id // Prevents and active item from interfering with obj_palette moveable objects
 		{
 			window_set_cursor(cr_size_all); // Sets cursor to move cursor
-			global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
+			global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 		}
 	}
 
@@ -63,10 +63,10 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 
 	if point_in_rectangle(mouse_x, mouse_y, x_offset, border_y2 - buffer, border_x2 - buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
 	{
-	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
 	    {
 	        window_set_cursor(cr_size_ns); // Sets cursor to up, down arrow
-	        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
+	        global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 	    }
 	}
 
@@ -74,10 +74,10 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 
 	if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, y_offset, border_x2 + buffer, border_y2 - buffer) // Check that mouse is in expand up, down area
 	{
-	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
 	    {
 	        window_set_cursor(cr_size_we); // Sets cursor to up, down arrow
-	        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
+	        global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 	    }
 	}
 
@@ -85,10 +85,10 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 
 	if point_in_rectangle(mouse_x, mouse_y, border_x2 - buffer, border_y1 - buffer, border_x2 + buffer, border_y2 + buffer) // Check that mouse is in expand up, down area
 	{
-	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
 	    {
 	        window_set_cursor(cr_size_nwse); // Sets cursor to up, down arrow
-	        global.border_selection_id = unique_id; // Prevents other objects being moved while current one is in use
+	        global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 	    }
 	}
 }
@@ -100,7 +100,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 	
 if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 {
-	if global.border_selection_id == unique_id // Prevents other objects being interacted with at same time
+	if global.border_selection_id == unique_id // Prevents obj_palette objects being interacted with at same time
 	{
 		// MOVE OBJECT
 		

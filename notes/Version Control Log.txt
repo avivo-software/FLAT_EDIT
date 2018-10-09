@@ -54,3 +54,4 @@ Version 0.0.4.8 | More button functions added.
 Version 0.0.4.9 | Pan to top button has been fixed. Grid now only zooms when mouse is inside grid.
 Version 0.0.5.0 | Grid can no longer be expanded past hard limits. 
 Version 0.0.5.1 | Re-coded Zoom and expand code.
+Version 0.0.5.2 | Fixed button states.

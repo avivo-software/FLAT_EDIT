@@ -12,7 +12,7 @@ if grid_visible == true // Checks if grid is visible to the user
 	{
 		x = x_offset + cell_size * i; // Calculates X coordinates
 
-	    draw_line_width_colour(x + (line_thickness * i), y_offset, x + (line_thickness * i), y_max + y_offset + (line_thickness * y_limit), line_thickness, grid_colour, grid_colour); // Draws the line
+	    if grid_enabled = true then draw_line_width_colour(x + (line_thickness * i), y_offset, x + (line_thickness * i), y_max + y_offset + (line_thickness * y_limit), line_thickness, grid_colour, grid_colour); // Draws the line
 	
 		if i < x_limit // Prevents numbers from being drawn outside of visible grid area
 		{
@@ -39,7 +39,7 @@ if grid_visible == true // Checks if grid is visible to the user
 	{
 		y = y_offset + cell_size * i; // Calculates Y coordinates
 		
-		draw_line_width_colour(x_offset, y + (line_thickness * i), x_max + x_offset + (line_thickness * x_limit), y + (line_thickness * i), line_thickness, grid_colour, grid_colour); // Draws the line
+		if grid_enabled = true then draw_line_width_colour(x_offset, y + (line_thickness * i), x_max + x_offset + (line_thickness * x_limit), y + (line_thickness * i), line_thickness, grid_colour, grid_colour); // Draws the line
 		
 		if i < y_limit // Prevents numbers from being drawn outside of visible grid area
 		{
