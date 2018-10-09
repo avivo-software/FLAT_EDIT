@@ -66,3 +66,6 @@ if grid_visible == true // Checks if grid is visible to the user
 									DEBUG								*
 *************************************************************************/
 
+if keyboard_check_pressed(vk_space)
+{
+}

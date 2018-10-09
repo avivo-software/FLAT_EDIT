@@ -38,72 +38,38 @@ with obj_grid // Prevents unknown variable error
 		
 			break;
 		
-			case 5: // Shift grid back to far most left position (Zero)
-			
-			if zoom_enabled == true  // prevents palette scrolling if it is not enabled
+			case 5: // Zoom out	
+
+			if cell_size > cell_min
 			{
-				if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
-				{
-				    if cell_size > cell_min // Ensures grid can't be zoomed outside of specified limits
-				    {
-						if y_limit > 1 // Prevents y_limit from being zero
-						{
-					        cell_size = cell_size / 2; // Doubles cell size
+				cell_size = cell_size / 2; // Doubles cell size
                 
-					        x_scale = x_scale / 2; // Double X scale
-					        y_scale = y_scale / 2; // Double Y scale
+				x_scale = x_scale / 2; // Double X scale
+				y_scale = y_scale / 2; // Double Y scale
                 
-					        x_limit = floor(x_limit * 2); // Half X limit
-					        y_limit = floor(y_limit * 2); // Half Y limit
-						}
-				    }
-				}
+				x_limit = floor(x_limit * 2); // Half X limit
+				y_limit = floor(y_limit * 2); // Half Y limit
 			}
 			
-			other.stuck[6] = false; // Unsticks zoom in button
+			if x_shift + x_limit > hard_x_limit then x_shift = x_shift - (x_limit / 2); // Ensures hard X limit is not breached
+			if y_shift + y_limit > hard_y_limit then y_shift = y_shift - (y_limit / 2); // Ensures hard Y limit is not breached
 			
-			if cell_size = cell_min // Checks if minimum limit has been reached
-			{
-				other.stuck[5] = true; // Sticks zoom button
-			}
-				else
-			{
-				other.stuck[5] = false; // Unsticks zoom out button
-			}
+			if x_shift < 0 then x_shift = 0; // Ensures grid can't be panned to negitive numbers X
+			if y_shift < 0 then y_shift = 0; // Ensures grid can't be panned to negitive numbers Y
 			
 			break;
 		
-			case 6: // Shift grid back to top most position (Zero)
+			case 6: // Zoom in
 			
-			if zoom_enabled == true  // prevents palette scrolling if it is not enabled
+			if cell_size < cell_max
 			{
-				if cell_size * 2 < x_max // Prevents error (Can't zoom past hard Y limit)
-				{
-				    if cell_size < cell_max // Ensures grid can't be zoomed outside of specified limits
-				    {
-						if y_limit > 1 // Prevents y_limit from being zero
-						{
-					        cell_size = cell_size * 2; // Doubles cell size
+				cell_size = cell_size * 2; // Doubles cell size
                 
-					        x_scale = x_scale * 2; // Double X scale
-					        y_scale = y_scale * 2; // Double Y scale
+				x_scale = x_scale * 2; // Double X scale
+				y_scale = y_scale * 2; // Double Y scale
                 
-					        x_limit = floor(x_limit / 2); // Half X limit
-					        y_limit = floor(y_limit / 2); // Half Y limit
-						}
-				    }
-				}
-			}
-			
-			other.stuck[5] = false; // Unsticks zoom out button
-			
-			if cell_size = cell_max // Checks if maximum limit has been reached
-			{
-				other.stuck[6] = true; // Sticks zoom in button
-			}
-				else
-			{
-				other.stuck[6] = false; // Unsticks zoom in button
+				x_limit = floor(x_limit / 2); // Half X limit
+				y_limit = floor(y_limit / 2); // Half Y limit
 			}
 			
 			break;

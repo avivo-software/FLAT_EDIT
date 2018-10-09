@@ -94,12 +94,12 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 {
 	if mouse_wheel_up() // Checks to see if mouse was scrolled up
 	{
-		spt_actions(0, 5); // Run zoom in code
+		spt_actions(0, 6); // Run zoom in code
 	}
 
 	if mouse_wheel_down() // Checks to see if mouse was scrolled down
 	{
-		spt_actions(0, 6); // Run zoom out code
+		spt_actions(0, 5); // Run zoom out code
 	}
 }
 
@@ -204,7 +204,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 				}
 					else
 				{
-					y_limit = 1; // Ensures griddoes not stick
+					y_limit = 1; // Ensures grid does not stick
 				}
 	        }
 			
@@ -218,7 +218,8 @@ if global.edit_enabled == true // Ensures grid can be modified
 					{
 						x_limit = floor((mouse_x - x_offset) / (cell_size + line_thickness)); // Recalculates X Limit based on mouse Y possition
 					}
-			}
+					
+				}
 					else
 				{
 					x_limit = 1; // Ensures griddoes not stick
@@ -229,14 +230,33 @@ if global.edit_enabled == true // Ensures grid can be modified
 		
             if window_get_cursor() == cr_size_nwse // Checks if current cursor is set to top, left cursor
             {	
-				if floor((mouse_x - x_offset) / cell_size) > 1 // Prevents grid from becoming invisible
-				{
-					x_limit = floor((mouse_x - x_offset) / (cell_size + line_thickness)); // Recalculates X Limit based on mouse X possition
-				}
+				// EXPAND Y
 				
 				if floor((mouse_y - y_offset) / cell_size) > 1 // Prevents grid from becoming invisible
 				{
-					y_limit = floor((mouse_y - y_offset) / (cell_size + line_thickness)); // Recalculates Y Limit based on mouse Y possition
+					if floor((mouse_y - y_offset) / (cell_size + line_thickness)) < hard_y_limit + 1
+					{
+						y_limit = floor((mouse_y - y_offset) / (cell_size + line_thickness)); // Recalculates Y Limit based on mouse Y possition
+					}
+				}
+					else
+				{
+					y_limit = 1; // Ensures grid does not stick
+				}
+				
+				// EXPAND X
+				
+				if floor((mouse_x - x_offset) / cell_size) > 1 // Prevents grid from becoming invisible
+				{
+					if floor((mouse_x - x_offset) / (cell_size + line_thickness)) < hard_x_limit + 1
+					{
+						x_limit = floor((mouse_x - x_offset) / (cell_size + line_thickness)); // Recalculates X Limit based on mouse Y possition
+					}
+					
+				}
+					else
+				{
+					x_limit = 1; // Ensures griddoes not stick
 				}
             }
         }

@@ -39,7 +39,6 @@ current_number_colour = c_white; //
 number_select_colour = c_red; // Sets colour of selected number
 number_non_select_colour = c_white; // Sets colour of non-selected numbers
 
-//in_scope = false; // Determines if mouse is in grid or not
 grid_enabled = true; // Determines if grid should be drawn
 numbers_enabled = true; // Determines if grid numbers are visible
 zoom_enabled = true; // Allows palette to be scrolled

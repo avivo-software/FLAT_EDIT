@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "34c65db8-eae0-4ab1-84df-cd09f9901fdc",
+            "Value": {
+                "id": "ef1ca02e-24ee-4d96-a0a5-560540e9daa7",
+                "resourcePath": "sounds\\snd_cancel\\snd_cancel.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "3a9bd628-ff6d-4cb3-a553-ca3db2ea1668",
             "Value": {
                 "id": "1b0f3251-b613-4bac-afee-b60e3bd5e1e8",

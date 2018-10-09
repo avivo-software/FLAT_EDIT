@@ -43,4 +43,4 @@ instance_create_layer(0, 0, layer_id, obj_palette); // Loads palette instance
 
 global.sounds[0] = snd_click_on; // Button click on sound (palette)
 global.sounds[1] = snd_click_off// Button click off sound (palette)
-
+global.sounds[2] = snd_cancel; // Button cancel sound
