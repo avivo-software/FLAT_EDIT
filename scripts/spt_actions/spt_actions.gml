@@ -51,18 +51,30 @@ with obj_grid // Prevents unknown variable error
                 
 				x_limit = floor(x_limit * 2); // Half X limit
 				y_limit = floor(y_limit * 2); // Half Y limit
+				
+				if x_limit + x_shift >= hard_x_limit then x_shift = x_shift - x_limit; // Ensures hard X limit is not breached
+				if y_limit + y_shift >= hard_y_limit then y_shift = y_shift - y_limit; // Ensures hard Y limit is not breached
 			}
+			
+			// TOGGLE BUTTON STATUS
 			
 			if cell_size = cell_min // Checks if cell size is less than minimum cell size
 			{
 				obj_palette.stuck[5] = true; // Sticks zoom out button
 			}
+				else
+			{
+				obj_palette.stuck[5] = false; // Unticks zoom in button
+			}
 			
-			if x_shift + x_limit > hard_x_limit then x_shift = x_shift - (x_limit / 2); // Ensures hard X limit is not breached
-			if y_shift + y_limit > hard_y_limit then y_shift = y_shift - (y_limit / 2); // Ensures hard Y limit is not breached
-			
-			if x_shift < 0 then x_shift = 0; // Ensures grid can't be panned to negitive numbers X
-			if y_shift < 0 then y_shift = 0; // Ensures grid can't be panned to negitive numbers Y
+			if cell_size = cell_min // Checks if cell size is at minimum limit
+			{
+				obj_palette.stuck[5] = true; // Sticks zoom out button
+			}
+				else
+			{
+				obj_palette.stuck[5] = false; // Unsticks zoom out button
+			}
 			
 			break;
 		
@@ -81,9 +93,15 @@ with obj_grid // Prevents unknown variable error
 				y_limit = floor(y_limit / 2); // Half Y limit
 			}
 			
-			if cell_size = cell_max // Greys out zoom in button
+			// TOGGLE BUTTON STATUS
+			
+			if cell_size = cell_max // Checks if cell size is at maximum limit
 			{
-				obj_palette.stuck[6] = true; // Sticks zoom out button
+				obj_palette.stuck[6] = true; // Sticks zoom in button
+			}
+				else
+			{
+				obj_palette.stuck[6] = false; // Unsticks zoom out button
 			}
 			
 			break;

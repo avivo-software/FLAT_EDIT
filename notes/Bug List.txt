@@ -12,6 +12,6 @@ BUG | Some grid lines are missing when line thickness is set to 1. Fixed 0.0.3.7
 BUG | Mouse is in incorrect possition when expanding grid if grid thickness is larger than 1. Fixed in 0.0.3.8
 BUG | Grid disappears when made too small. Fixed in 0.0.3.8
 BUG | Palette behaves strangely when sprite limit is low. Fixed in 0.0.4.5
-BUG | Grid goes beyond hard limits if zoomed out.
+BUG | Grid goes beyond hard limits if zoomed out. Fixed 0.0.5.1
 BUG | Grid panning is in wrong direction. Fixed in 0.0.4.6
-BUG | Buttons do not have correct stuck setting when panning using keyboard keys.
+BUG | Buttons do not have correct stuck setting when panning using keyboard keys. (Fixed 0.0.5.1)
