@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "1f80712d-89d5-4998-84af-9619d4df81a4",
+            "Value": {
+                "id": "585539a1-fe4d-489a-8ad8-16fcbf00a97a",
+                "resourcePath": "objects\\obj_slide\\obj_slide.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2178d006-7330-4a72-9268-86e84676a3ab",
             "Value": {
                 "id": "3ec450cc-8b42-4323-a1fe-41c92ad1fd32",
@@ -124,6 +132,14 @@
                 "id": "88a22ffd-faf2-4b63-b66d-1873f3f6a5cb",
                 "resourcePath": "views\\3c7f1825-7268-4726-8e17-f97cf06e5356.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3cf2b55a-9a3a-46b1-9054-256511721a51",
+            "Value": {
+                "id": "f64a8aa8-a64b-4d7e-8023-0c3fbace6893",
+                "resourcePath": "objects\\obj_buttons\\obj_buttons.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -295,6 +311,14 @@
             }
         },
         {
+            "Key": "aa9015e7-9573-42cb-8ad6-8379e6152e6b",
+            "Value": {
+                "id": "2590c3f8-0da4-41bd-98f5-11afc89410f4",
+                "resourcePath": "sprites\\spr_backgrounds_colour\\spr_backgrounds_colour.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "aefd8df5-a844-478c-8acf-7c1404a25006",
             "Value": {
                 "id": "2381a25d-44ea-4003-8e17-1995ce58efa8",
@@ -380,6 +404,14 @@
                 "id": "8a1fbec1-b60e-4d1e-8a88-dd1a97950015",
                 "resourcePath": "views\\cebfb3a2-11cb-4956-ad2d-051bb8aa5cc0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "da188922-e1fe-4269-81ab-aabf8eb06bb2",
+            "Value": {
+                "id": "ccf2a83e-9ede-4c6f-8ae8-ab51df6c2b9e",
+                "resourcePath": "sprites\\spr_backgrounds_grey\\spr_backgrounds_grey.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

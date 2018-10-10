@@ -300,3 +300,33 @@ with obj_grid // Prevents unknown variable error
 		}
 	}
 }
+
+// SLIDE
+
+if argument0 = 1 // Checks if action type is buttons
+{
+	// Sets toggle status for all slides
+	
+	for (i = 0; i < sprite_qty; ++i) // Loops through slides
+	{
+	    stuck[i] = false; // Unsticks slides
+	}
+	
+	stuck[argument1] = true; // Sticks selected slide
+	
+	switch argument1 // Determines selected sprite
+	{
+		
+		case 0: // Toggle temple tileset
+		
+			tilemap_tileset("lyr_collide", tl_temple); // Toggle current tileset to temple
+		
+		break;
+		
+		case 1: // Toggle city tileset
+		
+			tilemap_tileset("lyr_collide", tl_city); // Toggle current tileset to city
+		
+		break;
+	}
+}

@@ -5,7 +5,6 @@
 // SET CONSTANTS
 
 
-
 // INITIALIZE GENERAL GLOBALS
 
 global.edit_enabled = false; // Determines if objects can be resized or moved 
@@ -36,8 +35,9 @@ global.controls[5] = vk_down; // Move down
 
 layer_id = layer_get_id("lyr_gui"); // Gets GUI layer ID
 
-instance_create_layer(0, 0, layer_id, obj_grid); // Loads grid instance
-instance_create_layer(0, 0, layer_id, obj_palette); // Loads palette instance
+instance_create_layer(0, 0, layer_id, obj_grid); // Loads grid object
+instance_create_layer(0, 0, layer_id, obj_buttons); // Loads palette object
+instance_create_layer(0, 0, layer_id, obj_slide); // Loads place object
 
 // INITIALIZE SOUND VARIABLES
 

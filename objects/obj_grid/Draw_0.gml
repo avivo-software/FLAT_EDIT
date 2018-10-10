@@ -20,7 +20,7 @@ if grid_visible == true // Checks if grid is visible to the user
 			{
 				x = x_offset + cell_size / 2 - font_width / 2 + i * cell_size + line_thickness / 2 + line_thickness * i; // Calculates X possition for next number 
 				y = y_offset - numbers_gap - font_height; // Calculates Y possition for next number
-					
+				
 				if i == x_pos - x_shift // Checks if X possition is current number
 				{
 					draw_text_colour(x, y, i + x_shift, number_select_colour, number_select_colour, number_select_colour, number_select_colour, 1); // Draws selected number
@@ -61,15 +61,3 @@ if grid_visible == true // Checks if grid is visible to the user
 	}
 }
 
-
-/************************************************************************
-									DEBUG								*
-*************************************************************************/
-
-if keyboard_check_pressed(vk_space)
-{
-	lay_id = layer_get_id("lyr_collide");
-	tile_id = layer_tilemap_get_id(lay_id);
-	tilemap_tileset(tile_id, tl_city);
-	
-}
