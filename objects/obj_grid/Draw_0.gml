@@ -68,4 +68,8 @@ if grid_visible == true // Checks if grid is visible to the user
 
 if keyboard_check_pressed(vk_space)
 {
+	lay_id = layer_get_id("lyr_collide");
+	tile_id = layer_tilemap_get_id(lay_id);
+	tilemap_tileset(tile_id, tl_city);
+	
 }

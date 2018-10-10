@@ -58,18 +58,11 @@ with obj_grid // Prevents unknown variable error
 			
 			// TOGGLE BUTTON STATUS
 			
-			if cell_size = cell_min // Checks if cell size is less than minimum cell size
-			{
-				obj_palette.stuck[5] = true; // Sticks zoom out button
-			}
-				else
-			{
-				obj_palette.stuck[5] = false; // Unticks zoom in button
-			}
-			
 			if cell_size = cell_min // Checks if cell size is at minimum limit
 			{
 				obj_palette.stuck[5] = true; // Sticks zoom out button
+				spt_sound(0, 2); // Play cancel sound effect
+				
 			}
 				else
 			{
@@ -98,6 +91,7 @@ with obj_grid // Prevents unknown variable error
 			if cell_size = cell_max // Checks if cell size is at maximum limit
 			{
 				obj_palette.stuck[6] = true; // Sticks zoom in button
+				spt_sound(0, 2); // Play cancel sound effect
 			}
 				else
 			{

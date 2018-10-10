@@ -56,3 +56,4 @@ Version 0.0.5.0 | Grid can no longer be expanded past hard limits.
 Version 0.0.5.1 | Re-coded Zoom and expand code.
 Version 0.0.5.2 | Fixed button states.
 Version 0.0.5.3 | Ready for next full test.
+Version 0.0.5.4 | Added some graphics ready for next stage of project.
