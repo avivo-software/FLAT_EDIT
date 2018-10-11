@@ -58,11 +58,18 @@ with obj_grid // Prevents unknown variable error
 			
 			// TOGGLE BUTTON STATUS
 			
+			if cell_size = cell_min // Checks if cell size is less than minimum cell size
+			{
+				obj_palette.stuck[5] = true; // Sticks zoom out button
+			}
+				else
+			{
+				obj_palette.stuck[5] = false; // Unticks zoom in button
+			}
+			
 			if cell_size = cell_min // Checks if cell size is at minimum limit
 			{
 				obj_palette.stuck[5] = true; // Sticks zoom out button
-				spt_sound(0, 2); // Play cancel sound effect
-				
 			}
 				else
 			{
@@ -91,7 +98,6 @@ with obj_grid // Prevents unknown variable error
 			if cell_size = cell_max // Checks if cell size is at maximum limit
 			{
 				obj_palette.stuck[6] = true; // Sticks zoom in button
-				spt_sound(0, 2); // Play cancel sound effect
 			}
 				else
 			{
@@ -298,35 +304,5 @@ with obj_grid // Prevents unknown variable error
 		
 			break;
 		}
-	}
-}
-
-// SLIDE
-
-if argument0 = 1 // Checks if action type is buttons
-{
-	// Sets toggle status for all slides
-	
-	for (i = 0; i < sprite_qty; ++i) // Loops through slides
-	{
-	    stuck[i] = false; // Unsticks slides
-	}
-	
-	stuck[argument1] = true; // Sticks selected slide
-	
-	switch argument1 // Determines selected sprite
-	{
-		
-		case 0: // Toggle temple tileset
-		
-			tilemap_tileset("lyr_collide", tl_temple); // Toggle current tileset to temple
-		
-		break;
-		
-		case 1: // Toggle city tileset
-		
-			tilemap_tileset("lyr_collide", tl_city); // Toggle current tileset to city
-		
-		break;
 	}
 }

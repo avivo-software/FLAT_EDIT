@@ -1,31 +1,28 @@
-if global.edit_enabled == false // Prevents Sound-FX from playing if edit mode is enabled
+if global.edit == false
 {
-	if global.sound_fx_enabled == true // Stops Sound-FX playing if is disabled
+	if global.sound_fx_enabled == true
 	{
 		if argument0 == 0
 		{
 			switch argument1
 			{
-				case 0: // Play click on
+				case 0:
 				{
 					audio_play_sound(global.sounds[snd_click_on], 0, false); // Play mouse click sound provided palette is not currently being edited
 			
 					break;
 				}
 		
-				case 1: // Play click off sound
+				case 1:
 		
 					audio_play_sound(global.sounds[snd_click_off], 0, false); // Play mouse click sound provided palette is not currently being edited
 		
 				break;
 				
-				case 2: // Play cancel sound
+				case 2:
 		
-					if !audio_is_playing(global.sounds[snd_cancel]) // Prevents sound from over lapping
-					{
-						audio_play_sound(global.sounds[snd_cancel], 0, false); // Play mouse click sound provided palette is not currently being edited
-					}
-					
+					audio_play_sound(global.sounds[snd_cancel], 0, false); // Play mouse click sound provided palette is not currently being edited
+		
 				break;
 			}
 		}

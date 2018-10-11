@@ -18,12 +18,22 @@ border_y2 = y_offset + ((cell_size + line_thickness) * y_limit); // Y2 border co
 *              DETERMINES GRID COORDINATES BASED ON MOUSE              *       
 ***********************************************************************/
 
-if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Ensures mouse in grid preventing negative numbers from being reported
-{
-	x_pos = floor((mouse_x - x_offset) / (cell_size + line_thickness)) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
-	y_pos = floor((mouse_y - y_offset) / (cell_size + line_thickness)) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
-}
+x_pos = floor((mouse_x - x_offset) / (cell_size + line_thickness)) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
+y_pos = floor((mouse_y - y_offset) / (cell_size + line_thickness)) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
 
+
+/***********************************************************************
+*          DETERMINES IF MOUSE IS INSIDE OR OUTSIDE THE GRID           *       
+***********************************************************************/
+
+if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + ((cell_size + line_thickness) * x_limit) + line_thickness, y_offset + ((cell_size + line_thickness) * y_limit) + line_thickness) // Checks if mouse is inside grid
+{
+    mouse_in_grid = true; // Sets mouse_in_grid_status to true
+}
+    else
+{
+    mouse_in_grid = false; // Sets mouse_in_grid_status to false
+}
 
 /***********************************************************************
 *                         SETS FONT VARIABLES                          *       
@@ -97,7 +107,7 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 *                         EXPAND AND MOVE GRID                         *       
 ***********************************************************************/
 
-if global.edit_enabled == true // Ensures grid can be modified
+if global.edit == true // Ensures grid can be modified
 {
     if !mouse_check_button(global.controls[0]) then window_set_cursor(cr_arrow); // Sets cursor back to default as long as an operation is not active
 

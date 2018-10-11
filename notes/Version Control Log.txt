@@ -57,5 +57,5 @@ Version 0.0.5.1 | Re-coded Zoom and expand code.
 Version 0.0.5.2 | Fixed button states.
 Version 0.0.5.3 | Ready for next full test.
 Version 0.0.5.4 | Added some graphics ready for next stage of project.
-Version 0.0.5.5 | Started to implement child palette code.
 Version 0.0.5.6 | Added slide.
+Version 0.0.5.7 | Sub palettes have been set up.

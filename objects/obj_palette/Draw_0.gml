@@ -32,7 +32,7 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			
 			if mouse_check_button_pressed(global.controls[0]) // Checks if mouse is clicked 
 			{
-				if global.edit_enabled == false // Prevents sprites being interacted with when edit mode is enabled
+				if global.edit == false // Prevents sprites being interacted with when edit mode is enabled
 				{
 					stuck[current_sprite_id] = !stuck[current_sprite_id]; // Toggles sprite status 
 					last_selection = current_sprite_id; // Updates last selection ID
@@ -74,7 +74,7 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 *							DRAW RECTANGLE BORDER			    			*
 ****************************************************************************/
 
-if global.edit_enabled == true // Prevents border being drawn if edit is not enabled
+if global.edit == true // Prevents border being drawn if edit is not enabled
 {
 	if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Checks if mouse is in palette edit boundry
 	{
@@ -89,6 +89,5 @@ if global.edit_enabled == true // Prevents border being drawn if edit is not ena
 
 if keyboard_check_pressed(vk_enter)
 {
-	//sprite_limit ++;
-	stuck[6] = true;
+	global.edit_enabled = !global.edit_enabled;
 }
