@@ -306,3 +306,40 @@ with obj_grid // Prevents unknown variable error
 		}
 	}
 }
+
+// CHECKS SLIDES
+
+if argument0 == 1 or 2 then // Checks if action type is slide
+{
+	for(i = 0; i < obj_tiles.sprite_qty + 1; i++) // Loop through slides
+	{
+	    obj_tiles.stuck[i] = false; // Unsticks all slides
+	}
+	
+	obj_tiles.stuck[argument1] = true; // Sticks selected slide
+	
+	switch argument1 // Determines which slide hasbeen selected
+	{
+
+		case 0: // Checks if temple slideis selected
+		
+			tilemap_tileset("lyr_collide", tl_city); // Switch tileset to city
+			
+			obj_tiles.current_sprite = spr_city_tile_colour; // Sets current tile palette to city
+			obj_tiles.primary_sprite = spr_city_tile_colour; // Sets primary sprite to city
+			obj_tiles.secondary_sprite = spr_city_tile_grey; // Sets secondary sprite to city
+		
+		break;
+		
+		case 1: // Checks if temple slideis selected
+		
+			tilemap_tileset("lyr_collide", tl_temple); // Switch tileset to temple
+			
+			obj_tiles.current_sprite = spr_temple_tile_colour; // Sets tile palette to temple
+			obj_tiles.primary_sprite = spr_temple_tile_colour; // Sets primary sprite to temple
+			obj_tiles.secondary_sprite = spr_temple_tile_grey; // Sets secondary sprite to city
+		
+		break;
+	}
+}
+

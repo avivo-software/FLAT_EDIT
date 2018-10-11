@@ -46,7 +46,7 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 *								SET CURSOR							   *       
 ***********************************************************************/
 
-if global.edit == true // Prevents palette from being manipulated when edit mode is disabled
+if global.edit_enabled == true // Prevents palette from being manipulated when edit mode is disabled
 {
 	// DETECTS IF MOUSE CURSOR IS IN MOVE ZONE
 	
@@ -179,8 +179,8 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 
 if keyboard_check_pressed(vk_space)
 {
-	global.edit = !global.edit;
-	show_debug_message(global.edit);
+	global.edit_enabled = !global.edit_enabled;
+	show_debug_message(global.edit_enabled);
 }
 
 

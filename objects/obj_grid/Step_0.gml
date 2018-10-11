@@ -107,7 +107,7 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 *                         EXPAND AND MOVE GRID                         *       
 ***********************************************************************/
 
-if global.edit == true // Ensures grid can be modified
+if global.edit_enabled == true // Ensures grid can be modified
 {
     if !mouse_check_button(global.controls[0]) then window_set_cursor(cr_arrow); // Sets cursor back to default as long as an operation is not active
 

@@ -7,7 +7,7 @@
 
 // INITIALIZE GENERAL GLOBALS
 
-global.edit = true; // Determines if objects can be resized or moved 
+global.edit_enabled = true; // Determines if objects can be resized or moved 
 global.border_selection_id = 0; // Determines which palette has been selected
 
 global.sound_fx_enabled = true; // Toggles Sound-FX

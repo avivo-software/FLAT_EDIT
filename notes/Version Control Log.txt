@@ -59,3 +59,4 @@ Version 0.0.5.3 | Ready for next full test.
 Version 0.0.5.4 | Added some graphics ready for next stage of project.
 Version 0.0.5.6 | Added slide.
 Version 0.0.5.7 | Sub palettes have been set up.
+Version 0.0.5.8 | Ready for place code and testing.

@@ -22,8 +22,8 @@ current_y_scale = 0.5; // Determines current Y scale
 primary_x_scale = 0.5; // Determines the primary X scale
 primary_y_scale = 0.5; // Determines the primary Y scale
 
-secondary_x_scale = 0.24; // Determines the secondary X scale
-secondary_y_scale = 0.24; // Determines the secondary Y scale
+secondary_x_scale = 0.49; // Determines the secondary X scale
+secondary_y_scale = 0.49; // Determines the secondary Y scale
 
 scale_differential = 0.01; // The difference in percentage between primary and secondary scale
 

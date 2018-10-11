@@ -1,4 +1,4 @@
-if global.edit == false
+if global.edit_enabled == false
 {
 	if global.sound_fx_enabled == true
 	{
