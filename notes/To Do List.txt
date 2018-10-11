@@ -11,4 +11,5 @@ TO DO | Palette expand code now fully works but would benice to find away to mak
 TO DO | Go through comments to ensure spelling grammar and consistency.
 TO DO | See if sticky array can be removed.
 TO DO | Improve zoom code.
-TO DO | .
+TO DO | Look in to making grid the same border size regardless of size.
+TO DO | Look over all bugs and ensure their validity.

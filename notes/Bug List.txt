@@ -15,3 +15,5 @@ BUG | Palette behaves strangely when sprite limit is low. Fixed in 0.0.4.5
 BUG | Grid goes beyond hard limits if zoomed out. Fixed 0.0.5.1
 BUG | Grid panning is in wrong direction. Fixed in 0.0.4.6
 BUG | Buttons do not have correct stuck setting when panning using keyboard keys. (Fixed 0.0.5.1)
+BUG | Expanding palettes into out of bounds areas can restrict the movement of the palette in edit mode.
+BUG | .

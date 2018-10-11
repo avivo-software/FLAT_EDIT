@@ -26,7 +26,7 @@ with obj_grid // Prevents unknown variable error
 		
 				x_shift = 0; // Sets grid X shift back to zero
 				
-				if x_shift == 0 then obj_palette.stuck[argument1] = true; // Sticks button down if limit is reached
+				if x_shift == 0 then obj_buttons.stuck[argument1] = true; // Sticks button down if limit is reached
 		
 			break;
 		
@@ -34,7 +34,7 @@ with obj_grid // Prevents unknown variable error
 		
 				y_shift = 0; // Sets grid X shift back to zero
 				
-				if y_shift == 0 then obj_palette.stuck[argument1] = true; // Sticks button down if limit is reached
+				if y_shift == 0 then obj_buttons.stuck[argument1] = true; // Sticks button down if limit is reached
 		
 			break;
 		
@@ -42,7 +42,7 @@ with obj_grid // Prevents unknown variable error
 
 			if cell_size > cell_min // Ensures cell size can not go beyond minimum limit
 			{
-				obj_palette.stuck[6] = false; // Unsticks zoom out button
+				obj_buttons.stuck[6] = false; // Unsticks zoom out button
 				
 				cell_size = cell_size / 2; // Doubles cell size
                 
@@ -60,20 +60,20 @@ with obj_grid // Prevents unknown variable error
 			
 			if cell_size = cell_min // Checks if cell size is less than minimum cell size
 			{
-				obj_palette.stuck[5] = true; // Sticks zoom out button
+				obj_buttons.stuck[5] = true; // Sticks zoom out button
 			}
 				else
 			{
-				obj_palette.stuck[5] = false; // Unticks zoom in button
+				obj_buttons.stuck[5] = false; // Unticks zoom in button
 			}
 			
 			if cell_size = cell_min // Checks if cell size is at minimum limit
 			{
-				obj_palette.stuck[5] = true; // Sticks zoom out button
+				obj_buttons.stuck[5] = true; // Sticks zoom out button
 			}
 				else
 			{
-				obj_palette.stuck[5] = false; // Unsticks zoom out button
+				obj_buttons.stuck[5] = false; // Unsticks zoom out button
 			}
 			
 			break;
@@ -82,7 +82,7 @@ with obj_grid // Prevents unknown variable error
 			
 			if cell_size < cell_max // Ensures cell size can not go beyond maximum limit
 			{
-				obj_palette.stuck[5] = false; // Unsticks zoom in button
+				obj_buttons.stuck[5] = false; // Unsticks zoom in button
 				
 				cell_size = cell_size * 2; // Doubles cell size
                 
@@ -97,11 +97,11 @@ with obj_grid // Prevents unknown variable error
 			
 			if cell_size = cell_max // Checks if cell size is at maximum limit
 			{
-				obj_palette.stuck[6] = true; // Sticks zoom in button
+				obj_buttons.stuck[6] = true; // Sticks zoom in button
 			}
 				else
 			{
-				obj_palette.stuck[6] = false; // Unsticks zoom out button
+				obj_buttons.stuck[6] = false; // Unsticks zoom out button
 			}
 			
 			break;
@@ -112,15 +112,15 @@ with obj_grid // Prevents unknown variable error
 				
 				if x_shift = 0 or x_shift + x_limit = hard_x_limit // Checks if grid is within limits
 				{
-					obj_palette.stuck[3] = true // Sticks far left pan button
-					obj_palette.stuck[7] = true; // Sticks pan left button
-					obj_palette.stuck[8] = false; // Sticks pan far right button
+					obj_buttons.stuck[3] = true // Sticks far left pan button
+					obj_buttons.stuck[7] = true; // Sticks pan left button
+					obj_buttons.stuck[8] = false; // Sticks pan far right button
 				}
 					else
 				{
-					obj_palette.stuck[3] = false; // Unsticks far left pan button
-					obj_palette.stuck[7] = false; // Unsticks pan left button
-					obj_palette.stuck[8] = false // Unsticks pan far right button
+					obj_buttons.stuck[3] = false; // Unsticks far left pan button
+					obj_buttons.stuck[7] = false; // Unsticks pan left button
+					obj_buttons.stuck[8] = false // Unsticks pan far right button
 				}
 				
 			break;
@@ -129,17 +129,17 @@ with obj_grid // Prevents unknown variable error
 		
 				if x_limit + x_shift < hard_x_limit then x_shift ++; // Checks if grid is within limits
 				
-				obj_palette.stuck[7] = false; // Sticks pan left button
-				obj_palette.stuck[3] = false; // Unsticks far left pan button
+				obj_buttons.stuck[7] = false; // Sticks pan left button
+				obj_buttons.stuck[3] = false; // Unsticks far left pan button
 				
 				if x_limit + x_shift < hard_x_limit // Checks if grid is within max limits
 				{
-					obj_palette.stuck[8] = false; // Unsticks pan far right button
+					obj_buttons.stuck[8] = false; // Unsticks pan far right button
 				}
 					else
 				{
-					obj_palette.stuck[8] = true; // Sticks pan far right button
-					obj_palette.stuck[3] = true; // Sticks far left pan button
+					obj_buttons.stuck[8] = true; // Sticks pan far right button
+					obj_buttons.stuck[3] = true; // Sticks far left pan button
 				}
 		
 			break;
@@ -150,15 +150,15 @@ with obj_grid // Prevents unknown variable error
 				
 				if y_shift = 0 or y_shift + y_limit = hard_y_limit // Checks if grid is within limits
 				{
-					obj_palette.stuck[4] = true // Sticks far top pan button
-					obj_palette.stuck[9] = true; // Sticks up pan button
-					obj_palette.stuck[10] = false; // Unsticks down pan button
+					obj_buttons.stuck[4] = true // Sticks far top pan button
+					obj_buttons.stuck[9] = true; // Sticks up pan button
+					obj_buttons.stuck[10] = false; // Unsticks down pan button
 				}
 					else
 				{
-					obj_palette.stuck[4] = false; // Unsticks far top pan button
-					obj_palette.stuck[9] = false; // Unsticks up pan button
-					obj_palette.stuck[10] = false // Unsticks down pan button
+					obj_buttons.stuck[4] = false; // Unsticks far top pan button
+					obj_buttons.stuck[9] = false; // Unsticks up pan button
+					obj_buttons.stuck[10] = false // Unsticks down pan button
 				}
 		
 			break;
@@ -167,17 +167,17 @@ with obj_grid // Prevents unknown variable error
 		
 				if y_limit + y_shift < hard_y_limit then y_shift ++; // Checks if grid is within limits
 				
-				obj_palette.stuck[9] = false; // Unsticks up pan button
-				obj_palette.stuck[4] = false; // Unsticks far top pan button
+				obj_buttons.stuck[9] = false; // Unsticks up pan button
+				obj_buttons.stuck[4] = false; // Unsticks far top pan button
 				
 				if y_limit + y_shift < hard_y_limit // Checks if grid is within max limits
 				{
-					obj_palette.stuck[10] = false; // Unsticks down pan button
+					obj_buttons.stuck[10] = false; // Unsticks down pan button
 				}
 					else
 				{
-					obj_palette.stuck[10] = true; // Sticks down pan button
-					obj_palette.stuck[4] = true; // Sticks far top pan button
+					obj_buttons.stuck[10] = true; // Sticks down pan button
+					obj_buttons.stuck[4] = true; // Sticks far top pan button
 				}
 		
 			break;
@@ -309,18 +309,10 @@ with obj_grid // Prevents unknown variable error
 
 // CHECKS SLIDES
 
-if argument0 == 1 or 2 then // Checks if action type is slide
+if argument0 == 1 // Checks if action type is slide
 {
-	for(i = 0; i < obj_tiles.sprite_qty + 1; i++) // Loop through slides
+	switch argument1 // Determines which slide has been selected
 	{
-	    obj_tiles.stuck[i] = false; // Unsticks all slides
-	}
-	
-	obj_tiles.stuck[argument1] = true; // Sticks selected slide
-	
-	switch argument1 // Determines which slide hasbeen selected
-	{
-
 		case 0: // Checks if temple slideis selected
 		
 			tilemap_tileset("lyr_collide", tl_city); // Switch tileset to city
@@ -341,5 +333,23 @@ if argument0 == 1 or 2 then // Checks if action type is slide
 		
 		break;
 	}
+	
+	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
+	
+	for(i = 0; i < sprite_qty; i++) // loops through to numberof sprites availible
+	{
+		stuck[i] = false; // Unsticks current sprite
+	}
+	
+	stuck[argument1] = true; // Stricks selectedsprite
 }
+
+// CHECKS TILES
+
+for(i = 0; i < sprite_qty; i++) // loops through to numberof sprites availible
+{
+	stuck[i] = false; // Unsticks current sprite
+}
+	
+stuck[argument1] = true; // Stricks selectedsprite
 
