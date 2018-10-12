@@ -33,8 +33,8 @@ max_scale = 0.5; // Determines the maximum scale the palette size can be
 current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // Stores actual width
 current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
 
-x_offset = 256; // Determines X offset relative to the far left hand side of the screen
-y_offset = 512; // Determines Y offset relative to the top of the screen
+x_offset = 16; // Determines X offset relative to the far left hand side of the screen
+y_offset = 256; // Determines Y offset relative to the top of the screen
 
 sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
 sprite_limit = sprite_qty; // Sets the maximum number of sprites to draw
@@ -57,5 +57,5 @@ for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
 
 // CALCULATES LOOPS
 
-inner_loop = sprite_limit; // Sets inner loop to tile root
-outer_loop = 1; // Number of sprites to draw in Y direction (Calculated from inner loop)
+inner_loop = 4; // Sets inner loop to tile root
+outer_loop = 12; // Number of sprites to draw in Y direction (Calculated from inner loop)

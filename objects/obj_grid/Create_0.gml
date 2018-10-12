@@ -8,14 +8,14 @@ unique_id = instance_count; // Stores the unique ID number for this instance
 
 cell_size = 128; // Sets size of each grid cell
 
-x_offset = 512; // X offset of palette relative to window size
+x_offset = 320; // X offset of palette relative to window size
 y_offset = 256; // Y offset of Palette realative to window size
 
 x_shift = 0; // Determines number of cells to shift in the X direction
 y_shift = 0; // Determines number of cells to shift in the Y direction
 
-x_limit = 8; // Sets the number of rows to draw
-y_limit = 4; // Sets the number of columns to draw
+x_limit = 10; // Sets the number of rows to draw
+y_limit = 5; // Sets the number of columns to draw
 
 x_max = 0; // Stores the length of the X line
 y_max = 0; // Stores the length of the Y line

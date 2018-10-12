@@ -7,13 +7,15 @@
 
 // INITIALIZE GENERAL GLOBALS
 
-global.edit_enabled = true; // Determines if objects can be resized or moved 
+global.edit_enabled = false; // Determines if objects can be resized or moved 
 global.border_selection_id = 0; // Determines which palette has been selected
 
 global.sound_fx_enabled = true; // Toggles Sound-FX
 global.music_enabled = false; // Toggles music
 
 // INITIALIZE GRID GLOBALS
+
+global.current_layer = 0; // Stores current tile layer
 
 global.rotate_enabled = false; // Determines if selected grid tile should be rotated
 
@@ -39,6 +41,7 @@ instance_create_layer(0, 0, layer_id, obj_grid); // Loads grid object
 instance_create_layer(0, 0, layer_id, obj_buttons); // Loads palette object
 instance_create_layer(0, 0, layer_id, obj_slides); // Loads slides object
 instance_create_layer(0, 0, layer_id, obj_tiles); // Loads tiles object
+//instance_create_layer(0, 0, layer_id, obj_layer); // Loads layer object
 
 // INITIALIZE SOUND VARIABLES
 

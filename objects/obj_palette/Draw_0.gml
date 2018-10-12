@@ -89,5 +89,5 @@ if global.edit_enabled == true // Prevents border being drawn if edit is not ena
 
 if keyboard_check_pressed(vk_enter)
 {
-	global.edit_enabled = !global.edit_enabled;
+	
 }

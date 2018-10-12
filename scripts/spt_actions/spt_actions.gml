@@ -311,6 +311,16 @@ with obj_grid // Prevents unknown variable error
 
 if argument0 == 1 // Checks if action type is slide
 {
+	
+	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
+	
+	for(i = 0; i < sprite_qty; i++) // loops through to number of sprites availible
+	{
+		stuck[i] = false; // Unsticks current slide
+	}
+
+	stuck[argument1] = true; // Sticks selected slide
+
 	switch argument1 // Determines which slide has been selected
 	{
 		case 0: // Checks if temple slideis selected
@@ -333,23 +343,5 @@ if argument0 == 1 // Checks if action type is slide
 		
 		break;
 	}
-	
-	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
-	
-	for(i = 0; i < sprite_qty; i++) // loops through to numberof sprites availible
-	{
-		stuck[i] = false; // Unsticks current sprite
-	}
-	
-	stuck[argument1] = true; // Stricks selectedsprite
 }
-
-// CHECKS TILES
-
-for(i = 0; i < sprite_qty; i++) // loops through to numberof sprites availible
-{
-	stuck[i] = false; // Unsticks current sprite
-}
-	
-stuck[argument1] = true; // Stricks selectedsprite
 

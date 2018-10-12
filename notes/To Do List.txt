@@ -13,3 +13,4 @@ TO DO | See if sticky array can be removed.
 TO DO | Improve zoom code.
 TO DO | Look in to making grid the same border size regardless of size.
 TO DO | Look over all bugs and ensure their validity.
+TO DO | Default stuck positions need to be set correctly.

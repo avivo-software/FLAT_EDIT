@@ -11,35 +11,38 @@ border_y2 = y_offset + (current_sprite_height + y_gap) * outer_loop - y_gap; // 
 *								PALETTE SHIFT			   				 *
 *************************************************************************/
 
-if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Stops palette from scrolling when cursor is not inside 
+if palette_shift_enabled == true
 {
-	// SHIFT DOWN
-	
-	if mouse_wheel_up() // Checks for mouse wheel down
+	if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Stops palette from scrolling when cursor is not inside 
 	{
-		if palette_shift > 0 // Prevents negative number
+		// SHIFT DOWN
+	
+		if mouse_wheel_up() // Checks for mouse wheel down
 		{
-			palette_shift --; // Reduces palette_shift
+			if palette_shift > 0 // Prevents negative number
+			{
+				palette_shift --; // Reduces palette_shift
+			}
+				else
+			{
+				palette_shift = sprite_qty; // Cycles to sprite limit
+			}
 		}
-			else
+	
+		// SHIFT UP
+	
+		if mouse_wheel_down() // Checks for mouse wheel up
 		{
-			palette_shift = sprite_qty; // Cycles to sprite limit
-		}
+			if palette_shift < sprite_qty // Prevents number from exeeding sprite limit 
+			{
+				palette_shift ++; // Increments palette_shift by one
+			}
+				else
+			{
+				palette_shift = 0; // Sets palette back to original state
+			}
+		}					
 	}
-	
-	// SHIFT UP
-	
-	if mouse_wheel_down() // Checks for mouse wheel up
-	{
-		if palette_shift < sprite_qty // Prevents number from exeeding sprite limit 
-		{
-			palette_shift ++; // Increments palette_shift by one
-		}
-			else
-		{
-			palette_shift = 0; // Sets palette back to original state
-		}
-	}					
 }
 
 /***********************************************************************
