@@ -265,3 +265,7 @@ if global.edit_enabled == true // Ensures grid can be modified
     }
 }
 
+if keyboard_check_pressed(vk_enter)
+{
+	global.edit_enabled = !global.edit_enabled;
+}

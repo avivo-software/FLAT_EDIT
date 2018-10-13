@@ -62,3 +62,4 @@ Version 0.0.5.7 | Sub palettes have been set up.
 Version 0.0.5.8 | Ready for place code and testing.
 Version 0.0.5.9 | Palette behaviers now work as they should.
 Version 0.0.6.0 | Added palette shift enabled code.
+Version 0.0.6.1 | Ready for full and comprehensive test.

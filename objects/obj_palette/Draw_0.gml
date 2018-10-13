@@ -81,13 +81,3 @@ if global.edit_enabled == true // Prevents border being drawn if edit is not ena
 		draw_rectangle(border_x1, border_y1, border_x2, border_y2, 1); // Draws rectangle around palette border
 	}
 }
-
-
-/***********************************************************************
-*									DEBUG							   *       
-***********************************************************************/
-
-if keyboard_check_pressed(vk_enter)
-{
-	
-}

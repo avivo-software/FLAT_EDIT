@@ -314,7 +314,7 @@ if argument0 == 1 // Checks if action type is slide
 	
 	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
 	
-	for(i = 0; i < sprite_qty; i++) // loops through to number of sprites availible
+	for(i = 0; i < sprite_qty; i++) // loops through to number of slide availible
 	{
 		stuck[i] = false; // Unsticks current slide
 	}
@@ -345,3 +345,29 @@ if argument0 == 1 // Checks if action type is slide
 	}
 }
 
+// CHECKS TILES
+
+if argument0 == 2 // Checks if action type is tiles
+{
+	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
+	
+	for(i = 0; i < sprite_qty; i++) // loops through to number of tile availible
+	{
+		stuck[i] = false; // Unsticks current tile
+	}
+	
+	stuck[argument1] = true; // Sticks selected tile
+}
+
+// CHECKS LAYER
+
+if argument0 == 3 // Checks if action type is layer
+{
+	if mouse_check_button(global.controls[0]) // Checks for mouse click
+	{
+		if palette_shift < sprite_qty - 1 then palette_shift ++ else palette_shift = 0; // Cycles layers
+	}
+	
+	image_index = palette_shift; // Sets image index to palette shift
+	global.current_layer = palette_shift; // Updates current tile layer to 
+}
