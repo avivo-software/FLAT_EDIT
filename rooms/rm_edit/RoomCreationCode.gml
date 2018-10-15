@@ -42,6 +42,7 @@ instance_create_layer(0, 0, layer_id, obj_buttons); // Loads palette object
 instance_create_layer(0, 0, layer_id, obj_slides); // Loads slides object
 instance_create_layer(0, 0, layer_id, obj_tiles); // Loads tiles object
 instance_create_layer(0, 0, layer_id, obj_layer); // Loads layer object
+instance_create_layer(0, 0, layer_id, obj_place); // Loads place object
 
 // INITIALIZE SOUND VARIABLES
 

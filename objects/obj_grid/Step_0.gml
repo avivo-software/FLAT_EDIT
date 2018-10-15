@@ -15,18 +15,10 @@ border_y2 = y_offset + ((cell_size + line_thickness) * y_limit); // Y2 border co
 
 
 /***********************************************************************
-*              DETERMINES GRID COORDINATES BASED ON MOUSE              *       
-***********************************************************************/
-
-x_pos = floor((mouse_x - x_offset) / (cell_size + line_thickness)) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
-y_pos = floor((mouse_y - y_offset) / (cell_size + line_thickness)) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
-
-
-/***********************************************************************
 *          DETERMINES IF MOUSE IS INSIDE OR OUTSIDE THE GRID           *       
 ***********************************************************************/
 
-if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + ((cell_size + line_thickness) * x_limit) + line_thickness, y_offset + ((cell_size + line_thickness) * y_limit) + line_thickness) // Checks if mouse is inside grid
+if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Checks if mouse is inside grid
 {
     mouse_in_grid = true; // Sets mouse_in_grid_status to true
 }
@@ -34,6 +26,18 @@ if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + ((cell_si
 {
     mouse_in_grid = false; // Sets mouse_in_grid_status to false
 }
+
+
+/***********************************************************************
+*              DETERMINES GRID COORDINATES BASED ON MOUSE              *       
+***********************************************************************/
+
+if mouse_in_grid == true // Prevents reporting of negative numbers
+{
+	x_pos = floor((mouse_x - x_offset) / (cell_size + line_thickness)) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
+	y_pos = floor((mouse_y - y_offset) / (cell_size + line_thickness)) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
+}
+
 
 /***********************************************************************
 *                         SETS FONT VARIABLES                          *       
@@ -90,7 +94,7 @@ if keyboard_check_released(global.controls[5]) // Checks if shift down key has b
 
 // ZOOM IN
 
-if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Ensures mouse is inside grid before scrolling avoiding interference with obj_palette objects
+if mouse_in_grid == true // Ensures mouse is inside grid before scrolling avoiding interference with obj_palette objects
 {
 	if mouse_wheel_up() // Checks to see if mouse was scrolled up
 	{

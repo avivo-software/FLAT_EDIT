@@ -65,3 +65,4 @@ Version 0.0.6.0 | Added palette shift enabled code.
 Version 0.0.6.1 | Ready for full and comprehensive test.
 Version 0.0.6.2 | Palette qty now updates when tileset is applied. Correct layer is also applied. Layer now updates when layer is clicked.
 Version 0.0.6.3 | Fixed issue with layers prite not updating. Fixed tile palette so it works when changed for a different palette.
+Version 0.0.6.4 | Ready for place code.

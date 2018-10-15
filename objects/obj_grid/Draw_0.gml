@@ -60,3 +60,4 @@ if grid_visible == true // Checks if grid is visible to the user
 		}
 	}
 }
+

@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "1d8c0156-8415-4d75-a193-8f6baece60e9",
+            "Value": {
+                "id": "4f29ce63-cfc8-44f6-abe8-b3a99bf7b9ac",
+                "resourcePath": "objects\\obj_place\\obj_place.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1f90f503-88f8-4357-bed2-d78b95ee0af0",
             "Value": {
                 "id": "94d2702e-b6c3-4816-ba73-48dddba80f69",
@@ -116,6 +124,14 @@
                 "id": "ef1ca02e-24ee-4d96-a0a5-560540e9daa7",
                 "resourcePath": "sounds\\snd_cancel\\snd_cancel.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "37af12b5-d44f-470e-afa8-620286e52dc5",
+            "Value": {
+                "id": "4164aede-9212-4c2d-b3b2-240122a86c72",
+                "resourcePath": "scripts\\spt_translate\\spt_translate.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -505,7 +521,8 @@
     ],
     "script_order": [
         "809d016b-9dbc-42fe-b65d-537f0b25ebd6",
-        "96f0b1a9-e029-4e2c-88c7-a3c5cd8b945e"
+        "96f0b1a9-e029-4e2c-88c7-a3c5cd8b945e",
+        "37af12b5-d44f-470e-afa8-620286e52dc5"
     ],
     "tutorial": ""
 }
