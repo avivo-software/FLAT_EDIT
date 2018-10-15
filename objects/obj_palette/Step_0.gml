@@ -1,9 +1,10 @@
 /*************************************************************************
-*							INITIALIZE VARIABLES			   			 *
+*								UPDATE VARIABLES			   			 *
 *************************************************************************/
 
 border_x1 = x_offset; // Stores X1 location in order to define border boundries
 border_y1 = y_offset; // Stores Y1 location in order to define border boundries
+
 border_x2 = x_offset + (current_sprite_width + x_gap) * inner_loop - x_gap; // Stores X2 location in order to define border boundries
 border_y2 = y_offset + (current_sprite_height + y_gap) * outer_loop - y_gap; // Stores Y2 location in order to define border boundries
 

@@ -30,7 +30,7 @@ with obj_grid // Prevents unknown variable error
 		
 			break;
 		
-			case 4: // Shift grid back to top most position (Zero)
+			case 4: // Shift grid back to topmost position (Zero)
 		
 				y_shift = 0; // Sets grid X shift back to zero
 				
@@ -352,7 +352,7 @@ if argument0 == 1 // Checks if action type is slide
 	for(i = obj_tiles.sprite_qty; i < temp_qty; i++) // Loops through additional tiles needed
 	{
 		obj_tiles.stuck[i] = false; // Sets new stuck array value to false
-		obj_tiles.sticky[i] = false; // Sets new sticky array value to false
+		obj_tiles.sticky[i] = true; // Sets new sticky array value to true
 	}
 	
 	obj_tiles.sprite_qty = temp_qty; // Sets new sprite qty

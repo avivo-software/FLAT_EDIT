@@ -2,17 +2,17 @@
 *									TO DO							    *
 *************************************************************************
 
-TO DO | Look into palette expansion wobble effect by updateing the palette width and height in correct order. (Decided against this)
-TO DO | Reduce point_in_rectangle code for grid as as been done with palette. (Complete)
-TO DO | The bug with extra border line is caused by initial creation code. This can be fixed by duplicating the expand palette code. Fixed
+TO DO | Look into palette expansion wobble effect by updating the palette width and height in correct order. (Decided against this)
+TO DO | Reduce point in rectangle code for grid as with palette. (Complete)
+TO DO | The bug with extra border line is caused by the initial creation code. This can be fixed by duplicating the expand palette code. Fixed
 TO DO | Rebase git source control as some commit comments are incorrect.
 TO DO | Look into constants.
-TO DO | Palette expand code now fully works but would benice to find away to make the code more symmetrical.
+TO DO | Palette expand code now fully works but would be nice to find a way to make the code more symmetrical. (Complete)
 TO DO | Go through comments to ensure spelling grammar and consistency.
-TO DO | See if sticky array can be removed.
+TO DO | See if the sticky array can be removed.(No)
 TO DO | Improve zoom code.
 TO DO | Look in to making grid the same border size regardless of size.
 TO DO | Look over all bugs and ensure their validity.
 TO DO | Default stuck positions need to be set correctly.
-TO DO | Look into converting step based variable updates to on demand code
+TO DO | Look into converting step based variable updates to on-demand code
 TO DO | Look at x and y max variables and see if they can be improved.

@@ -57,5 +57,5 @@ for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
 
 // CALCULATES LOOPS
 
-inner_loop = 4; // Sets inner loop to tile root
+inner_loop = 5; // Sets inner loop to tile root
 outer_loop = 12; // Number of sprites to draw in Y direction (Calculated from inner loop)

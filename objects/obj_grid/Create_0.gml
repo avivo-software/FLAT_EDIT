@@ -8,8 +8,8 @@ unique_id = instance_count; // Stores the unique ID number for this instance
 
 cell_size = 128; // Sets size of each grid cell
 
-x_offset = 320; // X offset of palette relative to window
-y_offset = 256; // Y offset of Palette realative to window
+x_offset = 400; // X offset of palette relative to window
+y_offset = 300; // Y offset of Palette realative to window
 
 x_shift = 0; // Determines number of cells to shift in the X direction
 y_shift = 0; // Determines number of cells to shift in the Y direction
