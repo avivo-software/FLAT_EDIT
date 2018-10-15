@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "2756f223-c861-4268-836d-ac40a18e94bc",
+            "Value": {
+                "id": "0a4db14b-5036-403a-91c8-ab93e8a1dd77",
+                "resourcePath": "views\\2756f223-c861-4268-836d-ac40a18e94bc.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "29170ea2-e222-490e-9d8d-631de409e887",
             "Value": {
                 "id": "d63393ee-7186-405f-b613-0dab7122a4b8",
@@ -263,6 +271,14 @@
             }
         },
         {
+            "Key": "76b6618d-7d6c-4ae4-bd8e-6bc2f8752f0c",
+            "Value": {
+                "id": "90b39019-f0d7-4d8d-9d2d-3b75febe76dd",
+                "resourcePath": "sprites\\spr_graveyard_tile_colour\\spr_graveyard_tile_colour.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7a3116ea-bf4d-452a-a763-ff66db706c89",
             "Value": {
                 "id": "a93a1b38-4032-481d-8680-ae3bff8ca64f",
@@ -276,6 +292,14 @@
                 "id": "c0f43a1f-9a30-4604-afac-40ecc331a886",
                 "resourcePath": "scripts\\spt_actions\\spt_actions.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "86f21855-3d14-4ae8-84fd-dac2df372815",
+            "Value": {
+                "id": "641939f5-fb15-44bb-a86f-48c3a78f8201",
+                "resourcePath": "tilesets\\tl_graveyard\\tl_graveyard.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -348,6 +372,14 @@
                 "id": "2381a25d-44ea-4003-8e17-1995ce58efa8",
                 "resourcePath": "notes\\Version Control Log.yy",
                 "resourceType": "GMNotes"
+            }
+        },
+        {
+            "Key": "af3455f0-b197-434c-8fbe-9c59858b2fcc",
+            "Value": {
+                "id": "096b0d7d-50d3-4aa1-8332-c18e085c3ae3",
+                "resourcePath": "sprites\\spr_graveyard_map\\spr_graveyard_map.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -492,6 +524,14 @@
                 "id": "4af47dae-ac09-454b-a75f-cae0e040984b",
                 "resourcePath": "views\\e415da23-0c7d-4411-8050-ab86d76ec361.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "eaf487e0-cace-463c-9b3c-a5e26113db05",
+            "Value": {
+                "id": "e36ccb11-7471-44f0-9e6c-598dc7a4016e",
+                "resourcePath": "sprites\\spr_graveyard_tile_grey\\spr_graveyard_tile_grey.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

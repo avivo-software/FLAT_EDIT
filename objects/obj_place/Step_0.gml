@@ -4,8 +4,11 @@
 *								MANIPULATE TILES						   *
 ***************************************************************************/
 
-if mouse_check_button(global.controls[0])
+if obj_grid.mouse_in_grid == true
 {
-	show_debug_message(obj_grid.x_pos);
-	show_debug_message(obj_grid.y_pos);
+	if mouse_check_button(global.controls[0])
+	{
+		tilemap_set("lyr_collide", obj_tiles.last_selection, obj_grid.x_pos, obj_grid.y_pos);
+	}
 }
+

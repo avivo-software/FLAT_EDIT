@@ -55,6 +55,12 @@ for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
    sticky[i] = true; // Initialize sticky array
 }
 
+// STICKS PRE DEFINED SPRITES AS NEEDED
+
+stuck[3] = true; // Sets pan far left button
+stuck[4] = true; // Sets pan most top button
+stuck[7] = true; // Sets pan left button  
+stuck[9] = true; // Sets pan right button
 
 // CALCULATES LOOPS
 

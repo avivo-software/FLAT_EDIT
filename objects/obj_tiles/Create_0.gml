@@ -9,9 +9,9 @@ action_id = 2; // describes the type of palette | 2 = Tiles
 
 last_selection = 0; // Stores ID of last selected sprite
 
-current_sprite = spr_temple_tile_colour; // Determines the currently selected sprite
-primary_sprite = spr_temple_tile_colour; // Determines primary sprite
-secondary_sprite = spr_temple_tile_grey; // Determines secondary sprite
+current_sprite = spr_city_tile_colour; // Determines the currently selected sprite
+primary_sprite = spr_city_tile_colour; // Determines primary sprite
+secondary_sprite = spr_city_tile_grey; // Determines secondary sprite
 
 x_gap = 4; // Sets the distance in pixels between each sprite in the X direction
 y_gap = 4; // Sets the distance in pixels between each sprite in the Y direction
@@ -54,6 +54,10 @@ for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
    stuck[i] = false; // Initialize stuck array
    sticky[i] = true; // Initialize sticky array
 }
+
+// STICKS PRE DEFINED SPRITES AS NEEDED
+
+stuck[1] = true; // Sets default selection
 
 // CALCULATES LOOPS
 

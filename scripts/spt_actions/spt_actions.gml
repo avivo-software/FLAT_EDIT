@@ -324,7 +324,7 @@ if argument0 == 1 // Checks if action type is slide
 
 	switch argument1 // Determines which slide has been selected
 	{
-		case 0: // Checks if temple slideis selected
+		case 0: // Checks if temple slide is selected
 		
 			tilemap_tileset("lyr_collide", tl_city); // Switch tileset to city
 			
@@ -334,13 +334,23 @@ if argument0 == 1 // Checks if action type is slide
 		
 		break;
 		
-		case 1: // Checks if temple slideis selected
+		case 1: // Checks if temple slide is selected
 		
 			tilemap_tileset("lyr_collide", tl_temple); // Switch tileset to temple
 			
 			obj_tiles.current_sprite = spr_temple_tile_colour; // Sets tile palette to temple
 			obj_tiles.primary_sprite = spr_temple_tile_colour; // Sets primary sprite to temple
 			obj_tiles.secondary_sprite = spr_temple_tile_grey; // Sets secondary sprite to city
+		
+		break;
+		
+		case 2: // Checks if garveyard slide is selected
+		
+			tilemap_tileset("lyr_collide", tl_graveyard); // Switch tileset to temple
+			
+			obj_tiles.current_sprite = spr_graveyard_tile_colour; // Sets tile palette to temple
+			obj_tiles.primary_sprite = spr_graveyard_tile_colour; // Sets primary sprite to temple
+			obj_tiles.secondary_sprite = spr_graveyard_tile_grey; // Sets secondary sprite to city
 		
 		break;
 	}

@@ -55,6 +55,9 @@ for (i = 0; i < sprite_qty; i += 1) // Lopp until sprite qty has been reached
    sticky[i] = true; // Initialize sticky array
 }
 
+// STICKS PRE DEFINED SPRITES AS NEEDED
+
+stuck[1] = true; // Sets default selection
 
 // CALCULATES LOOPS
 

@@ -16,3 +16,4 @@ TO DO | Look over all bugs and ensure their validity.(Ongoing)
 TO DO | Default stuck positions need to be set correctly. 
 TO DO | Look into converting step based variable updates to on-demand code (Better as it is)
 TO DO | Look at x and y max variables and see if they can be improved. (Complete)
+TO DO | See if some of the case statements in action script can be condenced.
