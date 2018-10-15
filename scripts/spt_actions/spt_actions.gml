@@ -311,6 +311,7 @@ with obj_grid // Prevents unknown variable error
 
 if argument0 == 1 // Checks if action type is slide
 {
+	global.current_layer = 0; // Sets global layer back to zero (collide layer)
 	
 	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
 	
@@ -343,6 +344,19 @@ if argument0 == 1 // Checks if action type is slide
 		
 		break;
 	}
+	
+	// ENSURES CORRECT NUMBER OF PALETTE TILES ARE DRAWN
+	
+	temp_qty = sprite_get_number(obj_tiles.current_sprite); // Stores new tile qty 
+	
+	for(i = obj_tiles.sprite_qty; i < temp_qty; i++) // Loops through additional tiles needed
+	{
+		obj_tiles.stuck[i] = false; // Sets new stuck array value to false
+		obj_tiles.sticky[i] = false; // Sets new sticky array value to false
+	}
+	
+	obj_tiles.sprite_qty = temp_qty; // Sets new sprite qty
+	obj_tiles.sprite_limit = temp_qty; // Sets new sprite limit
 }
 
 // CHECKS TILES

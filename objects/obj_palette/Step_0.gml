@@ -7,6 +7,7 @@ border_y1 = y_offset; // Stores Y1 location in order to define border boundries
 border_x2 = x_offset + (current_sprite_width + x_gap) * inner_loop - x_gap; // Stores X2 location in order to define border boundries
 border_y2 = y_offset + (current_sprite_height + y_gap) * outer_loop - y_gap; // Stores Y2 location in order to define border boundries
 
+
 /*************************************************************************
 *								PALETTE SHIFT			   				 *
 *************************************************************************/
@@ -174,16 +175,6 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 			}
 		}
 	}
-}
-
-/***********************************************************************
-*									DEBUG							   *       
-***********************************************************************/
-
-if keyboard_check_pressed(vk_space)
-{
-	global.edit_enabled = !global.edit_enabled;
-	show_debug_message(global.edit_enabled);
 }
 
 
