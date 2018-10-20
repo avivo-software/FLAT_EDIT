@@ -10,9 +10,9 @@ collide_grid_angle = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit
 collide_grid_flip_horizontal = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates horizontal flip grid
 collide_grid_flip_vertical = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates vertical flip grid
 
-for(j = 0; j < obj_grid.hard_y_limit + 1; j++) // Outer loop
+for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 {
-	for(i = 0; i < obj_grid.hard_x_limit + 1; i++) // Inner loop
+	for(i = 0; i < obj_grid.hard_x_limit; i++) // Inner loop
 	{
 		ds_grid_add(collide_grid_index, i, j, 0); // Sets tile index to zero (Invisible)
 		ds_grid_add(collide_grid_angle, i, j, 0); // Sets tile angle to zero (zero degrees)

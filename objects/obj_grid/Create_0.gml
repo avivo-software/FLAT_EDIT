@@ -46,5 +46,5 @@ zoom_enabled = true; // Allows palette to be scrolled
 grid_snap = 16; // Sets the amount to snap the grid by
 numbers_gap = 16; // The distance from grid to draw numbers
 buffer = 4; // Sets the distance in pixels that borders the action areas
-line_thickness = 1; // Stores the thickness of the grid lines
+
 
