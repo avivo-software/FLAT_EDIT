@@ -345,7 +345,7 @@ if argument0 == 1 // Checks if action type is slide
 		break;
 		
 		case 2: // Checks if garveyard slide is selected
-		
+			
 			tilemap_tileset("lyr_collide", tl_graveyard); // Switch tileset to temple
 			
 			obj_tiles.current_sprite = spr_graveyard_tile_colour; // Sets tile palette to temple

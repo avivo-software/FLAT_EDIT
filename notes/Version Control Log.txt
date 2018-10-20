@@ -67,3 +67,4 @@ Version 0.0.6.2 | Palette qty now updates when tileset is applied. Correct layer
 Version 0.0.6.3 | Fixed issue with layers prite not updating. Fixed tile palette so it works when changed for a different palette.
 Version 0.0.6.4 | Ready for place code.
 Version 0.0.6.5 | Added extra slide and tileset.
+Version 0.0.6.6 | Started to code place object.

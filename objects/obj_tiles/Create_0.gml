@@ -7,7 +7,7 @@
 unique_id = instance_count; // Stores the unique ID number for this instance
 action_id = 2; // describes the type of palette | 2 = Tiles
 
-last_selection = 0; // Stores ID of last selected sprite
+last_selection = 1; // Stores ID of last selected sprite
 
 current_sprite = spr_city_tile_colour; // Determines the currently selected sprite
 primary_sprite = spr_city_tile_colour; // Determines primary sprite
