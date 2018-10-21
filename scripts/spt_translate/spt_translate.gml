@@ -1,4 +1,6 @@
-// Rotates about angle with no flips 
+/***************************************************************************
+*							TRANSLATE TILE SPRITES						   *
+***************************************************************************/
 
 if argument0 = 0 // Transforms sprites (Not tiles)
 {
@@ -183,74 +185,3 @@ if argument0 = 0 // Transforms sprites (Not tiles)
 		break;
 	}
 }
-
-if argument0 == 1 // Transforms tile layer (Not sprites)
-{
-	// NO FLIPS
-	
-	if current_grid_angle == 0 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == 1
-	or current_grid_angle == 180 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, false);
-			current_grid_data = tile_set_mirror(current_grid_data, false);
-			current_grid_data = tile_set_rotate(current_grid_data, false);
-		}
-	
-		if current_grid_angle == 90 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == 1
-		or current_grid_angle == 270 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, true);
-			current_grid_data = tile_set_mirror(current_grid_data, true);
-			current_grid_data = tile_set_rotate(current_grid_data, true);
-		}
-	
-		if current_grid_angle == 180 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == 1
-		or current_grid_angle == 0 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, true);
-			current_grid_data = tile_set_mirror(current_grid_data, true);
-			current_grid_data = tile_set_rotate(current_grid_data, false);
-		}
-	
-		if current_grid_angle == 270 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == 1
-		or current_grid_angle == 90 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, false);
-			current_grid_data = tile_set_mirror(current_grid_data, false);
-			current_grid_data = tile_set_rotate(current_grid_data, true);
-		}
-
-		if current_grid_angle == 0 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == 1
-		or current_grid_angle == 180 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, false);
-			current_grid_data = tile_set_mirror(current_grid_data, true);
-			current_grid_data = tile_set_rotate(current_grid_data, false);
-		}
-		
-		if current_grid_angle == 90 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == 1
-		or current_grid_angle == 270 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, true);
-			current_grid_data = tile_set_mirror(current_grid_data, false);
-			current_grid_data = tile_set_rotate(current_grid_data, true);
-		}
-		
-		if current_grid_angle == 180 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == 1
-		or current_grid_angle == 0 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, true);
-			current_grid_data = tile_set_mirror(current_grid_data, false);
-			current_grid_data = tile_set_rotate(current_grid_data, false);
-		}
-		
-		if current_grid_angle == 270 and current_grid_flip_horizontal == -1 and current_grid_flip_vertical == 1
-		or current_grid_angle == 90 and current_grid_flip_horizontal == 1 and current_grid_flip_vertical == -1
-		{
-			current_grid_data = tile_set_flip(current_grid_data, false);
-			current_grid_data = tile_set_mirror(current_grid_data, true);
-			current_grid_data = tile_set_rotate(current_grid_data, true);
-		}
-}
-
-

@@ -185,7 +185,6 @@ with obj_grid // Prevents unknown variable error
 			case 11: // Vertical tile flip
 		
 				 global.flip_vertical_enabled = !global.flip_vertical_enabled; // Toggles flip vertical status
-				 
 		
 			break;
 			

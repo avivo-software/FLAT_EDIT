@@ -69,3 +69,4 @@ Version 0.0.6.4 | Ready for place code.
 Version 0.0.6.5 | Added extra slide and tileset.
 Version 0.0.6.6 | Started to code place object.
 Version 0.0.6.7 | Removed line thickness code.
+Version 0.0.6.8 | Flip and rotate code ready for testing.
