@@ -202,9 +202,9 @@ if global.edit_enabled == true // Ensures grid can be modified
 	        {	
 				if floor((mouse_y - y_offset) / cell_size) > 1 // Prevents grid from becoming invisible
 				{
-					if floor((mouse_y - y_offset) / (cell_size + line_thickness)) < hard_y_limit + 1
+					if floor(mouse_y - y_offset / cell_size) < hard_y_limit + 1
 					{
-						y_limit = floor((mouse_y - y_offset) / (cell_size)); // Recalculates Y Limit based on mouse Y possition
+						y_limit = floor(mouse_y - y_offset) / (cell_size); // Recalculates Y Limit based on mouse Y possition
 					}
 				}
 					else
@@ -219,7 +219,7 @@ if global.edit_enabled == true // Ensures grid can be modified
 	        {	
 				if floor((mouse_x - x_offset) / cell_size) > 1 // Prevents grid from becoming invisible
 				{
-					if floor((mouse_x - x_offset) / (cell_size)) < hard_x_limit + 1
+					if floor(mouse_x - x_offset) / (cell_size) < hard_x_limit + 1 
 					{
 						x_limit = floor((mouse_x - x_offset) / (cell_size)); // Recalculates X Limit based on mouse Y possition
 					}
@@ -238,9 +238,9 @@ if global.edit_enabled == true // Ensures grid can be modified
 				
 				if floor((mouse_y - y_offset) / cell_size) > 1 // Prevents grid from becoming invisible
 				{
-					if floor((mouse_y - y_offset) / (cell_size)) < hard_y_limit + 1
+					if floor(mouse_y - y_offset) / (cell_size) < hard_y_limit + 1
 					{
-						y_limit = floor((mouse_y - y_offset) / (cell_size)); // Recalculates Y Limit based on mouse Y possition
+						y_limit = floor(mouse_y - y_offset) / (cell_size); // Recalculates Y Limit based on mouse Y possition
 					}
 				}
 					else
@@ -252,9 +252,9 @@ if global.edit_enabled == true // Ensures grid can be modified
 				
 				if floor((mouse_x - x_offset) / cell_size) > 1 // Prevents grid from becoming invisible
 				{
-					if floor((mouse_x - x_offset) / (cell_size)) < hard_x_limit + 1
+					if floor(mouse_x - x_offset) / (cell_size) < hard_x_limit + 1 // 
 					{
-						x_limit = floor((mouse_x - x_offset) / (cell_size)); // Recalculates X Limit based on mouse Y possition
+						x_limit = floor(mouse_x - x_offset) / (cell_size); // Recalculates X Limit based on mouse Y possition
 					}
 				}
 					else

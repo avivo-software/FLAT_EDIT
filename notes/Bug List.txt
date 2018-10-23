@@ -20,3 +20,4 @@ BUG | Switching palettes does not show correct number of sprites if border expan
 BUG | Overflow error. Fixed 0.0.6.7.
 BUG | Tile translation code only works for 128. Fixed 0.0.7.1
 BUG | Selected grid numbers does not seem to highlight correctly. Fixed 0.0.7.0.
+BUG | Selecting tile 13 when Egyption tileset is selected, caused palette to go grey. This also happens when tile zero is selected.

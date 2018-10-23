@@ -8,7 +8,10 @@ if obj_grid.mouse_in_grid == true // Ensures mouse cursor is still inside the gr
 {
 	if mouse_check_button_pressed(global.controls[0]) // Checks for mouse action button click
 	{
-		ds_grid_set(collide_grid_index, obj_grid.x_pos, obj_grid.y_pos, obj_tiles.last_selection); // Sets tile index to last selection
+		if global.rotate_enabled == false and global.flip_horizontal_enabled == false and global.flip_vertical_enabled == false // Prevents new tile from being placed when flip or rotation buttons are selected (Better UI experience)
+		{
+			ds_grid_set(collide_grid_index, obj_grid.x_pos, obj_grid.y_pos, obj_tiles.last_selection); // Sets tile index to last selection
+		}
 		
 		// ROTATE SELECTED TILE
 		

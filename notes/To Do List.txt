@@ -18,3 +18,5 @@ TO DO | Look into converting step based variable updates to on-demand code (Bett
 TO DO | Look at x and y max variables and see if they can be improved. (Complete)
 TO DO | See if some of the case statements in action script can be condenced. (No point as assigning variables to array will cost as much code as before and going by sequential numbers is poor codeing)
 TO DO | Fix scale placemnt code for when grid lines are thicker than one (Line thickness code has been  removed in favor of better scaling option)
+TO DO | When clicking tiles on palette does not always play correct sound. Can't recreate step by step.
+TO DO | Checks sprite tessellation.
