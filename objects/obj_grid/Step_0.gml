@@ -34,8 +34,9 @@ if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_
 
 if mouse_in_grid == true // Prevents reporting of negative numbers
 {
-	x_pos = floor(mouse_x - x_offset) / (cell_size)  + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
-	y_pos = floor(mouse_y - y_offset) / (cell_size) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
+	x_pos = floor((mouse_x - x_offset) / cell_size) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
+	y_pos = floor((mouse_y - y_offset) / cell_size) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
+
 }
 
 
