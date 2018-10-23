@@ -66,5 +66,8 @@ if obj_grid.mouse_in_grid == true // Ensures mouse cursor is still inside the gr
 	if mouse_check_button_pressed(global.controls[1]) // Checks for delete mouse click
 	{
 		ds_grid_set(collide_grid_index, obj_grid.x_pos, obj_grid.y_pos, 0); // Deletes selected tile by setting its index to zero
+		ds_grid_set(collide_grid_angle, obj_grid.x_pos, obj_grid.y_pos, 0); // Resets grid angle for selected tile
+		ds_grid_set(collide_grid_flip_horizontal, obj_grid.x_pos, obj_grid.y_pos, 1); // Resets grid flip horizontal for selected tile
+		ds_grid_set(collide_grid_flip_vertical, obj_grid.x_pos, obj_grid.y_pos, 1); // Resets grid vertical for selected tile
 	}
 }
