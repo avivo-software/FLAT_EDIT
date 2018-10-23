@@ -19,7 +19,7 @@ for(j = 0; j < obj_grid.y_limit; j++) // Outer loop
 		
 		current_rotation = ds_grid_get(collide_grid_angle, i + obj_grid.x_shift, j + obj_grid.y_shift); // Loads current rotation into local variable
 		
-		spt_translate();
+		spt_translate(); // Tranlates tiles to correct position
 		
 		draw_sprite_ext(current_sprite, current_index, x, y, current_x_scale, current_y_scale, current_rotation, c_white, 1); // Draw current tiles based on above variables
 	}

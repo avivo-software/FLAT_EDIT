@@ -280,8 +280,28 @@ with obj_grid // Prevents unknown variable error
 			
 			case 27: // Delete
 			
-				show_debug_message("delete");
-			
+				//show_message("");
+				
+				obj_buttons.stuck[27] = false; // Ensures button does not stick
+				
+				for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
+				{
+					for(i = 0; i < obj_grid.hard_x_limit; i++) // Inner loop
+					{
+						ds_grid_set(obj_place.collide_grid_index, i, j, 0); // Sets tile index to zero (Invisible)
+						ds_grid_set(obj_place.collide_grid_angle, i, j, 0); // Sets tile angle to zero (zero degrees)
+		
+						ds_grid_set(obj_place.collide_grid_flip_horizontal, i, j, 1); // Sets horizontal flip to 0
+						ds_grid_set(obj_place.collide_grid_flip_vertical, i, j, 1); // Sets vertical flip to 0
+					}
+				}
+				
+				// Unsticks buttons when grid is reset
+				
+				obj_buttons.stuck[11] = false; // Vertical flip
+				obj_buttons.stuck[12] = false;  // Horizontal flip
+				obj_buttons.stuck[13] = false; // Rotation
+				
 			break;
 						
 			case 28: // Info
