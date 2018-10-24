@@ -38,7 +38,7 @@ cell_max = 256; // Sets the maximum size of the grid
 hard_x_limit = 64; // Sets a maximum size for the level in the x direction
 hard_y_limit = 64; // Sets a maximum size for the level in the y direction
 
-grid_visible = true; // Sets if grid is visible
+grid_enabled = true; // Sets if grid is visible
 
 grid_colour = c_black; // Sets grid line colour
 number_select_colour = c_red; // Sets colour of 

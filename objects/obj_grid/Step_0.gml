@@ -39,28 +39,22 @@ if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + x_max, y_
 
 if keyboard_check_released(global.controls[2]) // Checks for pan left button
 {
-	if x_shift > 0 then x_shift --; // Pan grid left
+	spt_actions(0, 7); // Pan grid left
 }
 
 if keyboard_check_released(global.controls[3]) // Checks for pan right button
 {
-	if x_shift + x_limit < hard_x_limit // Prevents grid panning out of limits
-	{
-		x_shift ++; // Pan grid right
-	}
+	spt_actions(0, 8); // Pan grid right
 }
 
 if keyboard_check_released(global.controls[4]) // Checks for pan up button
 {
-	if y_shift > 0 then y_shift --; // Pan grid up
+	spt_actions(0, 9); // Pan grid up
 }
 
 if keyboard_check_released(global.controls[5]) // Checks for pan down button
 {
-	if y_shift + y_limit < hard_y_limit // Prevents grid panning out of limits
-	{
-		y_shift ++; // Pan grid down
-	}
+	spt_actions(0, 10); // Pan grid down
 }
 
 
@@ -72,12 +66,12 @@ if mouse_in_grid == true // Prevents grid from zooming when mouse is not in grid
 {
 	if mouse_wheel_down() // Checks for mouse wheel down
 	{
-		spt_actions(0, 6); // Zoom out
+		spt_actions(0, 5); // Zoom out
 	}
 	
 	if mouse_wheel_up() // Checks for mouse wheel up
 	{
-		spt_actions(0, 5); // Zoom in
+		spt_actions(0, 6); // Zoom in
 	}
 }
 

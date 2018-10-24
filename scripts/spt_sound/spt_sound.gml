@@ -24,6 +24,18 @@ if global.edit_enabled == false
 					audio_play_sound(global.sounds[snd_cancel], 0, false); // Play mouse click sound provided palette is not currently being edited
 		
 				break;
+				
+				case 3:
+		
+					audio_play_sound(global.sounds[snd_delete], 0, false); // Play delete sound provided palette is not currently being edited
+		
+				break;
+				
+				case 4:
+		
+					audio_play_sound(global.sounds[snd_place], 0, false); // Play delete sound provided palette is not currently being edited
+		
+				break;
 			}
 		}
 	}

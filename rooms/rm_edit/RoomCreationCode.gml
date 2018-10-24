@@ -49,3 +49,5 @@ instance_create_layer(0, 0, layer_id, obj_place); // Loads place object
 global.sounds[0] = snd_click_on; // Button click on sound (palette)
 global.sounds[1] = snd_click_off// Button click off sound (palette)
 global.sounds[2] = snd_cancel; // Button cancel sound
+global.sounds[3] = snd_delete; // Delete sound
+global.sounds[4] = snd_place; // Delete sound

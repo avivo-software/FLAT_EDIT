@@ -279,10 +279,6 @@ with obj_grid // Prevents unknown variable error
 			break;
 			
 			case 27: // Delete
-			
-				//show_message("");
-				
-				obj_buttons.stuck[27] = false; // Ensures button does not stick
 				
 				for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 				{
@@ -295,6 +291,10 @@ with obj_grid // Prevents unknown variable error
 						ds_grid_set(obj_place.collide_grid_flip_vertical, i, j, 1); // Sets vertical flip to 0
 					}
 				}
+				
+				spt_sound(0, 3); // Play delete sound
+				
+				obj_buttons.stuck[27] = false; // Ensures button does not stick
 				
 				// Unsticks buttons when grid is reset
 				
