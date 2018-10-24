@@ -1,63 +1,66 @@
 /// @description Draw Grid
 
 /************************************************************************
-							X AND Y GRID LINES							*
+								X AND Y GRID LINES
 *************************************************************************/
 
-// LOOPS THROUGH Y COORDINATES
+x_max = x_limit * cell_size; //Sets X coordinates to correct position
+y_max = y_limit * cell_size; //Sets Y Coordinates to correct position
+
+// LOOPS THROUGH X COORDINATES
+
 
 if grid_visible == true // Checks if grid is visible to the user
 {
-	for(i = 0; i < x_limit + 1; i++) // Loops through and draws X numbers
+	for(i = 0; i < x_limit + 1; i++) 
 	{
-		x = x_offset + cell_size * i - i; // Calculates X coordinates
+		x = x_offset + (cell_size * i);
+		
+		draw_set_color(grid_colour); // Sets colour to grid colour
+	    draw_line(x ,y_offset ,x , y_max + y_offset); // Draws the line
 
-	    if grid_enabled = true then draw_line_colour(x , y_offset, x, y_max + y_offset - obj_grid.y_limit, grid_colour, grid_colour); // Draws the line
-	
-		if i < x_limit // Prevents numbers from being drawn outside of visible grid area
+		if i == x_pos - x_shift 
 		{
-			if numbers_enabled == true // Determines if numbers should be displayed or not
+			draw_set_color(number_select_colour); // Sets selected number colour X
+		}
+			else
+		{
+			draw_set_color(number_non_select_colour); // Sets non-selected number colour X
+		}
+		
+		if i < x_limit
+		{
+			if numbers_enabled == true
 			{
-				x = x_offset + cell_size / 2 - font_width / 2 + i * cell_size; // Calculates X possition for next number 
-				y = y_offset - numbers_gap - font_height; // Calculates Y possition for next number
-					
-				if i == x_pos - x_shift // Checks if X possition is current number
-				{
-					draw_text_colour(x, y, i + x_shift, number_select_colour, number_select_colour, number_select_colour, number_select_colour, 1); // Draws selected number
-				}
-					else
-				{
-					draw_text_colour(x, y, i + x_shift, number_non_select_colour, number_non_select_colour, number_non_select_colour, number_non_select_colour, 1); // Draws unselected numbers
-				}
+				draw_text(x_offset + cell_size * i + (cell_size / 2) - 8,y_offset - font_height,i + x_shift); // Draws numbers
 			}
 		}
 	}
 
-	// LOOPS THROUGH X COORDINATES
+	// LOOPS THROUGH Y COORDINATES
 
-	for(i = 0; i < y_limit + 1; i++) // Loops through and draws Y numbers
+	for(i = 0; i < y_limit+1; i++) 
 	{
-		y = y_offset + cell_size * i - i; // Calculates Y coordinates
+		y = y_offset + (cell_size * i);
 		
-		if grid_enabled = true then draw_line_colour(x_offset, y, x_max + x_offset - obj_grid.x_limit, y, grid_colour, grid_colour); // Draws the line
-		
-		if i < y_limit // Prevents numbers from being drawn outside of visible grid area
+		draw_set_color(grid_colour); // Sets colour to selected grid colour
+		draw_line(x_offset, y, x_max + x_offset, y); //Draws the line
+
+		if i == y_pos - y_shift 
 		{
-			if numbers_enabled == true // Determines if numbers should be displayed or not
+			draw_set_color(number_select_colour); // Sets colour to selected number colour Y
+		}
+			else
+		{
+			draw_set_color(number_non_select_colour); // Sets colour to non-selected number colour Y
+		}
+	
+		if i < y_limit
+		{
+			if numbers_enabled == true
 			{
-				x = x_offset - numbers_gap - font_width; // Calculates X possition for next number
-				y = y_offset + cell_size / 2 - font_height / 2 + i * cell_size; // Calculates Y possition for next number
-				
-				if i == y_pos - y_shift // Checks if Y possition is current number
-				{
-					draw_text_colour(x, y, i + y_shift, number_select_colour, number_select_colour, number_select_colour, number_select_colour, 1); // Draws selected number
-				}
-					else
-				{
-					draw_text_colour(x, y, i + y_shift, number_non_select_colour, number_non_select_colour, number_non_select_colour, number_non_select_colour, 1); // Draws unselected numbers
-				}
+				draw_text(x_offset - 16 - font_width , y_offset + cell_size * i + (cell_size / 2), i + y_shift); //Draws numbers
 			}
 		}
 	}
 }
-

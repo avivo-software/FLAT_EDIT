@@ -75,3 +75,4 @@ Version 0.0.7.0 | Fixed grid numbers.
 Version 0.0.7.1 | Fixed tile flipping and rotation for different size grids.
 Version 0.0.7.2 | Added code for delete button.
 Version 0.0.7.3 | New tiles will not be placed when rotation button is selected. Updated graphics.
+Version 0.0.7.4 | Fixed problems with grid.

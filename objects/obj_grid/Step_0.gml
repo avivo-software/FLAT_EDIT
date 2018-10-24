@@ -1,277 +1,253 @@
-/// @description Grid Controls
+/// @description Grid Calculations
 
 /***********************************************************************
-*                            UPDATE VARIABLES                          *
+*                            SETS VARIABLES					           *
 ***********************************************************************/
 
-x_max = x_limit * cell_size; // Sets X coordinates to correct position
-y_max = y_limit * cell_size; // Sets Y Coordinates to correct position
+x1 = x_offset; // X1 border coordinate
+y1 = y_offset; // Y1 border coordinate
 
-border_x1 = x_offset; // X1 border coordinate
-border_y1 = y_offset; // Y1 border coordinate
-
-border_x2 = x_offset + (cell_size * x_limit); // X2 border coordinate
-border_y2 = y_offset + (cell_size * y_limit); // Y2 border coordinate
+x2 = x_offset + x_max; // X2 border coordinate
+y2 = y_offset + y_max; // Y2 border coordinate
 
 
 /***********************************************************************
-*          DETERMINES IF MOUSE IS INSIDE OR OUTSIDE THE GRID           *       
+*              DETERMINES GRID COORDINATES BASED ON MOUSE			   *	   
 ***********************************************************************/
 
-if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Checks if mouse is inside grid
-{
-    mouse_in_grid = true; // Sets mouse_in_grid_status to true
-}
-    else
-{
-    mouse_in_grid = false; // Sets mouse_in_grid_status to false
-}
+x_pos = floor((mouse_x - x_offset) / cell_size) + x_shift; // Updates X position based on mouse location
+y_pos = floor((mouse_y - y_offset) / cell_size) + y_shift; // Updates Y position based on mouse location
 
 
 /***********************************************************************
-*              DETERMINES GRID COORDINATES BASED ON MOUSE              *       
+*          DETERMINES IF MOUSE IS INSIDE OR OUTSIDE THE GRID		   *	   
 ***********************************************************************/
 
-if mouse_in_grid == true // Prevents reporting of negative numbers
+if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + x_max, y_offset + y_max) // Checks if mouse is inside grid
 {
-	x_pos = floor((mouse_x - x_offset) / cell_size) + x_shift; // Determines which grid number (X direction) is currently selected based on mouse possition
-	y_pos = floor((mouse_y - y_offset) / cell_size) + y_shift; // Determines which grid number (Y direction) is currently selected based on mouse possition
+	mouse_in_grid = true; // Sets mouse in grid to true 
+}
+	else
+{
+	mouse_in_grid = false; // Sets mouse in grid to false 
+}
 
+/***********************************************************************
+*                              PANS GRID							   *
+***********************************************************************/
+
+
+if keyboard_check_released(global.controls[2]) // Checks for pan left button
+{
+	if x_shift > 0 then x_shift --; // Pan grid left
+}
+
+if keyboard_check_released(global.controls[3]) // Checks for pan right button
+{
+	if x_shift + x_limit < hard_x_limit // Prevents grid panning out of limits
+	{
+		x_shift ++; // Pan grid right
+	}
+}
+
+if keyboard_check_released(global.controls[4]) // Checks for pan up button
+{
+	if y_shift > 0 then y_shift --; // Pan grid up
+}
+
+if keyboard_check_released(global.controls[5]) // Checks for pan down button
+{
+	if y_shift + y_limit < hard_y_limit // Prevents grid panning out of limits
+	{
+		y_shift ++; // Pan grid down
+	}
+}
+
+
+/*****************************************************************************
+*									ZOOM +/-								 *
+******************************************************************************/
+
+if mouse_in_grid == true // Prevents grid from zooming when mouse is not in grid
+{
+	if mouse_wheel_down() // Checks for mouse wheel down
+	{
+		spt_actions(0, 6); // Zoom out
+	}
+	
+	if mouse_wheel_up() // Checks for mouse wheel up
+	{
+		spt_actions(0, 5); // Zoom in
+	}
 }
 
 
 /***********************************************************************
-*                         SETS FONT VARIABLES                          *       
+*                       EXPAND AND REMOVE GRID						   *	   
+***********************************************************************/
+
+if global.edit_enabled == true // Prevents grid from being manipulated if edit mode is disabled
+{
+	if !mouse_check_button(global.controls[0]) then window_set_cursor(cr_arrow); // Sets cursor back to default as long as an operation is not active
+	
+	// SETS GRID MOVE
+	
+	if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer, y_offset - buffer, x_offset + buffer, y_offset + buffer)
+	{
+		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+		{
+			window_set_cursor(cr_size_all); // Sets cursor to move icon
+			global.border_selection_id = unique_id; // Locks grid for editing
+		}
+	}
+	
+	// SETS GRID TO EXPAND VERTICAL
+
+	if point_in_rectangle(mouse_x, mouse_y, x1 + buffer, y2 - buffer, x2 - buffer, y2 + buffer)
+	{
+		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+		{
+			window_set_cursor(cr_size_ns); // Sets cursor to expand vertical
+			global.border_selection_id = unique_id; // Locks grid for editing
+		}
+	}
+	
+	// SETS GRID TO EXPAND HORIZONTL
+	
+	if point_in_rectangle(mouse_x, mouse_y, x2 - buffer, y1 + buffer,x2 + buffer, y2 - buffer)
+	{
+		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+		{
+			window_set_cursor(cr_size_we); // Sets cursor to expand horizontal
+			global.border_selection_id = unique_id; // Locks grid for editing
+		}
+	}
+	
+	// SETS GRID TO EXPAND DIAGONAL
+
+	if point_in_rectangle(mouse_x, mouse_y, x2 - buffer, y2 - buffer, x2 + buffer, y2 + buffer)
+	{
+		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
+		{
+			window_set_cursor(cr_size_nwse); // Sets cursor to expand diagonal
+			global.border_selection_id = unique_id; // Locks grid for editing
+		}
+	}
+	
+	if mouse_check_button(global.controls[0]) // Checks if mouse select button is pressed
+	{
+		if global.border_selection_id == unique_id // Prevents and active item from interfering with other moveable objects
+		{
+			// MOVE GRID
+			
+			if window_get_cursor() == cr_size_all // Checks if grid can be moved
+			{
+				if mouse_x > 0 and mouse_x < room_width - x_max // Prevents grid leaving the boundaries of the room
+				{
+					x_offset = round(mouse_x / grid_snap) * grid_snap; // Snap X
+				}
+				
+				if mouse_y > 0 and mouse_y < room_height - y_max // Prevents grid leaving the boundaries of the room
+				{
+					y_offset = round(mouse_y / grid_snap) * grid_snap; // Snap Y
+				}
+			}
+		
+			// EXPAND GRID VERTICALLY
+		
+			if window_get_cursor() == cr_size_ns // Checks for expand vertical cursor
+			{
+				if mouse_y > y_offset + y_max + cell_size / 2 
+				{
+					if y_limit * cell_size < room_height - cell_size then y_limit ++; // Expand grid vertically
+				}
+	
+				if mouse_y < y_offset + y_max - cell_size / 2 
+				{
+					if y_limit > 1 then y_limit --; // Prevents grid from being too small
+				}
+			}
+			
+			// EXPAND GRID HORIZONTALLY
+		
+			if window_get_cursor() == cr_size_we // Checks for expand horizontal cursor
+			{
+				if mouse_x > x_offset + x_max + cell_size / 2 // 
+				{
+					if x_limit * cell_size < room_width - cell_size then x_limit ++; // Expand grid horizontally
+				}
+	
+				if mouse_x < x_offset + x_max - cell_size / 2 // Prevents grid from being expanded beyond limit
+				{
+					if x_limit > 1 then x_limit --; // Prevents grid from being too small
+				}
+			}
+			
+			// EXPAND GRID DIAGONALLY
+		
+			if window_get_cursor() == cr_size_nwse // Checks for expand diagonal cursor
+			{
+				if mouse_x > x_offset + x_max + cell_size 
+				{
+					if mouse_y > y_offset + y_max + cell_size
+					{
+						if x_limit < hard_x_limit // Prevents grid from being expanded out of bounds
+						{
+							if x_limit * cell_size < room_width - cell_size then x_limit ++; // Expand grid horizontally
+						}
+						
+						if y_limit < hard_y_limit // Prevents grid from being expanded out of bounds
+						{
+							if y_limit * cell_size < room_height - cell_size then y_limit ++; // Expand grid vertically
+						}
+					}
+				}
+					else
+				{
+					if mouse_x < x_offset + x_max - cell_size
+					{
+						if mouse_y < y_offset + y_max - cell_size
+						{
+							if x_limit > 1 // Prevents grid from being expanded out of bounds
+							{
+								if x_limit * cell_size < room_width - cell_size then x_limit --; // Reduce grid horizontally
+							}
+							
+							if y_limit > 1 // Prevents grid from being expanded out of bounds
+							{
+								if y_limit * cell_size < room_height - cell_size then y_limit --; // Reduce grid vertically
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+		else
+	{
+		global.border_selection_id = 0; // Releases grid so other objects can be edited
+	}
+}
+
+
+/***********************************************************************
+*                         SETS FONT VARIABLES						   *	   
 ***********************************************************************/
 
 current_font = fnt_arial_32;
 
-if cell_size < 64 then current_font = fnt_arial_6; // Sets current font to arial 8
-if cell_size < 128 then current_font = fnt_arial_12; // Sets current font to arial 12
-if cell_size > 128 then current_font = fnt_arial_32; // Sets current font to arial 32
+if cell_size < 128 then current_font = fnt_arial_12; // Sets current font
+if cell_size > 128 then current_font = fnt_arial_32; // Sets current font
 
-draw_set_font(current_font); // Sets font to draw numbers with
+draw_set_font(current_font); // Sets number font
 
 font_width = string_width(0); // Stores width of current font in pixels
 font_height = string_height(0); // Stores height of current font in pixels
 
 
-/***********************************************************************
-*                              PANS GRID                               *
-***********************************************************************/
-
-// PAN GRID LEFT
-
-if keyboard_check_released(global.controls[2]) // Checks if shift left key has been pressed
-{
-   spt_actions(0, 7);
-}
-
-// PAN GRID RIGHT
-
-if keyboard_check_released(global.controls[3]) // Checks if shift right key has been pressed
-{
-   spt_actions(0, 8);
-}
-
-// PAN GRID UP
-
-if keyboard_check_released(global.controls[4]) // Checks if shift up key has been pressed
-{
-   spt_actions(0, 9);
-}
-
-// PAN GRID DOWN
-
-if keyboard_check_released(global.controls[5]) // Checks if shift down key has been pressed
-{
-    spt_actions(0, 10);
-}
-
-
-/*****************************************************************************
-*                                    ZOOM +/-                                *
-******************************************************************************/
-
-// ZOOM IN
-
-if mouse_in_grid == true // Ensures mouse is inside grid before scrolling avoiding interference with obj_palette objects
-{
-	if mouse_wheel_up() // Checks to see if mouse was scrolled up
-	{
-		spt_actions(0, 6); // Run zoom in code
-	}
-
-	if mouse_wheel_down() // Checks to see if mouse was scrolled down
-	{
-		spt_actions(0, 5); // Run zoom out code
-	}
-}
 
 /***********************************************************************
-*                         EXPAND AND MOVE GRID                         *       
-***********************************************************************/
-
-if global.edit_enabled == true // Ensures grid can be modified
-{
-    if !mouse_check_button(global.controls[0]) then window_set_cursor(cr_arrow); // Sets cursor back to default as long as an operation is not active
-
-	// DETECTS IF MOUSE CURSOR IS IN MOVE ZONE
-
-    if point_in_rectangle(mouse_x, mouse_y, x_offset - buffer, y_offset - buffer, x_offset + buffer, y_offset + buffer) // Check that mouse is in move grid area
-    {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
-        {
-            window_set_cursor(cr_size_all); // Sets cursor to move cursor
-            global.border_selection_id = unique_id; // Locks grid for editing
-        }
-    }
-	
-	// DETECTS IF MOUSEIS IN EXPAND VERTICALLY ZONE
-	
-	border_x1 = x_offset; // Calculates X1 possition (Prevents string in function from being too long)
-	border_y1 = y_offset + y_max  - buffer; // Calculates Y1 possition (Prevents string in function from being too long)
-	border_x2 = x_offset + x_max; // Calculates X2 possition (Prevents string in function from being too long)
-	border_y2 = y_offset + y_max + buffer; // Calculates Y2 possition (Prevents string in function from being too long)
-
-    if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand up, down area
-    {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
-        {
-            window_set_cursor(cr_size_ns); // Sets cursor to up, down arrow
-            global.border_selection_id = unique_id; // Locks grid for editing
-        }
-	}
-	
-	// DETECTS IF MOUSE IS IN EXPAND HORIZONTALLY ZONE
-	
-	border_x1 = x_offset + x_max - buffer;// Calculates X1 possition (Prevents string in function from being too long)
-	border_y1 = y_offset; // Calculates Y1 possition (Prevents string in function from being too long)
-	border_x2 = x_offset + x_max + buffer; // Calculates X2 possition (Prevents string in function from being too long)
-	border_y2 = y_offset + y_max; // Calculates Y2 possition (Prevents string in function from being too long)
-
-    if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand left, right area
-    {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
-        {
-            window_set_cursor(cr_size_we); // Sets cursor to left, right arrow
-            global.border_selection_id = unique_id; // Locks grid for editing
-        }
-    }
-
-	// EXPAND GRID DIAGONALLY
-
-	border_x1 = x_offset - buffer + x_max; // Calculates X1 possition (Prevents string in function from being too long)
-	border_y1 = y_offset - buffer + y_max; // Calculates Y1 possition (Prevents string in function from being too long)
-	border_x2 = x_offset + buffer + x_max; // Calculates X2 possition (Prevents string in function from being too long)
-	border_y2 = y_offset + buffer + y_max; // Calculates Y2 possition (Prevents string in function from being too long)
-	
-	// DETECTS IF MOUSE IS IN EXPAND DIAGONALLY ZONE
-	
-    if point_in_rectangle(mouse_x, mouse_y, border_x1, border_y1, border_x2, border_y2) // Check that mouse is in expand diagonal area
-    {
-        if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
-        {
-            window_set_cursor(cr_size_nwse); // Sets cursor to diagonal top left
-            global.border_selection_id = unique_id; // Locks grid for editing
-        }
-    }
-    
-	// MOVE GRID
-	
-    if mouse_check_button(global.controls[0]) // Check if select button is pressed
-    {
-        if global.border_selection_id == unique_id // Prevents obj_palette objects from being moved while grid is being moved
-        {
-            if window_get_cursor() == cr_size_all // Checks if current cursor is set to move cursor
-            {
-                if mouse_x > 0 and mouse_x < room_width - x_max // Prevents grid leaving the boundaries of the room
-                {
-                    x_offset = floor(mouse_x / grid_snap) * grid_snap; // Snap X
-                }
-                
-                if mouse_y > 0 and mouse_y < room_height - y_max // Prevents grid leaving the boundaries of the room
-                {
-                    y_offset = floor(mouse_y / grid_snap) * grid_snap; // Snap Y
-				}
-			}
-        
-			// EXPAND GRID VERTICALLY
-		
-	        if window_get_cursor() == cr_size_ns // Checks if current cursor is set to up, down cursor
-	        {	
-				if floor((mouse_y - y_offset) / cell_size) > 1 // Prevents grid from becoming invisible
-				{
-					if floor(mouse_y - y_offset / cell_size) < hard_y_limit + 1
-					{
-						y_limit = floor(mouse_y - y_offset) / (cell_size); // Recalculates Y Limit based on mouse Y possition
-					}
-				}
-					else
-				{
-					y_limit = 1; // Ensures grid does not stick
-				}
-	        }
-			
-			// EXPAND GRID HORIZONTAL
-        
-	        if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, right cursor
-	        {	
-				if floor((mouse_x - x_offset) / cell_size) > 1 // Prevents grid from becoming invisible
-				{
-					if floor(mouse_x - x_offset) / (cell_size) < hard_x_limit + 1 
-					{
-						x_limit = floor((mouse_x - x_offset) / (cell_size)); // Recalculates X Limit based on mouse Y possition
-					}
-				}
-					else
-				{
-					x_limit = 1; // Ensures griddoes not stick
-				}
-	        }
-        
-			// EXPAND DIAGONALLY
-		
-            if window_get_cursor() == cr_size_nwse // Checks if current cursor is set to top, left cursor
-            {	
-				// EXPAND Y
-				
-				if floor((mouse_y - y_offset) / cell_size) > 1 // Prevents grid from becoming invisible
-				{
-					if floor(mouse_y - y_offset) / (cell_size) < hard_y_limit + 1
-					{
-						y_limit = floor(mouse_y - y_offset) / (cell_size); // Recalculates Y Limit based on mouse Y possition
-					}
-				}
-					else
-				{
-					y_limit = 1; // Ensures grid does not stick
-				}
-				
-				// EXPAND X
-				
-				if floor((mouse_x - x_offset) / cell_size) > 1 // Prevents grid from becoming invisible
-				{
-					if floor(mouse_x - x_offset) / (cell_size) < hard_x_limit + 1 // 
-					{
-						x_limit = floor(mouse_x - x_offset) / (cell_size); // Recalculates X Limit based on mouse Y possition
-					}
-				}
-					else
-				{
-					x_limit = 1; // Ensures griddoes not stick
-				}
-            }
-        }
-    }
-        else
-    {
-        global.border_selection_id = 0; // Frees up obj_palette objects to be moved and manipulated
-    }
-}
-
-/***********************************************************************
-*									DEBUG							   *       
+*									DEBUG							   *	   
 ***********************************************************************/
 
 if keyboard_check_pressed(vk_space)
