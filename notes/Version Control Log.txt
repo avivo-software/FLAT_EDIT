@@ -77,3 +77,4 @@ Version 0.0.7.2 | Added code for delete button.
 Version 0.0.7.3 | New tiles will not be placed when rotation button is selected. Updated graphics.
 Version 0.0.7.4 | Fixed problems with grid.
 Version 0.0.7.5 | Grid pan code now points to actions script. Updated tile placement logic.
+Version 0.0.7.6 | Added danger layer.

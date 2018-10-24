@@ -20,3 +20,4 @@ TO DO | See if some of the case statements in action script can be condenced. (N
 TO DO | Fix scale placemnt code for when grid lines are thicker than one (Line thickness code has been  removed in favor of better scaling option)
 TO DO | When clicking tiles on palette does not always play correct sound. Can't recreate step by step.
 TO DO | Checks sprite tessellation.
+TO DO | Put danger layer on different layer to collide layer. Use layer ID to swap current layer to avoid duplicate code.

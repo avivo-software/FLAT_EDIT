@@ -58,7 +58,7 @@ for(i = 0; i < y_limit+1; i++)
 	{
 		if numbers_enabled == true // Checks numbers are enabled before drawing
 		{
-			draw_text(x_offset - 16 - font_width , y_offset + cell_size * i + (cell_size / 2), i + y_shift); //Draws numbers
+			draw_text(x_offset - 24 - font_width , y_offset + cell_size * i + (cell_size / 2), i + y_shift); //Draws numbers
 		}
 	}
 }

@@ -22,11 +22,11 @@ for (j = 0; j < outer_loop; ++j) // Outer loop (Y)
 			{
 				if stuck[current_sprite_id] == false  // Playes sound depending if sprite has been released or pressed
 				{
-					spt_sound(0, 0);	
+					spt_sound(0, 0); // Play click sound	
 				}
 					else
 				{
-					spt_sound(0, 1);
+					spt_sound(0, 1); // Play unclick sound
 				}
 			}
 			

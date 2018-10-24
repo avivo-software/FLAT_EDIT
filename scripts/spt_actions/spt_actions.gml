@@ -331,6 +331,7 @@ with obj_grid // Prevents unknown variable error
 if argument0 == 1 // Checks if action type is slide
 {
 	global.current_layer = 0; // Sets global layer back to zero (collide layer)
+	obj_layer.palette_shift = 0; // Sets layer to correct sprite
 	
 	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
 	
@@ -400,6 +401,7 @@ if argument0 == 2 // Checks if action type is tiles
 	}
 	
 	stuck[argument1] = true; // Sticks selected tile
+	
 }
 
 // CHECKS LAYER
@@ -413,4 +415,24 @@ if argument0 == 3 // Checks if action type is layer
 	
 	image_index = palette_shift; // Sets image index to palette shift
 	global.current_layer = palette_shift; // Updates current tile layer to 
+	
+	palette_shift = global.current_layer; // Updates layer to match current
+	global.current_layer = palette_shift; // Updates global layer
+	
+	if palette_shift == 0
+	{
+		spt_actions(1, obj_slides.last_selection);
+	}
+	
+	if palette_shift == 1
+	{
+		tilemap_tileset("lyr_danger", tl_danger); // Switch tileset to city
+			
+		obj_tiles.current_sprite = spr_danger_tile_colour; // Sets current tile palette to danger
+		obj_tiles.primary_sprite = spr_danger_tile_colour; // Sets primary sprite to danger
+		obj_tiles.secondary_sprite = spr_danger_tile_grey; // Sets secondary sprite to danger
+		
+		obj_tiles.sprite_qty = sprite_get_number(obj_tiles.current_sprite); // Stores the number of sub images in current sprite
+		obj_tiles.sprite_limit = obj_tiles.sprite_qty; // Sets the maximum number of sprites to draw
+	}
 }
