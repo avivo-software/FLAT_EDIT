@@ -15,6 +15,10 @@ global.music_enabled = false; // Toggles music
 
 // INITIALIZE GRID GLOBALS
 
+global.current_sprite = spr_city_tile_colour; // Stores current tileset globally
+global.primary_sprite = spr_city_tile_colour; // Stores primary tileset globally
+global.secondary_sprite = spr_city_tile_grey; // Stores secondary tileset globally
+
 global.current_layer = 0; // Stores current tile layer
 
 global.rotate_enabled = false; // Determines if selected grid tile should be rotated

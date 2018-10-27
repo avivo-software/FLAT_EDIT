@@ -351,6 +351,10 @@ if argument0 == 1 // Checks if action type is slide
 			obj_tiles.current_sprite = spr_city_tile_colour; // Sets current tile palette to city
 			obj_tiles.primary_sprite = spr_city_tile_colour; // Sets primary sprite to city
 			obj_tiles.secondary_sprite = spr_city_tile_grey; // Sets secondary sprite to city
+			
+			global.current_sprite = spr_city_tile_colour; // Sets current tile palette to city (global)
+			global.primary_sprite = spr_city_tile_colour; // Sets primary sprite to city (global)
+			global.secondary_sprite = spr_city_tile_grey; // Sets secondary sprite to city (global)
 		
 		break;
 		
@@ -361,6 +365,10 @@ if argument0 == 1 // Checks if action type is slide
 			obj_tiles.current_sprite = spr_temple_tile_colour; // Sets tile palette to temple
 			obj_tiles.primary_sprite = spr_temple_tile_colour; // Sets primary sprite to temple
 			obj_tiles.secondary_sprite = spr_temple_tile_grey; // Sets secondary sprite to city
+			
+			global.current_sprite = spr_temple_tile_colour; // Sets current tile palette to temple (global)
+			global.primary_sprite = spr_temple_tile_colour; // Sets primary sprite to temple (global)
+			global.secondary_sprite = spr_temple_tile_grey; // Sets secondary sprite to temple (global)
 		
 		break;
 		
@@ -371,7 +379,11 @@ if argument0 == 1 // Checks if action type is slide
 			obj_tiles.current_sprite = spr_graveyard_tile_colour; // Sets tile palette to temple
 			obj_tiles.primary_sprite = spr_graveyard_tile_colour; // Sets primary sprite to temple
 			obj_tiles.secondary_sprite = spr_graveyard_tile_grey; // Sets secondary sprite to city
-		
+			
+			global.current_sprite = spr_temple_tile_colour; // Sets current tile palette to temple (global)
+			global.primary_sprite = spr_temple_tile_colour; // Sets primary sprite to temple (global)
+			global.secondary_sprite = spr_temple_tile_grey; // Sets secondary sprite to temple (global)
+			
 		break;
 	}
 	
