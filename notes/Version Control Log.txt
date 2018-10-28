@@ -79,3 +79,4 @@ Version 0.0.7.4 | Fixed problems with grid.
 Version 0.0.7.5 | Grid pan code now points to actions script. Updated tile placement logic.
 Version 0.0.7.6 | Added danger layer.
 Version 0.0.7.7 | Started to re code place object code.
+Version 0.0.7.8 | Ready for place code tidy.
