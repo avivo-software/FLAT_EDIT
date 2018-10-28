@@ -80,3 +80,4 @@ Version 0.0.7.5 | Grid pan code now points to actions script. Updated tile place
 Version 0.0.7.6 | Added danger layer.
 Version 0.0.7.7 | Started to re code place object code.
 Version 0.0.7.8 | Ready for place code tidy.
+Version 0.0.7.9 | Version 0.0.7.8 is bad version 0.0.7.9 is ready for testing.

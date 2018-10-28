@@ -70,7 +70,11 @@ if obj_grid.mouse_in_grid == true
 				current_y_scale[obj_grid.x_pos, obj_grid.y_pos] = current_y_scale[obj_grid.x_pos, obj_grid.y_pos] * -1;
 			}
 		}
-		show_debug_message(current_rotation[obj_grid.x_pos, obj_grid.y_pos]);
+	}
+	
+	if mouse_check_button_pressed(global.controls[1])
+	{
+		current_index[obj_grid.x_pos, obj_grid.y_pos] = 0;
 	}
 	
 	switch global.current_layer
@@ -88,8 +92,8 @@ if obj_grid.mouse_in_grid == true
 		
 			danger_index = current_index;
 			danger_angle = current_rotation;
-			danger_x_scale = current_flip_horizontal;
-			danger_y_scale = current_flip_vertical;
+			danger_flip_horizontal = current_x_scale;
+			danger_flip_vertical = current_y_scale;
 		
 		break;
 	}

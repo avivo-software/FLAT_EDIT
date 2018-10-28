@@ -15,7 +15,6 @@ switch current_rotation // Checks for current tile rotation value
 		if current_x_scale < 0 and current_y_scale > 0
 		{
 			x = x + obj_grid.cell_size; // Shift selected tile one cell to the right
-			show_debug_message("");
 		}
 		
 		if current_x_scale > 0 and current_y_scale < 0
