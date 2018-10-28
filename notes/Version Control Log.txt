@@ -74,10 +74,11 @@ Version 0.0.6.9 | Tile rotation script works only for grid size 128.
 Version 0.0.7.0 | Fixed grid numbers.
 Version 0.0.7.1 | Fixed tile flipping and rotation for different size grids.
 Version 0.0.7.2 | Added code for delete button.
-Version 0.0.7.3 | New tiles will not be placed when rotation button is selected. Updated graphics.
+Version 0.0.7.3 | New tiles will not be placed when rotation button is selected. Updated graphics. 
 Version 0.0.7.4 | Fixed problems with grid.
 Version 0.0.7.5 | Grid pan code now points to actions script. Updated tile placement logic.
 Version 0.0.7.6 | Added danger layer.
 Version 0.0.7.7 | Started to re code place object code.
 Version 0.0.7.8 | Ready for place code tidy.
 Version 0.0.7.9 | Version 0.0.7.8 is bad version 0.0.7.9 is ready for testing.
+Version 0.0.8.0 | Fixed grid so that it does not report negitive numbers in terms of x and y pos variables. Updated comments.

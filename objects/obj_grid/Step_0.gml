@@ -12,14 +12,6 @@ y2 = y_offset + y_max; // Y2 border coordinate
 
 
 /***********************************************************************
-*              DETERMINES GRID COORDINATES BASED ON MOUSE			   *	   
-***********************************************************************/
-
-x_pos = floor((mouse_x - x_offset) / cell_size) + x_shift; // Updates X position based on mouse location
-y_pos = floor((mouse_y - y_offset) / cell_size) + y_shift; // Updates Y position based on mouse location
-
-
-/***********************************************************************
 *          DETERMINES IF MOUSE IS INSIDE OR OUTSIDE THE GRID		   *	   
 ***********************************************************************/
 
@@ -32,6 +24,18 @@ if point_in_rectangle(mouse_x, mouse_y, x_offset, y_offset, x_offset + x_max, y_
 	mouse_in_grid = false; // Sets mouse in grid to false 
 }
 
+
+/***********************************************************************
+*              DETERMINES GRID COORDINATES BASED ON MOUSE			   *	   
+***********************************************************************/
+
+if mouse_in_grid == true
+{
+	x_pos = floor((mouse_x - x_offset) / cell_size) + x_shift; // Updates X position based on mouse location
+	y_pos = floor((mouse_y - y_offset) / cell_size) + y_shift; // Updates Y position based on mouse location
+}
+
+show_debug_message(x_pos);
 /***********************************************************************
 *                              PANS GRID							   *
 ***********************************************************************/

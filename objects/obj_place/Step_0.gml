@@ -4,7 +4,7 @@
 *								MANIPULATE TILES						   *
 ***************************************************************************/
 
-if obj_grid.mouse_in_grid == true
+if obj_grid.mouse_in_grid == true // Checks mouse is inside grid to 
 {
 	switch global.current_layer
 	{
