@@ -284,11 +284,19 @@ with obj_grid // Prevents unknown variable error
 				{
 					for(i = 0; i < obj_grid.hard_x_limit; i++) // Inner loop
 					{
-						ds_grid_set(obj_place.collide_grid_index, i, j, 0); // Sets tile index to zero (Invisible)
-						ds_grid_set(obj_place.collide_grid_angle, i, j, 0); // Sets tile angle to zero (zero degrees)
+						// CLEAR COLLIDE VARIABLES
 		
-						ds_grid_set(obj_place.collide_grid_flip_horizontal, i, j, 1); // Sets horizontal flip to 0
-						ds_grid_set(obj_place.collide_grid_flip_vertical, i, j, 1); // Sets vertical flip to 0
+						obj_place.collide_index[i, j] = 0; // Set collide index
+						obj_place.collide_angle[i, j] = 0; // Set collide angle
+						obj_place.collide_flip_horizontal[i, j] = 1; // Set collide flip horizontal
+						obj_place.collide_flip_vertical[i, j] = 1; // Set collide flip vertical
+		
+						// CLEAR DANGER VARIABLES
+		
+						obj_place.danger_index[i, j] = 0; // Set danger index
+						obj_place.danger_angle[i, j] = 0; // Set danger angle
+						obj_place.danger_flip_horizontal[i, j] = 1; // Set danger flip horizontal
+						obj_place.danger_flip_vertical[i, j] = 1; // Set danger flip vertical
 					}
 				}
 				
@@ -341,7 +349,7 @@ if argument0 == 1 // Checks if action type is slide
 	}
 
 	stuck[argument1] = true; // Sticks selected slide
-
+	
 	switch argument1 // Determines which slide has been selected
 	{
 		case 0: // Checks if temple slide is selected

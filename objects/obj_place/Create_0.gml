@@ -4,6 +4,10 @@
 *							INITIALIZES VARIABLES						   *
 ***************************************************************************/
 
+layer_alpha = 0; // Determines the opacity of non selected layers
+non_selected_alpha = 0.5; // Sets opacity for non selected layer
+selected_alpha = 1; // Sets opacityfor selected layer
+
 for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 {
 	for(i = 0; i < obj_grid.hard_x_limit; i++) // Inner loop

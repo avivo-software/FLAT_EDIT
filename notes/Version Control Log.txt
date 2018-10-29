@@ -83,3 +83,4 @@ Version 0.0.7.8 | Ready for place code tidy.
 Version 0.0.7.9 | Version 0.0.7.8 is bad version 0.0.7.9 is ready for testing.
 Version 0.0.8.0 | Fixed grid so that it does not report negitive numbers in terms of x and y pos variables. Updated comments.
 Version 0.0.8.1 | Fixed tile placement bug.
+Version 0.0.8.2 | Fixed delete code. Shortened draw tile function code. Now is taken from variables to avoid single line being too long. Non selected layers are now transparent. 
