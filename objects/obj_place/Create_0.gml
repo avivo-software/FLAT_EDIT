@@ -27,3 +27,19 @@ for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 		danger_flip_vertical[i, j] = 1; // Set danger flip vertical
 	}
 }
+
+/***************************************************************************
+*								CREATE DS GRIDS							   *
+****************************************************************************/
+
+collide_grid_index = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for collide map
+collide_grid_angle = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for collide map
+collide_grid_flip_horizontal = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for collide map
+collide_grid_flip_vertical = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for collide map
+
+danger_grid_index = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for danger map
+danger_grid_angle = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for danger map
+danger_grid_flip_horizontal = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for danger map
+danger_grid_flip_vertical = ds_grid_create(obj_grid.hard_x_limit, obj_grid.hard_y_limit); // Creates ds grid for danger map
+
+

@@ -24,7 +24,6 @@ for(j = 0; j < obj_grid.y_limit; j++) // Outer loop
 		spt_translate(); // Recalculates X and Y positions based on rotation and flip values
 		
 		if global.current_layer == 1 then layer_alpha = selected_alpha else layer_alpha = non_selected_alpha;
-		//if global.current_layer == 0 then layer_alpha = 0.5;
 		
 		draw_sprite_ext(current_sprite, current_index, x, y, current_x_scale, current_y_scale, current_rotation, c_white, layer_alpha); // Draw danger layer
 		
@@ -44,7 +43,6 @@ for(j = 0; j < obj_grid.y_limit; j++) // Outer loop
 		spt_translate(); // Recalculates X and Y positions based on rotation and flip values
 		
 		if global.current_layer == 0 then layer_alpha = selected_alpha else layer_alpha = non_selected_alpha;
-		//if global.current_layer == 1 then layer_alpha = 0.5;
 		
 		draw_sprite_ext(global.current_sprite, current_index, x, y, current_x_scale, current_y_scale, current_rotation, c_white, layer_alpha); // Draw collide layer
 	}

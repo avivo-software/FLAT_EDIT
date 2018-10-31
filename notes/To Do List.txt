@@ -21,3 +21,15 @@ TO DO | Fix scale placemnt code for when grid lines are thicker than one (Line t
 TO DO | When clicking tiles on palette does not always play correct sound. Can't recreate step by step.
 TO DO | Checks sprite tessellation.
 TO DO | Put danger layer on different layer to collide layer. Use layer ID to swap current layer to avoid duplicate code.
+TO DO | Correct version numbers by editing commits. Version 0.0.8.2 for example.
+TO DO | Allow palette manipulation to happen from all sides.
+
+*************************************************************************
+*								CODE TIDY							    *
+*************************************************************************
+
+(1) Ensure that all if statements are defined with a double equils and assignments in single.
+(2) Spelling and grammar must be correct.
+(3) Make long function strings short by assigning data to variables before the function.
+(4) A space must be between the operator (+, -, /, *) unless the integer is that number. I.E x = -1 would be written as so, if you intend to remove 1 then a space should be inserted between the operator and the integer
+(5) 

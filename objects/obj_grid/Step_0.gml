@@ -35,7 +35,7 @@ if mouse_in_grid == true
 	y_pos = floor((mouse_y - y_offset) / cell_size) + y_shift; // Updates Y position based on mouse location
 }
 
-show_debug_message(x_pos);
+
 /***********************************************************************
 *                              PANS GRID							   *
 ***********************************************************************/

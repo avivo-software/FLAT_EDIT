@@ -40,7 +40,6 @@ if obj_grid.mouse_in_grid == true // Checks mouse is inside grid to
 			if current_rotation[obj_grid.x_pos, obj_grid.y_pos] < 270 
 			{
 				current_rotation[obj_grid.x_pos, obj_grid.y_pos] = current_rotation[obj_grid.x_pos, obj_grid.y_pos] + 90;
-				show_debug_message(current_rotation[obj_grid.x_pos, obj_grid.y_pos]);
 			}
 				else
 			{
