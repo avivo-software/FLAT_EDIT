@@ -23,6 +23,7 @@ TO DO | Checks sprite tessellation.
 TO DO | Put danger layer on different layer to collide layer. Use layer ID to swap current layer to avoid duplicate code.
 TO DO | Correct version numbers by editing commits. Version 0.0.8.2 for example.
 TO DO | Allow palette manipulation to happen from all sides.
+TO DO | See if there is a more condenced way to calculate tile layers.
 
 *************************************************************************
 *								CODE TIDY							    *

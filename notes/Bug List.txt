@@ -23,4 +23,4 @@ BUG | Selected grid numbers does not seem to highlight correctly. Fixed 0.0.7.0.
 BUG | Selecting tile 13 when Egyption tileset is selected, caused palette to go grey. This also happens when tile zero is selected. Fixed 0.0.7.8
 BUG | When trying to place a tile on grid when layer is not 0 or 1 causes a crash. 
 BUG | Tile placement does not work when grid is panned. Fixed in 0.0.8.1.
-BUG | Save system does not work for danger tiles.
+BUG | Save system does not work for danger tiles. Fixed in 0.0.8.5
