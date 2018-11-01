@@ -85,3 +85,4 @@ Version 0.0.8.0 | Fixed grid so that it does not report negitive numbers in term
 Version 0.0.8.1 | Fixed tile placement bug.
 Version 0.0.8.2 | Fixed delete code. Shortened draw tile function code. Now is taken from variables to avoid single line being too long. Non selected layers are now transparent. 
 Version 0.0.8.3 | Save and load code example works in principle. Need to add rest of code.
+Version 0.0.8.4 | Save system works only for collide data.
