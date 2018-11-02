@@ -87,3 +87,4 @@ Version 0.0.8.2 | Fixed delete code. Shortened draw tile function code. Now is t
 Version 0.0.8.3 | Save and load code example works in principle. Need to add rest of code.
 Version 0.0.8.4 | Save system works only for collide data.
 Version 0.0.8.5 | Fixed danger tile save function. Fixed button sticking.
+Version 0.0.8.6 | Added debug object. Fixed issue with correct tiles being placed when graveyard slide is selected. Load, save functions now store level.

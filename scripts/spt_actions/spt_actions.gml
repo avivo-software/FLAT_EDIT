@@ -220,7 +220,25 @@ with obj_grid // Prevents unknown variable error
 			
 			case 17: // Play
 			
-				show_debug_message("play");
+			for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
+			{
+				for(i = 0; i < obj_grid.hard_x_limit; i++) // Inner loop
+				{
+					// COLLIDE MAP
+					
+					lay_id = layer_get_id("lyr_collide"); // Gets layer ID for collide layer
+					map_id = layer_tilemap_get_id(lay_id); // Gets map ID for collide layer
+			
+					tilemap_set(map_id, obj_place.collide_index[i, j], i, j); // Applies stored tile to collide map
+					
+					// DANGER MAP
+					
+					lay_id = layer_get_id("lyr_danger"); // Gets layer ID for danger layer
+					map_id = layer_tilemap_get_id(lay_id); // Gets map ID for danger layer
+			
+					tilemap_set(map_id, obj_place.danger_index[i, j], i, j); // Applies stored tile to danger map
+				}
+			}
 			
 			break;
 			
@@ -270,6 +288,10 @@ with obj_grid // Prevents unknown variable error
 			
 			ini_open("test.txt"); // Open ini file for writing
 			
+			// READ AND APPLY SETTINGS DATA
+			
+			spt_actions(1, ini_read_real("settings_data", "last_selection", "")); // Toggles slide back to correct possition causeing tile palette to be updated
+			
 			// POPULATE DANGER GRID WITH DATA
 			
 			ds_grid_read(obj_place.danger_grid_index, ini_read_string("danger_data", "danger_grid_index", "")); // Read danger index data from file
@@ -314,8 +336,6 @@ with obj_grid // Prevents unknown variable error
 			
 			case 26: // Save
 			
-			//file = get_open_filename("save|*.txt", "");
-			
 			// CLEAR DANGER GRID DATA (PREVENTS ERROR)
 			
 			ds_grid_clear(obj_place.danger_grid_index, 0); // Clear danger index data
@@ -353,6 +373,10 @@ with obj_grid // Prevents unknown variable error
 			}
 			
 			ini_open("test.txt"); // Open ini file for writing
+			
+			// WRITE SETTINGS
+			
+			ini_write_real("settings_data", "last_selection", obj_slides.last_selection); // Write current slide to file
 			
 			// WRITE DANGER GRID DATA TO FILE
 			
@@ -439,12 +463,12 @@ if argument0 == 1 // Checks if action type is slide
 	
 	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
 	
-	for(i = 0; i < sprite_qty; i++) // loops through to number of slide availible
+	for(i = 0; i < obj_slides.sprite_qty; i++) // loops through to number of slide availible
 	{
-		stuck[i] = false; // Unsticks current slide
+		obj_slides.stuck[i] = false; // Unsticks current slide
 	}
 
-	stuck[argument1] = true; // Sticks selected slide
+	obj_slides.stuck[argument1] = true; // Sticks selected slide
 	
 	switch argument1 // Determines which slide has been selected
 	{
@@ -484,9 +508,9 @@ if argument0 == 1 // Checks if action type is slide
 			obj_tiles.primary_sprite = spr_graveyard_tile_colour; // Sets primary sprite to temple
 			obj_tiles.secondary_sprite = spr_graveyard_tile_grey; // Sets secondary sprite to city
 			
-			global.current_sprite = spr_temple_tile_colour; // Sets current tile palette to temple (global)
-			global.primary_sprite = spr_temple_tile_colour; // Sets primary sprite to temple (global)
-			global.secondary_sprite = spr_temple_tile_grey; // Sets secondary sprite to temple (global)
+			global.current_sprite = spr_graveyard_tile_colour; // Sets current tile palette to temple (global)
+			global.primary_sprite = spr_graveyard_tile_colour; // Sets primary sprite to temple (global)
+			global.secondary_sprite = spr_graveyard_tile_grey; // Sets secondary sprite to temple (global)
 			
 		break;
 	}

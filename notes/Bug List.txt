@@ -24,3 +24,4 @@ BUG | Selecting tile 13 when Egyption tileset is selected, caused palette to go 
 BUG | When trying to place a tile on grid when layer is not 0 or 1 causes a crash. 
 BUG | Tile placement does not work when grid is panned. Fixed in 0.0.8.1.
 BUG | Save system does not work for danger tiles. Fixed in 0.0.8.5
+BUG | If a tile is placed, rotated then deleted, causes rotate button to reverse polarity.

@@ -47,6 +47,7 @@ instance_create_layer(0, 0, layer_id, obj_slides); // Loads slides object
 instance_create_layer(0, 0, layer_id, obj_tiles); // Loads tiles object
 instance_create_layer(0, 0, layer_id, obj_layer); // Loads layer object
 instance_create_layer(0, 0, layer_id, obj_place); // Loads place object
+instance_create_layer(0, 0, layer_id, obj_debug); // Loads debug object
 
 // INITIALIZE SOUND VARIABLES
 

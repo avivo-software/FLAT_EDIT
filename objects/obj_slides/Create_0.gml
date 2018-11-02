@@ -63,3 +63,4 @@ stuck[0] = true; // Sets default selection
 
 inner_loop = sprite_limit; // Sets inner loop to tile root
 outer_loop = 1; // Number of sprites to draw in Y direction (Calculated from inner loop)
+
