@@ -228,15 +228,17 @@ with obj_grid // Prevents unknown variable error
 					
 					lay_id = layer_get_id("lyr_collide"); // Gets layer ID for collide layer
 					map_id = layer_tilemap_get_id(lay_id); // Gets map ID for collide layer
-			
-					tilemap_set(map_id, obj_place.collide_index[i, j], i, j); // Applies stored tile to collide map
+
+					data = tilemap_get(map_id, i, j);
+					index = tile_get_index(data);
+					data = tile_set_index(data, obj_place.collide_index[i, j]);
 					
-					// DANGER MAP
-					
-					lay_id = layer_get_id("lyr_danger"); // Gets layer ID for danger layer
-					map_id = layer_tilemap_get_id(lay_id); // Gets map ID for danger layer
-			
-					tilemap_set(map_id, obj_place.danger_index[i, j], i, j); // Applies stored tile to danger map
+					data = tile_set_flip(data, obj_place.collide_flip_data[i, j]);
+					data = tile_set_mirror(data, obj_place.collide_mirror_data[i, j]);
+					data = tile_set_rotate(data, obj_place.collide_rotate_data[i, j]);
+
+					tilemap_set(map_id, data, i, j);
+
 				}
 			}
 			

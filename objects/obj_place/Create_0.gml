@@ -19,12 +19,20 @@ for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 		collide_flip_horizontal[i, j] = 1; // Set collide flip horizontal
 		collide_flip_vertical[i, j] = 1; // Set collide flip vertical
 		
+		collide_flip_data[i, j] = false;
+		collide_mirror_data[i, j] = false;
+		collide_rotate_data[i, j] = false;
+		
 		// SET DANGER VARIABLES
 		
 		danger_index[i, j] = 0; // Set danger index
 		danger_angle[i, j] = 0; // Set danger angle
 		danger_flip_horizontal[i, j] = 1; // Set danger flip horizontal
 		danger_flip_vertical[i, j] = 1; // Set danger flip vertical
+		
+		danger_flip_data[i, j] = false;
+		danger_mirror_data[i, j] = false;
+		danger_rotate_data[i, j] = false;
 	}
 }
 
