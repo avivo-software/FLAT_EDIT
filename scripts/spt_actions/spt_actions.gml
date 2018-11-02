@@ -229,15 +229,15 @@ with obj_grid // Prevents unknown variable error
 					lay_id = layer_get_id("lyr_collide"); // Gets layer ID for collide layer
 					map_id = layer_tilemap_get_id(lay_id); // Gets map ID for collide layer
 
-					data = tilemap_get(map_id, i, j);
-					index = tile_get_index(data);
-					data = tile_set_index(data, obj_place.collide_index[i, j]);
+					data = tilemap_get(map_id, i, j); // Gets data blob
+					index = tile_get_index(data); // Gets index for data blob
+					data = tile_set_index(data, obj_place.collide_index[i, j]); // Applies index to data blob
 					
-					data = tile_set_flip(data, obj_place.collide_flip_data[i, j]);
-					data = tile_set_mirror(data, obj_place.collide_mirror_data[i, j]);
-					data = tile_set_rotate(data, obj_place.collide_rotate_data[i, j]);
+					data = tile_set_flip(data, obj_place.collide_flip_data[i, j]); // Applies flip data to blob
+					data = tile_set_mirror(data, obj_place.collide_mirror_data[i, j]); // Applies mirror data to blob
+					data = tile_set_rotate(data, obj_place.collide_rotate_data[i, j]); // Applies rotate data to blob
 
-					tilemap_set(map_id, data, i, j);
+					tilemap_set(map_id, data, i, j); // Applies modified blob data
 
 				}
 			}
