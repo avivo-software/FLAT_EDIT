@@ -93,3 +93,4 @@ Version 0.0.8.8 | Tilemap rotation logic completed and ready for testing.
 Version 0.0.8.9 | Commented new translation code.
 Version 0.0.9.0 | Started to code object palette.
 Version 0.0.9.1 | Updated object palette code.
+Version 0.0.9.2 | Updated object palette code.

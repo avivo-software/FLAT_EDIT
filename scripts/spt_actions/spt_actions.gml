@@ -596,14 +596,25 @@ if argument0 == 4
 		}
 			else
 		{
-			current_sprite = spr_barrels_colour;
-			primary_sprite = spr_barrels_colour;
-			secondary_sprite = spr_barrels_colour;
+			current_sprite = spr_lever_colour;
+			primary_sprite = spr_lever_colour;
+			secondary_sprite = spr_lever_colour;
 		}
 		
 		break;
 		
 		case 1:
+		
+		if current_sprite == spr_category_colour
+		{
+			current_sprite = spr_barrels_colour;
+			primary_sprite = spr_barrels_colour;
+			secondary_sprite = spr_barrels_colour;
+		}
+	
+		break;
+		
+		case 2:
 		
 		if current_sprite == spr_category_colour
 		{
