@@ -21,7 +21,9 @@ BUG | Overflow error. Fixed 0.0.6.7.
 BUG | Tile translation code only works for 128. Fixed 0.0.7.1
 BUG | Selected grid numbers does not seem to highlight correctly. Fixed 0.0.7.0.
 BUG | Selecting tile 13 when Egyption tileset is selected, caused palette to go grey. This also happens when tile zero is selected. Fixed 0.0.7.8
-BUG | When trying to place a tile on grid when layer is not 0 or 1 causes a crash. 
+BUG | When trying to place a tile on grid when layer is not 0 or 1 causes a crash. Fixed in 0.0.8.1.
 BUG | Tile placement does not work when grid is panned. Fixed in 0.0.8.1.
 BUG | Save system does not work for danger tiles. Fixed in 0.0.8.5
-BUG | If a tile is placed, rotated then deleted, causes rotate button to reverse polarity.
+BUG | If a tile is placed, rotated then deleted, causes rotate button to reverse polarity. Fixed in 0.0.9.0.
+BUG | When delete is pressed toggle options break. Fixed in 0.0.9.0.
+BUG | Border for moving palettes is incorrect onece number of items in palette has been swapped.

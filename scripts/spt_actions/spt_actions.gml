@@ -10,6 +10,11 @@ with obj_grid // Prevents unknown variable error
 	{
 		switch argument1 // Checks which type of action should be executed
 		{
+			case 0 : // Home
+			
+			
+			break;
+			
 			case 1: // Toggle grid
 		
 				grid_enabled = !grid_enabled // Toggle grid
@@ -426,12 +431,6 @@ with obj_grid // Prevents unknown variable error
 				
 				obj_buttons.stuck[27] = false; // Ensures button does not stick
 				
-				// Unsticks buttons when grid is reset
-				
-				obj_buttons.stuck[11] = false; // Vertical flip
-				obj_buttons.stuck[12] = false;  // Horizontal flip
-				obj_buttons.stuck[13] = false; // Rotation
-				
 			break;
 						
 			case 28: // Info
@@ -577,4 +576,52 @@ if argument0 == 3 // Checks if action type is layer
 		obj_tiles.sprite_qty = sprite_get_number(obj_tiles.current_sprite); // Stores the number of sub images in current sprite
 		obj_tiles.sprite_limit = obj_tiles.sprite_qty; // Sets the maximum number of sprites to draw
 	}
+}
+
+// OBJECTS PALETTE
+
+if argument0 == 4
+{
+	stuck[argument1] = true; // Sticks selected tile
+	
+	switch argument1
+	{
+		case 0:
+		
+		if current_sprite == spr_category_colour = false
+		{
+			current_sprite = spr_category_colour;
+			primary_sprite = spr_category_colour;
+			secondary_sprite = spr_category_colour;
+		}
+			else
+		{
+			current_sprite = spr_barrels_colour;
+			primary_sprite = spr_barrels_colour;
+			secondary_sprite = spr_barrels_colour;
+		}
+		
+		break;
+		
+		case 1:
+		
+		if current_sprite == spr_category_colour
+		{
+			current_sprite = spr_blocks_colour;
+			primary_sprite = spr_blocks_colour;
+			secondary_sprite = spr_blocks_colour;
+		}
+	
+		break;
+	}
+	
+	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
+	
+	for(i = 0; i < sprite_qty; i++) // loops through to number of tile availible
+	{
+		stuck[i] = false; // Unsticks current tile
+	}
+	
+	sprite_qty = sprite_get_number(current_sprite); // Update sprite qty
+	sprite_limit = sprite_qty; // Update sprite limit
 }

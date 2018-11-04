@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "2989af2a-ef3d-4b71-add9-f9950770bf28",
+            "Value": {
+                "id": "cfa8e8f5-5ae1-4b31-a920-98b6936c52b9",
+                "resourcePath": "objects\\obj_objects\\obj_objects.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "31ccdcc0-d63d-458b-8692-85c5cdacb6ba",
             "Value": {
                 "id": "a54b4fa4-fd33-477b-afb5-de3d1a66fac4",
@@ -180,6 +188,14 @@
                 "id": "88a22ffd-faf2-4b63-b66d-1873f3f6a5cb",
                 "resourcePath": "views\\3c7f1825-7268-4726-8e17-f97cf06e5356.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3f257b86-c15f-4400-9d21-8d9b3fe1dc8c",
+            "Value": {
+                "id": "b76c50a4-1c80-40c7-9211-6832b654988e",
+                "resourcePath": "sprites\\spr_category_colour\\spr_category_colour.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -324,6 +340,14 @@
                 "id": "a93a1b38-4032-481d-8680-ae3bff8ca64f",
                 "resourcePath": "notes\\To Do List.yy",
                 "resourceType": "GMNotes"
+            }
+        },
+        {
+            "Key": "7ddea6df-3bdf-489d-ab40-721937c5688b",
+            "Value": {
+                "id": "1bbe764a-50af-457b-81bf-6d1e109602bf",
+                "resourcePath": "sprites\\spr_blocks_colour\\spr_blocks_colour.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -479,6 +503,14 @@
             }
         },
         {
+            "Key": "ba5fee6f-47f2-460e-b7a8-4f3c387b993d",
+            "Value": {
+                "id": "f74592b5-3476-427e-97c1-e76b234bd604",
+                "resourcePath": "sprites\\spr_barrels_colour\\spr_barrels_colour.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bb5ee88e-de70-44c7-9d91-6ef23e600c08",
             "Value": {
                 "id": "8bfec857-320d-4ebd-a830-aff9170dd73e",
@@ -524,6 +556,14 @@
                 "id": "915c096d-a813-45c1-bbb3-8661169a2346",
                 "resourcePath": "sprites\\spr_editor_background\\spr_editor_background.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "cc812781-282d-4b07-9782-d89551be4e98",
+            "Value": {
+                "id": "1037c548-598d-4783-a0de-4ca3507465aa",
+                "resourcePath": "views\\cc812781-282d-4b07-9782-d89551be4e98.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
