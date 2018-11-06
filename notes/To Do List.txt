@@ -35,4 +35,6 @@ TO DO | Apply relevant tile maniplulation to mouse cursor icon.
 (2) Spelling and grammar must be correct.
 (3) Make long function strings short by assigning data to variables before the function.
 (4) A space must be between the operator (+, -, /, *) unless the integer is that number. I.E x = -1 would be written as so, if you intend to remove 1 then a space should be inserted between the operator and the integer
-(5) 
+(5) Add constants.
+(6) Make sure code order is consistant. I.E if Y code comes before X code then this should be consistant throughout all code.
+(7) .

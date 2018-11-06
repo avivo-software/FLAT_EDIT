@@ -6,7 +6,31 @@
 
 layer_alpha = 0; // Determines the opacity of non selected layers
 non_selected_alpha = 0.5; // Sets opacity for non selected layer
-selected_alpha = 1; // Sets opacityfor selected layer
+selected_alpha = 1; // Sets opacity for selected layer
+
+object_sprite = 0;
+
+object_x_scale = 1; // Determines X scale of selected object
+object_y_scale = 1; // Determines X scale of selected object
+
+object_alpha = 0.75; // Sets transperancy of selected object
+
+object_angle = 0;
+
+// OBJECT DATA
+
+object_data_sprite[0] = 0;
+object_data_index[0] = 0;
+object_data_angle[0] = 0;
+
+object_data_x_pos[0] = 0;
+object_data_y_pos[0] = 0;
+
+object_data_x_scale[0] = 0;
+object_data_y_scale[0] = 0;
+
+palette_conversion[spr_barrels_colour] = spr_barrels;
+palette_conversion[spr_blocks_colour] = spr_blocks;
 
 for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 {

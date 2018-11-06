@@ -580,15 +580,15 @@ if argument0 == 3 // Checks if action type is layer
 
 // OBJECTS PALETTE
 
-if argument0 == 4
+if argument0 == 4 // Checks for objects palette
 {
 	stuck[argument1] = true; // Sticks selected tile
 	
-	switch argument1
+	switch argument1 // Determines which tile index was selected
 	{
-		case 0:
+		case 0: // Category
 		
-		if current_sprite == spr_category_colour = false
+		if current_sprite == spr_category_colour = false 
 		{
 			current_sprite = spr_category_colour;
 			primary_sprite = spr_category_colour;
@@ -603,7 +603,7 @@ if argument0 == 4
 		
 		break;
 		
-		case 1:
+		case 1: // Barrels
 		
 		if current_sprite == spr_category_colour
 		{
@@ -614,7 +614,7 @@ if argument0 == 4
 	
 		break;
 		
-		case 2:
+		case 2: // Blocks
 		
 		if current_sprite == spr_category_colour
 		{
