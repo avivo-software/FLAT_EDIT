@@ -38,3 +38,4 @@ TO DO | Apply relevant tile maniplulation to mouse cursor icon.
 (5) Add constants.
 (6) Make sure code order is consistant. I.E if Y code comes before X code then this should be consistant throughout all code.
 (7) .
+(10) Write detailed documentation.

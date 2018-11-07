@@ -31,6 +31,7 @@ object_data_y_scale[0] = 0;
 
 palette_conversion[spr_barrels_colour] = spr_barrels;
 palette_conversion[spr_blocks_colour] = spr_blocks;
+palette_conversion[spr_lever_colour] = spr_levers;
 
 for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 {
