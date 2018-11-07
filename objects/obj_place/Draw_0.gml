@@ -86,8 +86,8 @@ if global.current_layer == 2
 				object_data_index[array_length] = obj_objects.last_selection;
 				object_data_angle[array_length] = object_angle;
 		
-				object_data_x_pos[array_length] = relative_x_pos;
-				object_data_y_pos[array_length] = relative_y_pos;
+				object_data_x_pos[array_length] = relative_x_pos / obj_grid.x_scale;
+				object_data_y_pos[array_length] = relative_y_pos  / obj_grid.y_scale;
 		
 				object_data_x_scale[array_length] = object_x_scale;
 				object_data_y_scale[array_length] = object_y_scale;
