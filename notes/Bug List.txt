@@ -27,3 +27,4 @@ BUG | Save system does not work for danger tiles. Fixed in 0.0.8.5
 BUG | If a tile is placed, rotated then deleted, causes rotate button to reverse polarity. Fixed in 0.0.9.0.
 BUG | When delete is pressed toggle options break. Fixed in 0.0.9.0.
 BUG | Border for moving palettes is incorrect onece number of items in palette has been swapped.
+BUG | When objects palette is expanded error occers.
