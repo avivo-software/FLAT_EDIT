@@ -58,7 +58,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 	{
 		if global.border_selection_id == !unique_id // Prevents and active item from interfering with obj_palette moveable objects
 		{
-			window_set_cursor(cr_size_all); // Sets cursor to move cursor
+			window_set_cursor(global.icon[4]); // Sets cursor to move cursor
 			global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 		}
 	}
@@ -69,7 +69,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 	{
 	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
 	    {
-	        window_set_cursor(cr_size_ns); // Sets cursor to up, down arrow
+	        window_set_cursor(global.icon[2]); // Sets cursor to up, down arrow
 	        global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 	    }
 	}
@@ -80,7 +80,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 	{
 	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
 	    {
-	        window_set_cursor(cr_size_we); // Sets cursor to up, down arrow
+	        window_set_cursor(global.icon[1]); // Sets cursor to up, down arrow
 	        global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 	    }
 	}
@@ -91,7 +91,7 @@ if global.edit_enabled == true // Prevents palette from being manipulated when e
 	{
 	    if global.border_selection_id == !unique_id // Prevents and active item from interfering  with obj_palette moveable objects
 	    {
-	        window_set_cursor(cr_size_nwse); // Sets cursor to up, down arrow
+	        window_set_cursor(global.icon[3]); // Sets cursor to up, down arrow
 	        global.border_selection_id = unique_id; // Prevents obj_palette objects being moved while current one is in use
 	    }
 	}
@@ -137,7 +137,7 @@ if mouse_check_button(global.controls[0]) // Checks if mouse button is pressed
 
 		// EXPAND GRID HORIZONTALLY
 		
-		if window_get_cursor() == cr_size_we // Checks if current cursor is set to left, right cursor
+		if window_get_cursor() == global.icon[1] // Checks if current cursor is set to left, right cursor
 		{	
 			if floor((mouse_x - x_offset) / current_sprite_width) > 0 // Prevents palette from freezing
 			{

@@ -19,15 +19,15 @@ object_angle = 0;
 
 // OBJECT DATA
 
-object_data_sprite[0] = 0;
-object_data_index[0] = 0;
-object_data_angle[0] = 0;
+object_data_sprite = ds_list_create();
+object_data_index = ds_list_create();
+object_data_angle = ds_list_create();
 
-object_data_x_pos[0] = 0;
-object_data_y_pos[0] = 0;
+object_data_x_pos = ds_list_create();
+object_data_y_pos = ds_list_create();
 
-object_data_x_scale[0] = 0;
-object_data_y_scale[0] = 0;
+object_data_x_scale = ds_list_create();
+object_data_y_scale = ds_list_create();
 
 palette_conversion[spr_barrels_colour] = spr_barrels;
 palette_conversion[spr_blocks_colour] = spr_blocks;

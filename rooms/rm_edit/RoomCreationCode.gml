@@ -36,6 +36,13 @@ global.controls[3] = vk_right; // Move right
 global.controls[4] = vk_up; // Move up
 global.controls[5] = vk_down; // Move down
 
+global.icon[0] = cr_arrow;
+global.icon[1] = cr_size_we;
+global.icon[2] = cr_size_ns;
+global.icon[3] = cr_size_nwse;
+global.icon[4] = cr_size_all;
+global.icon[5] = cr_handpoint;
+
 
 // GENERATE OBJECT INSTANCES
 

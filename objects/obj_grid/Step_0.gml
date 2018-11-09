@@ -86,7 +86,7 @@ if mouse_in_grid == true // Prevents grid from zooming when mouse is not in grid
 
 if global.edit_enabled == true // Prevents grid from being manipulated if edit mode is disabled
 {
-	if !mouse_check_button(global.controls[0]) then window_set_cursor(cr_arrow); // Sets cursor back to default as long as an operation is not active
+	if !mouse_check_button(global.controls[0]) then window_set_cursor(global.icon[0]); // Sets cursor back to default as long as an operation is not active
 	
 	// SETS GRID MOVE
 	
@@ -94,7 +94,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 	{
 		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
 		{
-			window_set_cursor(cr_size_all); // Sets cursor to move icon
+			window_set_cursor(global.icon[4]); // Sets cursor to move icon
 			global.border_selection_id = unique_id; // Locks grid for editing
 		}
 	}
@@ -105,7 +105,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 	{
 		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
 		{
-			window_set_cursor(cr_size_ns); // Sets cursor to expand vertical
+			window_set_cursor(global.icon[2]); // Sets cursor to expand vertical
 			global.border_selection_id = unique_id; // Locks grid for editing
 		}
 	}
@@ -116,7 +116,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 	{
 		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
 		{
-			window_set_cursor(cr_size_we); // Sets cursor to expand horizontal
+			window_set_cursor(global.icon[1]); // Sets cursor to expand horizontal
 			global.border_selection_id = unique_id; // Locks grid for editing
 		}
 	}
@@ -127,7 +127,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 	{
 		if global.border_selection_id == !unique_id // Prevents and active item from interfering  with other moveable objects
 		{
-			window_set_cursor(cr_size_nwse); // Sets cursor to expand diagonal
+			window_set_cursor(global.icon[3]); // Sets cursor to expand diagonal
 			global.border_selection_id = unique_id; // Locks grid for editing
 		}
 	}
@@ -138,7 +138,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 		{
 			// MOVE GRID
 			
-			if window_get_cursor() == cr_size_all // Checks if grid can be moved
+			if window_get_cursor() == global.icon[4] // Checks if grid can be moved
 			{
 				if mouse_x > 0 and mouse_x < room_width - x_max // Prevents grid leaving the boundaries of the room
 				{
@@ -153,7 +153,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 		
 			// EXPAND GRID VERTICALLY
 		
-			if window_get_cursor() == cr_size_ns // Checks for expand vertical cursor
+			if window_get_cursor() == global.icon[2] // Checks for expand vertical cursor
 			{
 				if mouse_y > y_offset + y_max + cell_size / 2 
 				{
@@ -168,7 +168,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 			
 			// EXPAND GRID HORIZONTALLY
 		
-			if window_get_cursor() == cr_size_we // Checks for expand horizontal cursor
+			if window_get_cursor() == global.icon[1] // Checks for expand horizontal cursor
 			{
 				if mouse_x > x_offset + x_max + cell_size / 2 // 
 				{
@@ -183,7 +183,7 @@ if global.edit_enabled == true // Prevents grid from being manipulated if edit m
 			
 			// EXPAND GRID DIAGONALLY
 		
-			if window_get_cursor() == cr_size_nwse // Checks for expand diagonal cursor
+			if window_get_cursor() == global.icon[3] // Checks for expand diagonal cursor
 			{
 				if mouse_x > x_offset + x_max + cell_size 
 				{

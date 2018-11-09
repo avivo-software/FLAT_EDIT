@@ -98,3 +98,4 @@ Version 0.0.9.3 | Object placement code is well underway.
 Version 0.0.9.4 | Placement code improved. Checkpoint save.
 Version 0.0.9.5 | Further updates. Issues from last commit have been largely resolved.
 Version 0.0.9.6 | Fixed object placement when grid is not 128.
+Version 0.0.9.7 | Converted place object arrays to lists allowing for greater manipulation.
