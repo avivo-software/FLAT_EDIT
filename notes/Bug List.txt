@@ -28,5 +28,6 @@ BUG | If a tile is placed, rotated then deleted, causes rotate button to reverse
 BUG | When delete is pressed toggle options break. Fixed in 0.0.9.0.
 BUG | Border for moving palettes is incorrect onece number of items in palette has been swapped.
 BUG | When objects palette is expanded error occers.
-BUG | First placed object does not display if top level category is selected. Fixed in 0.0.1.0.
+BUG | First placed object does not display if top level category is selected.
 BUG | Category object palette does not update sprite limit and qty. Fixed in 0.0.1.0.
+BUG | Can't place any more objects once last is deleted. Fixed in 0.0.1.1

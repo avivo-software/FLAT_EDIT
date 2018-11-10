@@ -6,7 +6,5 @@
 
 if keyboard_check(vk_enter)
 {
-	obj_objects.sprite_qty = 5;
-	obj_objects.sprite_limit = 5;
-	
+	obj_place.object_data_x_scale[| 0] = obj_place.object_data_x_scale[| 0] * -1;
 }

@@ -4,6 +4,13 @@
 *								MANIPULATE TILES						   *
 ***************************************************************************/
 
+current_sprite = obj_tiles.current_sprite;
+		
+current_index = collide_index;
+current_rotation = collide_angle;
+current_x_scale = collide_flip_horizontal;
+current_y_scale = collide_flip_vertical;
+
 if obj_grid.mouse_in_grid == true // Checks mouse is inside grid to 
 {
 	switch global.current_layer
@@ -71,7 +78,7 @@ if obj_grid.mouse_in_grid == true // Checks mouse is inside grid to
 			}
 		}
 	}
-	
+
 	if mouse_check_button_pressed(global.controls[1])
 	{
 		current_index[obj_grid.x_pos, obj_grid.y_pos] = 0;
