@@ -628,14 +628,11 @@ if argument0 == 4 // Checks for objects palette
 	
 		break;
 	}
-	
+
 	// LOOPS THROUGH OBJECTS AND UNSTICKS THEM APART FROM SELECTED ONE
 	
 	for(i = 0; i < sprite_qty; i++) // loops through to number of tile availible
 	{
 		stuck[i] = false; // Unsticks current tile
 	}
-	
-	sprite_qty = sprite_get_number(current_sprite); // Update sprite qty
-	sprite_limit = sprite_qty; // Update sprite limit
 }

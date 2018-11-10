@@ -6,6 +6,7 @@
 
 if keyboard_check(vk_enter)
 {
-	// DELETE OBJECT
+	obj_objects.sprite_qty = 5;
+	obj_objects.sprite_limit = 5;
 	
 }

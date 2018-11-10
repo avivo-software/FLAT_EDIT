@@ -9,9 +9,9 @@ action_id = 4; // describes the type of palette | 0 = Buttons
 
 last_selection = 0; // Stores ID of last selected sprite
 
-current_sprite = spr_barrels_colour; // Determines the currently selected sprite
-primary_sprite = spr_barrels_colour; // Determines primary sprite
-secondary_sprite = spr_barrels_colour; // Determines secondary sprite
+current_sprite = spr_category_colour; // Determines the currently selected sprite
+primary_sprite = spr_category_colour; // Determines primary sprite
+secondary_sprite = spr_category_colour; // Determines secondary sprite
 
 x_gap = 4; // Sets the distance in pixels between each sprite in the X direction
 y_gap = 4; // Sets the distance in pixels between each sprite in the Y direction
