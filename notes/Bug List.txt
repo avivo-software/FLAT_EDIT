@@ -19,7 +19,7 @@ BUG | Expanding palettes into out of bounds areas can restrict the movement of t
 BUG | Switching palettes does not show correct number of sprites if border expand is enabled an clicked.
 BUG | Overflow error. Fixed 0.0.6.7.
 BUG | Tile translation code only works for 128. Fixed 0.0.7.1
-BUG | Selected grid numbers does not seem to highlight correctly. Fixed 0.0.7.0.
+BUG | Selected grid numbers does not seem to highlight correctly. Fixed in 0.0.7.0.
 BUG | Selecting tile 13 when Egyption tileset is selected, caused palette to go grey. This also happens when tile zero is selected. Fixed 0.0.7.8
 BUG | When trying to place a tile on grid when layer is not 0 or 1 causes a crash. Fixed in 0.0.8.1.
 BUG | Tile placement does not work when grid is panned. Fixed in 0.0.8.1.
@@ -28,5 +28,5 @@ BUG | If a tile is placed, rotated then deleted, causes rotate button to reverse
 BUG | When delete is pressed toggle options break. Fixed in 0.0.9.0.
 BUG | Border for moving palettes is incorrect onece number of items in palette has been swapped.
 BUG | When objects palette is expanded error occers.
-BUG | First placed object does not display if top level category is selected.
-BUG | Category object palette does not update sprite limit and qty.
+BUG | First placed object does not display if top level category is selected. Fixed in 0.0.1.0.
+BUG | Category object palette does not update sprite limit and qty. Fixed in 0.0.1.0.

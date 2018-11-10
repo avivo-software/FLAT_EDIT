@@ -9,9 +9,9 @@ action_id = 4; // describes the type of palette | 0 = Buttons
 
 last_selection = 0; // Stores ID of last selected sprite
 
-current_sprite = spr_category_colour; // Determines the currently selected sprite
-primary_sprite = spr_category_colour; // Determines primary sprite
-secondary_sprite = spr_category_colour; // Determines secondary sprite
+current_sprite = spr_blocks_colour; // Determines the currently selected sprite
+primary_sprite = spr_blocks_colour; // Determines primary sprite
+secondary_sprite = spr_blocks_colour; // Determines secondary sprite
 
 x_gap = 4; // Sets the distance in pixels between each sprite in the X direction
 y_gap = 4; // Sets the distance in pixels between each sprite in the Y direction
@@ -34,7 +34,7 @@ current_sprite_width = sprite_get_width(current_sprite) * primary_x_scale; // St
 current_sprite_height = sprite_get_height(current_sprite) * primary_y_scale; // Stores actual height
 
 x_offset = 512; // Determines X offset relative to the far left hand side of the screen
-y_offset = 950; // Determines Y offset relative to the top of the screen
+y_offset = 756; // Determines Y offset relative to the top of the screen
 
 sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
 sprite_limit = sprite_qty; // Sets the maximum number of sprites to draw

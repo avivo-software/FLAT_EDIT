@@ -112,8 +112,8 @@ for(i = 0; i < array_length; i++)
 	current_x_scale = object_data_x_scale[| i] * obj_grid.x_scale; 
 	current_y_scale = object_data_y_scale[| i] * obj_grid.y_scale;
 	
-	current_width = sprite_get_width(current_sprite) * obj_grid.x_scale;
-	current_height = sprite_get_height(current_sprite)* obj_grid.y_scale;
+	current_width = sprite_get_width(current_sprite) * obj_grid.x_scale * object_data_x_scale[| i];
+	current_height = sprite_get_height(current_sprite)* obj_grid.y_scale * object_data_y_scale[| i];
 	
 	if point_in_rectangle(mouse_x, mouse_y, current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height)
 	{

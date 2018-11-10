@@ -101,3 +101,4 @@ Version 0.0.9.6 | Fixed object placement when grid is not 128.
 Version 0.0.9.7 | Converted place object arrays to lists allowing for greater manipulation.
 Version 0.0.9.8 | Fixed object place code. Changed all icon changes to global array.
 Version 0.0.9.9 | Check point pre investigation to object not displaying correct number of sprites.
+Version 0.0.1.0 | Fixed last two issues listed in bug list.

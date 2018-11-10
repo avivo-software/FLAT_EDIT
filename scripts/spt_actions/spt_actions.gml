@@ -635,4 +635,7 @@ if argument0 == 4 // Checks for objects palette
 	{
 		stuck[i] = false; // Unsticks current tile
 	}
+	
+	sprite_qty = sprite_get_number(current_sprite); // Stores the number of sub images in current sprite
+	sprite_limit = sprite_qty; // Sets the maximum number of sprites to draw
 }

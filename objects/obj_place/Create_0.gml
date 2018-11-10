@@ -17,7 +17,7 @@ object_alpha = 0.75; // Sets transperancy of selected object
 
 object_angle = 0;
 
-// OBJECT DATA
+// CREATE OBJECT DATA LISTS
 
 object_data_sprite = ds_list_create();
 object_data_index = ds_list_create();
