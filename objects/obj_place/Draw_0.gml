@@ -64,6 +64,8 @@ if global.current_layer == 2
 	{
 		if obj_objects.current_sprite == spr_category_colour = false
 		{
+			// DISPLAY PLACEMENT ICON
+			
 			relative_x_pos = mouse_x - obj_grid.x_offset + obj_grid.x_shift * obj_grid.cell_size;
 			relative_y_pos = mouse_y - obj_grid.y_offset + obj_grid.y_shift * obj_grid.cell_size;
 			
@@ -79,6 +81,8 @@ if global.current_layer == 2
 			current_rotation = object_angle;
 			
 			draw_sprite_ext(current_palette, current_index, current_x_pos, current_y_pos, current_x_scale, current_y_scale, current_rotation, c_white, object_alpha);
+			
+			// SET OBJECT DATA
 
 			if mouse_check_button_pressed(global.controls[0])
 			{
@@ -92,20 +96,44 @@ if global.current_layer == 2
 			}
 		}
 	}
+}
+
+// DRAW OBJECTS
+
+for(i = 0; i < array_length; i++)
+{
+	current_sprite = object_data_sprite[| i];
+	current_index = object_data_index[| i];
+	current_angle = object_data_angle[| i];
 	
-	for(i = 0; i < array_length; i++)
+	current_x_pos = object_data_x_pos[| i] * obj_grid.x_scale + obj_grid.x_offset - current_width / 2 - obj_grid.cell_size * obj_grid.x_shift;
+	current_y_pos = object_data_y_pos[| i] * obj_grid.y_scale + obj_grid.y_offset - current_height / 2 - obj_grid.cell_size * obj_grid.y_shift;
+	
+	current_x_scale = object_data_x_scale[| i] * obj_grid.x_scale; 
+	current_y_scale = object_data_y_scale[| i] * obj_grid.y_scale;
+	
+	current_width = sprite_get_width(current_sprite) * obj_grid.x_scale;
+	current_height = sprite_get_height(current_sprite)* obj_grid.y_scale;
+	
+	if point_in_rectangle(mouse_x, mouse_y, current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height)
 	{
-		current_sprite = object_data_sprite[| i];
-		current_index = object_data_index[| i];
-	
-		current_x_pos = object_data_x_pos[| i] * obj_grid.x_scale + obj_grid.x_offset - current_width / 2 - obj_grid.cell_size * obj_grid.x_shift;
-		current_y_pos = object_data_y_pos[| i] * obj_grid.y_scale + obj_grid.y_offset - current_height / 2 - obj_grid.cell_size * obj_grid.y_shift;
-	
-		current_x_scale = object_data_x_scale[| i] * obj_grid.x_scale;
-		current_y_scale = object_data_y_scale[| i] * obj_grid.y_scale;
-	
-		current_angle = object_data_angle[| i];
-				
-		draw_sprite_ext(current_sprite, current_index, current_x_pos, current_y_pos, current_x_scale, current_y_scale, current_angle, c_white, 1);
+		draw_rectangle(current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height, 1);
+		
+		if mouse_check_button_pressed(global.controls[1])
+		{
+			ds_list_delete(object_data_sprite, i);
+			ds_list_delete(object_data_index, i);
+			ds_list_delete(object_data_angle, i);
+			
+			ds_list_delete(object_data_x_pos, i);
+			ds_list_delete(object_data_y_pos, i);
+			
+			ds_list_delete(object_data_x_scale, i);
+			ds_list_delete(object_data_y_scale, i);
+			
+			array_length = ds_list_size(object_data_sprite); // Stores length of list array
+		}
 	}
+	
+	draw_sprite_ext(current_sprite, current_index, current_x_pos, current_y_pos, current_x_scale, current_y_scale, current_angle, c_white, 1);
 }

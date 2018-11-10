@@ -6,5 +6,6 @@
 
 if keyboard_check(vk_enter)
 {
-	spt_actions(1, 1);
+	// DELETE OBJECT
+	
 }

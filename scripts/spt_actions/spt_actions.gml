@@ -584,6 +584,9 @@ if argument0 == 4 // Checks for objects palette
 {
 	stuck[argument1] = true; // Sticks selected tile
 	
+	global.current_layer = 2;
+	obj_layer.palette_shift = 2;
+	
 	switch argument1 // Determines which tile index was selected
 	{
 		case 0: // Category
@@ -626,7 +629,7 @@ if argument0 == 4 // Checks for objects palette
 		break;
 	}
 	
-	// LOOPS THROUGH SLIDES AND UNSTICKS THEM APART FROM SELECTED ONE
+	// LOOPS THROUGH OBJECTS AND UNSTICKS THEM APART FROM SELECTED ONE
 	
 	for(i = 0; i < sprite_qty; i++) // loops through to number of tile availible
 	{
