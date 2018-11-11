@@ -79,26 +79,21 @@ if global.current_layer == 2 // Checks correct layer is selected
 			current_y_scale = obj_grid.y_scale * object_y_scale; // Sets current Y scale
 
 			current_rotation = object_angle; // Sets current angle
+
+			draw_sprite_ext(current_palette, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_rotation, c_white, object_alpha); // Draw sprite if place is enabled
 			
-			if place_enabled == true 
-			{
-				draw_sprite_ext(current_palette, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_rotation, c_white, object_alpha); // Draw sprite if place is enabled
-			}
 			
 			// SET OBJECT DATA
 
 			if mouse_check_button_pressed(global.controls[0]) // Checks if mouse select button has been pressed
 			{
-				if place_enabled == true // Checks if object can be placed
-				{
-					ds_list_add(object_data_sprite, palette_conversion[obj_objects.current_sprite]); // Add current sprite to sprite list
-					ds_list_add(object_data_index, obj_objects.last_selection); // Add current index to index list
-					ds_list_add(object_data_angle, object_angle); // Add current angle to angle list
-					ds_list_add(object_data_x_pos, relative_x_pos / obj_grid.x_scale); // Add current X pos to X pos list
-					ds_list_add(object_data_y_pos, relative_y_pos / obj_grid.y_scale); // Add current Y pos to Y pos list
-					ds_list_add(object_data_x_scale, object_x_scale); // Add current X scale to X scale list
-					ds_list_add(object_data_y_scale, object_y_scale); // Add current Y scale to Y scale list
-				}
+				ds_list_add(object_data_sprite, palette_conversion[obj_objects.current_sprite]); // Add current sprite to sprite list
+				ds_list_add(object_data_index, obj_objects.last_selection); // Add current index to index list
+				ds_list_add(object_data_angle, object_angle); // Add current angle to angle list
+				ds_list_add(object_data_x_pos, relative_x_pos / obj_grid.x_scale); // Add current X pos to X pos list
+				ds_list_add(object_data_y_pos, relative_y_pos / obj_grid.y_scale); // Add current Y pos to Y pos list
+				ds_list_add(object_data_x_scale, object_x_scale); // Add current X scale to X scale list
+				ds_list_add(object_data_y_scale, object_y_scale); // Add current Y scale to Y scale list
 			}
 		}
 	}
@@ -129,8 +124,6 @@ for(i = 0; i < array_length; i++) // Start loop
 	
 	if point_in_rectangle(mouse_x, mouse_y, current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height) // Checks if mouse is hovering over object
 	{
-		place_enabled = false; // Disables new object placement (Prevents bug)
-		
 		draw_rectangle(current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height, 1); // Draw rectangle border arround selected object
 		
 		if mouse_check_button_pressed(global.controls[0]) // Checks for mouse selection button
@@ -164,12 +157,7 @@ for(i = 0; i < array_length; i++) // Start loop
 			ds_list_delete(object_data_y_scale, i); // Removes entry for data Y scale list
 			
 			array_length = ds_list_size(object_data_sprite); // Stores length of list array
-			place_enabled = true; // Allows objects to be placed after last object is deleted
 		}
-	}
-		else
-	{
-		place_enabled = true; // Enables object placement
 	}
 	
 	draw_sprite_ext(current_sprite, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_angle, c_white, 1); // Draw current sprite

@@ -427,6 +427,19 @@ with obj_grid // Prevents unknown variable error
 					}
 				}
 				
+				ds_list_destroy(obj_place.object_data_sprite);
+				ds_list_destroy(obj_place.object_data_index);
+				ds_list_destroy(obj_place.object_data_angle);
+				
+				ds_list_destroy(obj_place.object_data_x_pos);
+				ds_list_destroy(obj_place.object_data_y_pos);
+				
+				ds_list_destroy(obj_place.object_data_x_scale);
+				ds_list_destroy(obj_place.object_data_y_scale);
+				
+				instance_destroy(obj_place, true);
+				instance_create_layer(0, 0, 0, obj_place); // Loads place object
+				
 				spt_sound(0, 3); // Play delete sound
 				
 				obj_buttons.stuck[27] = false; // Ensures button does not stick
