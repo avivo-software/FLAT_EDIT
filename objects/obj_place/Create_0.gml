@@ -15,26 +15,28 @@ object_y_scale = 1; // Determines X scale of selected object
 
 object_alpha = 0.75; // Sets transperancy of selected object
 
-object_angle = 0;
+object_angle = 0; // The default angle of object to place
 
-place_enabled = true;
+place_enabled = true; // Determines if object can be placed
 rotation_amount = 45;
 
 // CREATE OBJECT DATA LISTS
 
-object_data_sprite = ds_list_create();
-object_data_index = ds_list_create();
-object_data_angle = ds_list_create();
+object_data_sprite = ds_list_create(); // Create sprite data list
+object_data_index = ds_list_create(); // Create index data list
+object_data_angle = ds_list_create(); // Create data data list
 
-object_data_x_pos = ds_list_create();
-object_data_y_pos = ds_list_create();
+object_data_x_pos = ds_list_create(); // Create X pos data list
+object_data_y_pos = ds_list_create(); // Create Y pos data list
 
-object_data_x_scale = ds_list_create();
-object_data_y_scale = ds_list_create();
+object_data_x_scale = ds_list_create(); // Create X scale data list
+object_data_y_scale = ds_list_create(); // Create Y scale data list
 
-palette_conversion[spr_barrels_colour] = spr_barrels;
-palette_conversion[spr_blocks_colour] = spr_blocks;
-palette_conversion[spr_lever_colour] = spr_levers;
+// PALETTE CONVERSION ARRAY
+
+palette_conversion[spr_barrels_colour] = spr_barrels; // Stores paleete conversion for barrels
+palette_conversion[spr_blocks_colour] = spr_blocks; // Stores paleete conversion for blocks
+palette_conversion[spr_lever_colour] = spr_levers; // Stores paleete conversion for levers
 
 for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
 {

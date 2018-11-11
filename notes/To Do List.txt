@@ -25,7 +25,12 @@ TO DO | Correct version numbers by editing commits. Version 0.0.8.2 for example.
 TO DO | Allow palette manipulation to happen from all sides.
 TO DO | See if there is a more condenced way to calculate tile layers.
 TO DO | Apply relevant tile maniplulation to mouse cursor icon.
-
+TO DO | Add objects to save code.
+TO DO | Add snap to grid code for object placement.
+TO DO | Prevent objects being drawn outside grid.
+TO DO | Ensure correct transperenacy is used for different layers.
+TO DO | Add object removal code to delete action.
+TO DO | .
 
 *************************************************************************
 *								CODE TIDY							    *

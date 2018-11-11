@@ -591,28 +591,28 @@ if argument0 == 4 // Checks for objects palette
 	{
 		case 0: // Category
 		
-		if current_sprite == spr_category_colour = false 
+		if current_sprite == spr_category_colour = false // Checks if top level category is not currently active
 		{
-			current_sprite = spr_category_colour;
-			primary_sprite = spr_category_colour;
-			secondary_sprite = spr_category_colour;
+			current_sprite = spr_category_colour; // Sets current sprite to category
+			primary_sprite = spr_category_colour; // Sets primary sprite to category
+			secondary_sprite = spr_category_colour; // Sets secondary sprite to category
 		}
 			else
 		{
-			current_sprite = spr_lever_colour;
-			primary_sprite = spr_lever_colour;
-			secondary_sprite = spr_lever_colour;
+			current_sprite = spr_lever_colour; // Sets current sprite to lever
+			primary_sprite = spr_lever_colour; // Sets primary sprite to lever
+			secondary_sprite = spr_lever_colour; // Sets secondary sprite to lever
 		}
 		
 		break;
 		
 		case 1: // Barrels
 		
-		if current_sprite == spr_category_colour
+		if current_sprite == spr_category_colour // Checks if top level category is currently active
 		{
-			current_sprite = spr_barrels_colour;
-			primary_sprite = spr_barrels_colour;
-			secondary_sprite = spr_barrels_colour;
+			current_sprite = spr_barrels_colour; // Sets current sprite to barrels
+			primary_sprite = spr_barrels_colour; // Sets primary sprite to barrels
+			secondary_sprite = spr_barrels_colour; // Sets secondary sprite to barrels
 		}
 	
 		break;
@@ -621,9 +621,9 @@ if argument0 == 4 // Checks for objects palette
 		
 		if current_sprite == spr_category_colour
 		{
-			current_sprite = spr_blocks_colour;
-			primary_sprite = spr_blocks_colour;
-			secondary_sprite = spr_blocks_colour;
+			current_sprite = spr_blocks_colour;  // Sets current sprite to blocks
+			primary_sprite = spr_blocks_colour;  // Sets primary sprite to blocks
+			secondary_sprite = spr_blocks_colour;  // Sets secondary sprite to blocks
 		}
 	
 		break;

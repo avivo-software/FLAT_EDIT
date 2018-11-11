@@ -103,3 +103,5 @@ Version 0.0.9.8 | Fixed object place code. Changed all icon changes to global ar
 Version 0.0.9.9 | Check point pre investigation to object not displaying correct number of sprites.
 Version 0.0.1.0 | Fixed last two issues listed in bug list.
 Version 0.0.1.1 | Objects now have centered origin. Objects can now be rotated and flipped.
+Version 0.0.1.2 | Added comments.
+Version 0.0.1.3 | Test version.
