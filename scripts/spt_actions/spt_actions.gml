@@ -313,6 +313,17 @@ with obj_grid // Prevents unknown variable error
 			ds_grid_read(obj_place.collide_grid_flip_horizontal, ini_read_string("collide_data", "collide_grid_flip_horizontal", "")); // Read collide flip horizontal data from file
 			ds_grid_read(obj_place.collide_grid_flip_vertical, ini_read_string("collide_data", "collide_grid_flip_vertical", "")); // Read collide flip vertical data from file
 			
+			// LOAD OBJECT DATA 
+
+			ds_list_read(obj_place.object_data_index, ini_read_string("object_data", "object_data_index", ""));
+			ds_list_read(obj_place.object_data_angle, ini_read_string("object_data", "object_data_angle", ""));
+			
+			ds_list_read(obj_place.object_data_x_pos, ini_read_string("object_data", "object_data_x_pos", ""));
+			ds_list_read(obj_place.object_data_y_pos, ini_read_string("object_data", "object_data_y_pos", ""));
+			
+			ds_list_read(obj_place.object_data_x_scale, ini_read_string("object_data", "object_data_x_scale", ""));
+			ds_list_read(obj_place.object_data_y_scale, ini_read_string("object_data", "object_data_y_scale", ""));
+			
 			// POPULATE ARRAYS WITH PREVIOUSLY LOADED GRID DATA
 			
 			for(j = 0; j < obj_grid.hard_y_limit; j++) // Outer loop
@@ -332,6 +343,10 @@ with obj_grid // Prevents unknown variable error
 					obj_place.collide_angle[i, j] = ds_grid_get(obj_place.collide_grid_angle, i, j); // Populate danger angle array with previously loaded grid data
 					obj_place.collide_flip_horizontal[i, j] = ds_grid_get(obj_place.collide_grid_flip_horizontal, i, j); // Populate danger flip horizontal array with previously loaded grid data
 					obj_place.collide_flip_vertical[i, j] = ds_grid_get(obj_place.collide_grid_flip_vertical, i, j); // Populate danger flip vertical array with previously loaded grid data
+				
+					// LOAD OBJECT DATA BACK TO LIST
+					
+					
 				}
 			}
 			
@@ -398,6 +413,18 @@ with obj_grid // Prevents unknown variable error
 			ini_write_string("collide_data", "collide_grid_angle", ds_grid_write(obj_place.collide_grid_angle)); // Write collide angle data to file
 			ini_write_string("collide_data", "collide_grid_flip_horizontal", ds_grid_write(obj_place.collide_grid_flip_horizontal)); // Write collide flip horizontal data to file
 			ini_write_string("collide_data", "collide_grid_flip_vertical", ds_grid_write(obj_place.collide_grid_flip_vertical)); // Write collide flip vertical data to file
+			
+			// WRITE OBJECTS
+			
+			ini_write_string("object_data", "object_sprite", ds_list_write(obj_place.object_data_sprite));
+			ini_write_string("object_data", "object_index", ds_list_write(obj_place.object_data_index));
+			ini_write_string("object_data", "object_angle", ds_list_write(obj_place.object_data_angle));
+			
+			ini_write_string("object_data", "object_x_pos", ds_list_write(obj_place.object_data_x_pos));
+			ini_write_string("object_data", "object_y_pos", ds_list_write(obj_place.object_data_y_pos));
+			
+			ini_write_string("object_data", "object_x_scale", ds_list_write(obj_place.object_data_x_scale));
+			ini_write_string("object_data", "object_y_scale", ds_list_write(obj_place.object_data_y_scale));
 			
 			ini_close(); // Closes ini file for writing preventing memmory leak
 			

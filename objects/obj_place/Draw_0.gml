@@ -66,15 +66,15 @@ if global.current_layer == 2 // Checks correct layer is selected
 		{
 			// DISPLAY PLACEMENT ICON
 			
-			relative_x_pos = mouse_x - obj_grid.x_offset + obj_grid.x_shift * obj_grid.cell_size; // Calculates relative X pos
-			relative_y_pos = mouse_y - obj_grid.y_offset + obj_grid.y_shift * obj_grid.cell_size; // Calculates relative Y pos
+			relative_x_pos = round((mouse_x - obj_grid.x_offset + obj_grid.x_shift * obj_grid.cell_size) / grid_snap) * grid_snap; // Calculates relative X pos
+			relative_y_pos = round((mouse_y - obj_grid.y_offset + obj_grid.y_shift * obj_grid.cell_size) / grid_snap) * grid_snap; // Calculates relative Y pos
 			
 			current_palette = palette_conversion[obj_objects.current_sprite]; // Sets current palette
 			current_index = obj_objects.last_selection; // Sets current index
 
-			current_x_pos = mouse_x - current_width / 2; // Sets current X pos
-			current_y_pos = mouse_y - current_height / 2; // Sets current Y pos
-
+			current_x_pos = round((mouse_x - current_width / 2) / grid_snap) * grid_snap; // Sets current X pos
+			current_y_pos = round((mouse_y - current_height / 2) / grid_snap) * grid_snap; // Sets current Y pos
+			
 			current_x_scale = obj_grid.x_scale * object_x_scale; // Sets current X scale
 			current_y_scale = obj_grid.y_scale * object_y_scale; // Sets current Y scale
 

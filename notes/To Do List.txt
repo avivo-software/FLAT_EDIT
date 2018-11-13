@@ -31,6 +31,7 @@ TO DO | Prevent objects being drawn outside grid.
 TO DO | Ensure correct transperenacy is used for different layers.
 TO DO | Add object removal code to delete action.
 TO DO | Look into layer system.
+TO DO | Convert save and load functions from string to real.
 
 *************************************************************************
 *								CODE TIDY							    *

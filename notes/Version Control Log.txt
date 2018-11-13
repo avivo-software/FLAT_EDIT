@@ -106,3 +106,4 @@ Version 0.0.1.1 | Objects now have centered origin. Objects can now be rotated a
 Version 0.0.1.2 | Added comments.
 Version 0.0.1.3 | Test version.
 Version 0.0.1.4 | Delete code now remove objects as well as tiles.
+Version 0.0.1.5 | Object placement now snaps to grid.
