@@ -64,36 +64,40 @@ if global.current_layer == 2 // Checks correct layer is selected
 	{
 		if obj_objects.current_sprite == spr_category_colour = false // Ensures current object palette is not top level category
 		{
-			// DISPLAY PLACEMENT ICON
-			
-			relative_x_pos = round((mouse_x - obj_grid.x_offset + obj_grid.x_shift * obj_grid.cell_size) / grid_snap) * grid_snap; // Calculates relative X pos
-			relative_y_pos = round((mouse_y - obj_grid.y_offset + obj_grid.y_shift * obj_grid.cell_size) / grid_snap) * grid_snap; // Calculates relative Y pos
-			
-			current_palette = palette_conversion[obj_objects.current_sprite]; // Sets current palette
-			current_index = obj_objects.last_selection; // Sets current index
-
-			current_x_pos = round((mouse_x - current_width / 2) / grid_snap) * grid_snap; // Sets current X pos
-			current_y_pos = round((mouse_y - current_height / 2) / grid_snap) * grid_snap; // Sets current Y pos
-			
-			current_x_scale = obj_grid.x_scale * object_x_scale; // Sets current X scale
-			current_y_scale = obj_grid.y_scale * object_y_scale; // Sets current Y scale
-
-			current_rotation = object_angle; // Sets current angle
-
-			draw_sprite_ext(current_palette, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_rotation, c_white, object_alpha); // Draw sprite if place is enabled
-			
-			
-			// SET OBJECT DATA
-
-			if mouse_check_button_pressed(global.controls[0]) // Checks if mouse select button has been pressed
+			if place_enabled == true // Determines if object can be placed
 			{
-				ds_list_add(object_data_sprite, palette_conversion[obj_objects.current_sprite]); // Add current sprite to sprite list
-				ds_list_add(object_data_index, obj_objects.last_selection); // Add current index to index list
-				ds_list_add(object_data_angle, object_angle); // Add current angle to angle list
-				ds_list_add(object_data_x_pos, relative_x_pos / obj_grid.x_scale); // Add current X pos to X pos list
-				ds_list_add(object_data_y_pos, relative_y_pos / obj_grid.y_scale); // Add current Y pos to Y pos list
-				ds_list_add(object_data_x_scale, object_x_scale); // Add current X scale to X scale list
-				ds_list_add(object_data_y_scale, object_y_scale); // Add current Y scale to Y scale list
+				
+				// DISPLAY PLACEMENT ICON
+			
+				relative_x_pos = round((mouse_x - obj_grid.x_offset + obj_grid.x_shift * obj_grid.cell_size) / grid_snap) * grid_snap; // Calculates relative X pos
+				relative_y_pos = round((mouse_y - obj_grid.y_offset + obj_grid.y_shift * obj_grid.cell_size) / grid_snap) * grid_snap; // Calculates relative Y pos
+			
+				current_palette = palette_conversion[obj_objects.current_sprite]; // Sets current palette
+				current_index = obj_objects.last_selection; // Sets current index
+
+				current_x_pos = round((mouse_x - current_width / 2) / grid_snap) * grid_snap; // Sets current X pos
+				current_y_pos = round((mouse_y - current_height / 2) / grid_snap) * grid_snap; // Sets current Y pos
+			
+				current_x_scale = obj_grid.x_scale * object_x_scale; // Sets current X scale
+				current_y_scale = obj_grid.y_scale * object_y_scale; // Sets current Y scale
+
+				current_rotation = object_angle; // Sets current angle
+
+				draw_sprite_ext(current_palette, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_rotation, c_white, object_alpha); // Draw sprite if place is enabled
+			
+			
+				// SET OBJECT DATA
+			
+				if mouse_check_button_pressed(global.controls[0]) // Checks if mouse select button has been pressed
+				{
+					ds_list_add(object_data_sprite, palette_conversion[obj_objects.current_sprite]); // Add current sprite to sprite list
+					ds_list_add(object_data_index, obj_objects.last_selection); // Add current index to index list
+					ds_list_add(object_data_angle, object_angle); // Add current angle to angle list
+					ds_list_add(object_data_x_pos, relative_x_pos / obj_grid.x_scale); // Add current X pos to X pos list
+					ds_list_add(object_data_y_pos, relative_y_pos / obj_grid.y_scale); // Add current Y pos to Y pos list
+					ds_list_add(object_data_x_scale, object_x_scale); // Add current X scale to X scale list
+					ds_list_add(object_data_y_scale, object_y_scale); // Add current Y scale to Y scale list
+				}
 			}
 		}
 	}
@@ -122,8 +126,12 @@ for(i = 0; i < array_length; i++) // Start loop
 	current_width = sprite_get_width(current_sprite) * obj_grid.x_scale * temp_x_scale; // Calculates current object width
 	current_height = sprite_get_height(current_sprite)* obj_grid.y_scale * temp_y_scale; // Calculates current object height
 	
+	place_enabled = true;
+	
 	if point_in_rectangle(mouse_x, mouse_y, current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height) // Checks if mouse is hovering over object
 	{
+		place_enabled = false;
+		
 		draw_rectangle(current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height, 1); // Draw rectangle border arround selected object
 		
 		if mouse_check_button_pressed(global.controls[0]) // Checks for mouse selection button
