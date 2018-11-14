@@ -66,7 +66,6 @@ if global.current_layer == 2 // Checks correct layer is selected
 		{
 			if place_enabled == true // Determines if object can be placed
 			{
-				
 				// DISPLAY PLACEMENT ICON
 			
 				relative_x_pos = round((mouse_x - obj_grid.x_offset + obj_grid.x_shift * obj_grid.cell_size) / grid_snap) * grid_snap; // Calculates relative X pos
@@ -84,7 +83,6 @@ if global.current_layer == 2 // Checks correct layer is selected
 				current_rotation = object_angle; // Sets current angle
 
 				draw_sprite_ext(current_palette, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_rotation, c_white, object_alpha); // Draw sprite if place is enabled
-			
 			
 				// SET OBJECT DATA
 			

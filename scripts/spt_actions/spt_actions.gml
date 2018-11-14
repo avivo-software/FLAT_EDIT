@@ -343,10 +343,6 @@ with obj_grid // Prevents unknown variable error
 					obj_place.collide_angle[i, j] = ds_grid_get(obj_place.collide_grid_angle, i, j); // Populate danger angle array with previously loaded grid data
 					obj_place.collide_flip_horizontal[i, j] = ds_grid_get(obj_place.collide_grid_flip_horizontal, i, j); // Populate danger flip horizontal array with previously loaded grid data
 					obj_place.collide_flip_vertical[i, j] = ds_grid_get(obj_place.collide_grid_flip_vertical, i, j); // Populate danger flip vertical array with previously loaded grid data
-				
-					// LOAD OBJECT DATA BACK TO LIST
-					
-					
 				}
 			}
 			

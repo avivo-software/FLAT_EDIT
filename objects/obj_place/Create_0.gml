@@ -19,7 +19,7 @@ object_angle = 0; // The default angle of object to place
 
 place_enabled = true; // Determines if object can be placed
 rotation_amount = 45; // Sets amount to rotate objects by
-grid_snap = 16; // Determines amount to snap object to grid by
+grid_snap = 8; // Determines amount to snap object to grid by
 place_enabled = true; // Prevents objects being placed on top of other objects
 
 // CREATE OBJECT DATA LISTS

@@ -14,11 +14,11 @@ BUG | Grid disappears when made too small. Fixed in 0.0.3.8
 BUG | Palette behaves strangely when sprite limit is low. Fixed in 0.0.4.5
 BUG | Grid goes beyond hard limits if zoomed out. Fixed 0.0.5.1
 BUG | Grid panning is in wrong direction. Fixed in 0.0.4.6
-BUG | Buttons do not have correct stuck setting when panning using keyboard keys. (Fixed 0.0.5.1)
+BUG | Buttons do not have correct stuck setting when panning using keyboard keys. Fixed in 0.0.5.1
 BUG | Expanding palettes into out of bounds areas can restrict the movement of the palette in edit mode.
 BUG | Switching palettes does not show correct number of sprites if border expand is enabled an clicked.
 BUG | Overflow error. Fixed 0.0.6.7.
-BUG | Tile translation code only works for 128. Fixed 0.0.7.1
+BUG | Tile translation code only works for 128. Fixed in 0.0.7.1
 BUG | Selected grid numbers does not seem to highlight correctly. Fixed in 0.0.7.0.
 BUG | Selecting tile 13 when Egyption tileset is selected, caused palette to go grey. This also happens when tile zero is selected. Fixed 0.0.7.8
 BUG | When trying to place a tile on grid when layer is not 0 or 1 causes a crash. Fixed in 0.0.8.1.
@@ -27,8 +27,9 @@ BUG | Save system does not work for danger tiles. Fixed in 0.0.8.5
 BUG | If a tile is placed, rotated then deleted, causes rotate button to reverse polarity. Fixed in 0.0.9.0.
 BUG | When delete is pressed toggle options break. Fixed in 0.0.9.0.
 BUG | Border for moving palettes is incorrect onece number of items in palette has been swapped.
-BUG | When objects palette is expanded error occers.
+BUG | When objects palette is expanded error occers. Fixed in 0.0.1.6
 BUG | First placed object does not display if top level category is selected.
 BUG | Category object palette does not update sprite limit and qty. Fixed in 0.0.1.0.
 BUG | Can't place any more objects once last is deleted. Fixed in 0.0.1.1
-BUG | Object placement is only disabled for last object placement.
+BUG | Object placement is only disabled for last object placement. Fixed 0.0.1.6
+BUG | When last object is deleted. No more objects can be placed.
