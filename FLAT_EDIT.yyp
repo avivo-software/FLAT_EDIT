@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "03762f43-1440-4fff-ae08-131ab863e3a2",
+            "Value": {
+                "id": "83e85f75-21b7-4df2-aa1f-7aae2dc6df12",
+                "resourcePath": "sprites\\spr_temple_tile_colour\\spr_temple_tile_colour.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "04ea2f03-3120-4312-b65a-12c3f7d96cba",
             "Value": {
                 "id": "6fbe43ba-6fc1-4e95-b8ba-e98056cd0f66",
@@ -175,19 +183,19 @@
             }
         },
         {
-            "Key": "39f0c5c9-5ac7-464b-a1e1-c6446de124fd",
-            "Value": {
-                "id": "9e20605e-d1be-4099-abed-ccfb50c541e8",
-                "resourcePath": "views\\39f0c5c9-5ac7-464b-a1e1-c6446de124fd.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "3a9bd628-ff6d-4cb3-a553-ca3db2ea1668",
             "Value": {
                 "id": "1b0f3251-b613-4bac-afee-b60e3bd5e1e8",
                 "resourcePath": "views\\3a9bd628-ff6d-4cb3-a553-ca3db2ea1668.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3c119d75-e0c3-42a9-ae6a-c7cc3aaa7061",
+            "Value": {
+                "id": "b15a47f7-0587-414c-9426-d314e7ff66af",
+                "resourcePath": "sprites\\spr_temple_map\\spr_temple_map.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -447,14 +455,6 @@
             }
         },
         {
-            "Key": "954e1693-c413-4cdd-b530-efc23360e5c1",
-            "Value": {
-                "id": "00168760-e8a8-417e-abba-540ba837a1a3",
-                "resourcePath": "sprites\\spr_temple_tile_colour\\spr_temple_tile_colour.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "96cc20ac-ef2b-43f4-9dff-a26f992e2f80",
             "Value": {
                 "id": "11a7b271-2bbb-4c28-be38-02e219ea5d54",
@@ -471,19 +471,19 @@
             }
         },
         {
+            "Key": "9f7edb82-03ca-4c28-94b9-3bfe880ce3a4",
+            "Value": {
+                "id": "d21c8cb4-dd05-4b7d-a704-05f25646a1d1",
+                "resourcePath": "views\\9f7edb82-03ca-4c28-94b9-3bfe880ce3a4.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a46ff14c-a5d7-44d9-9a51-8c6374666a5e",
             "Value": {
                 "id": "de555ddd-39ff-4f36-85a0-3890d7f0671e",
                 "resourcePath": "views\\a46ff14c-a5d7-44d9-9a51-8c6374666a5e.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "a8211c8f-6f69-44b5-8adc-bcf9e1c2df55",
-            "Value": {
-                "id": "483db29b-eadd-4074-b7a1-12c149eed2a2",
-                "resourcePath": "sprites\\spr_temple_map\\spr_temple_map.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -507,14 +507,6 @@
             "Value": {
                 "id": "096b0d7d-50d3-4aa1-8332-c18e085c3ae3",
                 "resourcePath": "sprites\\spr_graveyard_map\\spr_graveyard_map.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "af68e13a-5b55-4763-ad01-931b7fcdab50",
-            "Value": {
-                "id": "291dc0bf-4786-4975-be37-9d517a10aa22",
-                "resourcePath": "sprites\\spr_temple_tile_grey\\spr_temple_tile_grey.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -572,6 +564,14 @@
                 "id": "729decbf-6c08-4704-b9fd-4d3ee9371c5b",
                 "resourcePath": "views\\bdf03dec-e233-42ef-b23d-004b91f6dbac.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bf6fd42e-6f01-4494-9987-46f73ee11f1c",
+            "Value": {
+                "id": "87dfb213-19cc-4f5e-94a6-cf86ed6485d4",
+                "resourcePath": "sprites\\spr_temple_tile_grey\\spr_temple_tile_grey.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

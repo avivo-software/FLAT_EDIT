@@ -109,3 +109,4 @@ Version 0.0.1.4 | Delete code now remove objects as well as tiles.
 Version 0.0.1.5 | Object placement now snaps to grid.
 Version 0.0.1.6 | Place enabled code for object placement now working.
 Version 0.0.1.7 | Ready for testing.
+Version 0.1.0.8 | Fixed temple plaette issue.
