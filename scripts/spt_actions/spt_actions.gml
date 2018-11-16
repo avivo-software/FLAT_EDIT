@@ -293,7 +293,7 @@ with obj_grid // Prevents unknown variable error
 			
 			case 25: // Load
 			
-			ini_open("test.txt"); // Open ini file for writing
+			ini_open("save.ini"); // Open ini file for writing
 			
 			// READ AND APPLY SETTINGS DATA
 			
@@ -315,7 +315,8 @@ with obj_grid // Prevents unknown variable error
 			
 			// LOAD OBJECT DATA 
 
-			ds_list_read(obj_place.object_data_index, ini_read_string("object_data", "object_data_index", ""));
+			ds_list_read(obj_place.object_data_sprite, ini_read_string("object_data", "object_data_sprite", ""));
+			ds_list_read(obj_place.object_data_index, ini_read_string("object_data", "object_data_index", "")); // Save object 
 			ds_list_read(obj_place.object_data_angle, ini_read_string("object_data", "object_data_angle", ""));
 			
 			ds_list_read(obj_place.object_data_x_pos, ini_read_string("object_data", "object_data_x_pos", ""));
@@ -346,6 +347,34 @@ with obj_grid // Prevents unknown variable error
 				}
 			}
 			
+			// LOAD OBJECT DATA
+			
+			ds_list_clear(obj_place.object_data_sprite); // Clear object sprite data
+			ds_list_clear(obj_place.object_data_index); // Clear object index data
+			ds_list_clear(obj_place.object_data_angle); // Clear object angle data
+	
+			ds_list_clear(obj_place.object_data_x_pos); // Clear object X pos data
+			ds_list_clear(obj_place.object_data_y_pos); // Clear object Y pos data
+	
+			ds_list_clear(obj_place.object_data_x_scale); // Clear object X scale data
+			ds_list_clear(obj_place.object_data_y_scale); // Clear object Y scale data
+	
+			array_size = ini_read_real("object_data_qty", "qty", "") - 1; // Load array size from file
+	
+			for(i = 0; i < array_size + 1; i++) 
+			{
+				ds_list_add(obj_place.object_data_sprite, ini_read_real("object_data_sprite", i, "")); // Load object sprite data from file
+				ds_list_add(obj_place.object_data_index, ini_read_real("object_data_index", i, "")); // Load object index data from file
+				ds_list_add(obj_place.object_data_angle, ini_read_real("object_data_angle", i, "")); // Load object angle data from file
+	
+				ds_list_add(obj_place.object_data_x_pos, ini_read_real("object_data_x_pos", i, "")); // Load object X pos data from file
+				ds_list_add(obj_place.object_data_y_pos, ini_read_real("object_data_y_pos", i, "")); // Load object Y pos data from file
+	
+				ds_list_add(obj_place.object_data_x_scale, ini_read_real("object_data_x_scale", i, "")); // Load object X scale data from file
+				ds_list_add(obj_place.object_data_y_scale, ini_read_real("object_data_y_scale", i, "")); // Load object Y scale data from file
+	
+			}
+				
 			ini_close(); // Closes ini file for writing preventing memmory leak
 			
 			obj_buttons.stuck[25] = false; // Ensures button does not stick
@@ -390,7 +419,7 @@ with obj_grid // Prevents unknown variable error
 				}
 			}
 			
-			ini_open("test.txt"); // Open ini file for writing
+			ini_open("save.ini"); // Open ini file for writing
 			
 			// WRITE SETTINGS
 			
@@ -412,15 +441,20 @@ with obj_grid // Prevents unknown variable error
 			
 			// WRITE OBJECTS
 			
-			ini_write_string("object_data", "object_sprite", ds_list_write(obj_place.object_data_sprite));
-			ini_write_string("object_data", "object_index", ds_list_write(obj_place.object_data_index));
-			ini_write_string("object_data", "object_angle", ds_list_write(obj_place.object_data_angle));
-			
-			ini_write_string("object_data", "object_x_pos", ds_list_write(obj_place.object_data_x_pos));
-			ini_write_string("object_data", "object_y_pos", ds_list_write(obj_place.object_data_y_pos));
-			
-			ini_write_string("object_data", "object_x_scale", ds_list_write(obj_place.object_data_x_scale));
-			ini_write_string("object_data", "object_y_scale", ds_list_write(obj_place.object_data_y_scale));
+			for(i = 0; i < ds_list_size(obj_place.object_data_sprite); i++) 
+			{
+				ini_write_real("object_data_qty", "qty", ds_list_size(obj_place.object_data_sprite)); // Save array size to ini file
+		
+				ini_write_real("object_data_sprite", i, obj_place.object_data_sprite[| i]); // Save object sprite data to file
+				ini_write_real("object_data_index", i, obj_place.object_data_index[| i]); // Save object index data to file
+				ini_write_real("object_data_angle", i, obj_place.object_data_angle[| i]); // Save object angle data to file
+		
+				ini_write_real("object_data_x_pos", i, obj_place.object_data_x_pos[| i]); // Save object X pos data to file
+				ini_write_real("object_data_y_pos", i, obj_place.object_data_y_pos[| i]); // Save object Y pos data to file
+		
+				ini_write_real("object_data_x_scale", i, obj_place.object_data_x_scale[| i]); // Save object X scale data to file
+				ini_write_real("object_data_y_scale", i, obj_place.object_data_y_scale[| i]); // Save object Y scale data to file
+			}
 			
 			ini_close(); // Closes ini file for writing preventing memmory leak
 			
@@ -450,17 +484,17 @@ with obj_grid // Prevents unknown variable error
 					}
 				}
 				
-				ds_list_destroy(obj_place.object_data_sprite);
-				ds_list_destroy(obj_place.object_data_index);
-				ds_list_destroy(obj_place.object_data_angle);
+				ds_list_destroy(obj_place.object_data_sprite); // Destroy object sprite data list
+				ds_list_destroy(obj_place.object_data_index); // Destroy object index data list
+				ds_list_destroy(obj_place.object_data_angle); // Destroy object angle data list
 				
-				ds_list_destroy(obj_place.object_data_x_pos);
-				ds_list_destroy(obj_place.object_data_y_pos);
+				ds_list_destroy(obj_place.object_data_x_pos); // Destroy object X pos data list
+				ds_list_destroy(obj_place.object_data_y_pos); // Destroy object Y pos data list
 				
-				ds_list_destroy(obj_place.object_data_x_scale);
-				ds_list_destroy(obj_place.object_data_y_scale);
+				ds_list_destroy(obj_place.object_data_x_scale); // Destroy object X scale data list
+				ds_list_destroy(obj_place.object_data_y_scale); // Destroy object Y scale data list
 				
-				instance_destroy(obj_place, true);
+				instance_destroy(obj_place, true); // Destroy place object
 				instance_create_layer(0, 0, 0, obj_place); // Loads place object
 				
 				spt_sound(0, 3); // Play delete sound
