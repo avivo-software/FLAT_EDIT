@@ -112,3 +112,4 @@ Version 0.0.1.7 | Ready for testing.
 Version 0.1.0.8 | Fixed temple plaette issue.
 Version 0.1.0.9 | Object save code now working. Needs to be intergrated correctly.
 Version 0.1.1.0 | Object save and load code now inside button actions.
+Version 0.1.1.1 | Fixed bug where last deleted object prevents further object placement.

@@ -163,8 +163,13 @@ for(i = 0; i < array_length; i++) // Start loop
 			ds_list_delete(object_data_y_scale, i); // Removes entry for data Y scale list
 			
 			array_length = ds_list_size(object_data_sprite); // Stores length of list array
+			
+			place_enabled = true;
 		}
 	}
 	
-	draw_sprite_ext(current_sprite, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_angle, c_white, 1); // Draw current sprite
+	if rectangle_in_rectangle(current_x_pos, current_y_pos, current_x_pos + current_width, current_y_pos + current_height, obj_grid.x_offset + current_width, obj_grid.y_offset + current_height, obj_grid.x_offset + obj_grid.x_max - current_width, obj_grid.y_offset + obj_grid.y_max - current_height)
+	{
+		draw_sprite_ext(current_sprite, current_index, current_x_pos + current_width / 2, current_y_pos + current_height / 2, current_x_scale, current_y_scale, current_angle, c_white, 1); // Draw current sprite
+	}
 }

@@ -32,6 +32,7 @@ TO DO | Ensure correct transperenacy is used for different layers.
 TO DO | Add object removal code to delete action.
 TO DO | Look into layer system.
 TO DO | Convert save and load functions from string to real.
+TO DO | Look into using JSON encoding and mark as list functions for save functions.
 
 *************************************************************************
 *								CODE TIDY							    *

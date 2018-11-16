@@ -32,4 +32,4 @@ BUG | First placed object does not display if top level category is selected.
 BUG | Category object palette does not update sprite limit and qty. Fixed in 0.0.1.0.
 BUG | Can't place any more objects once last is deleted. Fixed in 0.0.1.1
 BUG | Object placement is only disabled for last object placement. Fixed 0.0.1.6
-BUG | When last object is deleted. No more objects can be placed.
+BUG | When last object is deleted. No more objects can be placed. Fixed in 0.1.1.1.

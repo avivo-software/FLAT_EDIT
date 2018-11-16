@@ -630,9 +630,9 @@ if argument0 == 3 // Checks if action type is layer
 	palette_shift = global.current_layer; // Updates layer to match current
 	global.current_layer = palette_shift; // Updates global layer
 	
-	if palette_shift == 0
+	if palette_shift == 0 // Checks if palette shift is set to 0
 	{
-		spt_actions(1, obj_slides.last_selection);
+		spt_actions(1, obj_slides.last_selection); // Execute relivent action
 	}
 	
 	if palette_shift == 1
@@ -654,8 +654,8 @@ if argument0 == 4 // Checks for objects palette
 {
 	stuck[argument1] = true; // Sticks selected tile
 	
-	global.current_layer = 2;
-	obj_layer.palette_shift = 2;
+	global.current_layer = 2; // Sets global layer to 2
+	obj_layer.palette_shift = 2; // Sets palette shift to 2
 	
 	switch argument1 // Determines which tile index was selected
 	{
@@ -689,7 +689,7 @@ if argument0 == 4 // Checks for objects palette
 		
 		case 2: // Blocks
 		
-		if current_sprite == spr_category_colour
+		if current_sprite == spr_category_colour // Checks if top level category is currently active
 		{
 			current_sprite = spr_blocks_colour;  // Sets current sprite to blocks
 			primary_sprite = spr_blocks_colour;  // Sets primary sprite to blocks
