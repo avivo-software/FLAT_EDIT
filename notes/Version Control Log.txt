@@ -114,3 +114,4 @@ Version 0.1.0.9 | Object save code now working. Needs to be intergrated correctl
 Version 0.1.1.0 | Object save and load code now inside button actions.
 Version 0.1.1.1 | Fixed bug where last deleted object prevents further object placement.
 Version 0.1.1.2 | Added menu room. Added test room.
+Version 0.1.1.3 | Changed city graphics. Grid hard limits are now stored in ini file.

@@ -35,7 +35,7 @@ y2 = y1 + y_max; // Stores Y2 coordinate for grid
 cell_min = 32; // Sets the minimum size of the grid
 cell_max = 256; // Sets the maximum size of the grid
 
-hard_x_limit = 64; // Sets a maximum size for the level in the x direction
+hard_x_limit = 128; // Sets a maximum size for the level in the x direction
 hard_y_limit = 64; // Sets a maximum size for the level in the y direction
 
 grid_enabled = true; // Sets if grid is visible

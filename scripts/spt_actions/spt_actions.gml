@@ -243,9 +243,10 @@ with obj_grid // Prevents unknown variable error
 					data = tile_set_rotate(data, obj_place.collide_rotate_data[i, j]); // Applies rotate data to blob
 
 					tilemap_set(map_id, data, i, j); // Applies modified blob data
-
 				}
 			}
+			
+			room_goto(rm_test);
 			
 			break;
 			
@@ -315,15 +316,15 @@ with obj_grid // Prevents unknown variable error
 			
 			// LOAD OBJECT DATA 
 
-			ds_list_read(obj_place.object_data_sprite, ini_read_string("object_data", "object_data_sprite", ""));
-			ds_list_read(obj_place.object_data_index, ini_read_string("object_data", "object_data_index", "")); // Save object 
-			ds_list_read(obj_place.object_data_angle, ini_read_string("object_data", "object_data_angle", ""));
+			ds_list_read(obj_place.object_data_sprite, ini_read_string("object_data", "object_data_sprite", "")); // Load object sprite data
+			ds_list_read(obj_place.object_data_index, ini_read_string("object_data", "object_data_index", "")); // Load object index data
+			ds_list_read(obj_place.object_data_angle, ini_read_string("object_data", "object_data_angle", "")); // Load object angle data
 			
-			ds_list_read(obj_place.object_data_x_pos, ini_read_string("object_data", "object_data_x_pos", ""));
-			ds_list_read(obj_place.object_data_y_pos, ini_read_string("object_data", "object_data_y_pos", ""));
+			ds_list_read(obj_place.object_data_x_pos, ini_read_string("object_data", "object_data_x_pos", "")); // Load object X pos data
+			ds_list_read(obj_place.object_data_y_pos, ini_read_string("object_data", "object_data_y_pos", "")); // Load object Y pos data
 			
-			ds_list_read(obj_place.object_data_x_scale, ini_read_string("object_data", "object_data_x_scale", ""));
-			ds_list_read(obj_place.object_data_y_scale, ini_read_string("object_data", "object_data_y_scale", ""));
+			ds_list_read(obj_place.object_data_x_scale, ini_read_string("object_data", "object_data_x_scale", "")); // Load object X scale data
+			ds_list_read(obj_place.object_data_y_scale, ini_read_string("object_data", "object_data_y_scale", "")); // Load object Y scale data
 			
 			// POPULATE ARRAYS WITH PREVIOUSLY LOADED GRID DATA
 			
@@ -424,6 +425,8 @@ with obj_grid // Prevents unknown variable error
 			// WRITE SETTINGS
 			
 			ini_write_real("settings_data", "last_selection", obj_slides.last_selection); // Write current slide to file
+			ini_write_real("settings_data", "hard_x_limit", obj_grid.hard_x_limit); // Store grid X limit
+			ini_write_real("settings_data", "hard_y_limit", obj_grid.hard_y_limit); // Store grid Y limit
 			
 			// WRITE DANGER GRID DATA TO FILE
 			

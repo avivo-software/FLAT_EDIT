@@ -141,7 +141,7 @@ for(i = 0; i < array_length; i++) // Start loop
 			
 			if global.flip_vertical_enabled == true // Checks if flip vertical is enabled
 			{
-				object_data_x_scale[| i] = object_data_x_scale[| i] * -1; // Flips polarity of object Y scale thus flipping it
+				object_data_y_scale[| i] = object_data_y_scale[| i] * -1; // Flips polarity of object Y scale thus flipping it
 			}
 			
 			if global.rotate_enabled == true // Checks if rotation is enabled
